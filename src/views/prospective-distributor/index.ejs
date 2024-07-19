@@ -1,0 +1,73 @@
+<%- include("../shared/header.ejs") %>
+
+      <!-- partial -->
+      <div class="main-panel distributors-details">
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="col-12 grid-margin stretch-card">
+              <div class="card p-3 table-responsive">
+                <div class="d-flex justify-content-between my-4">
+                  <div>
+                    <h4 class="add-distributor-text">INVITE DISTRIBUTOR</h4>
+                  </div>
+                  <div class="add-distributor-btn">
+                    <a
+                      href="/invite/addDistributor"
+                      class="btn"
+                      >Add Distributor</a
+                    >
+                  </div>
+                </div>
+                <table
+                  id="distributors-details-table"
+                  class="display table table-hover responsive nowrap"
+                  style="width: 100%"
+                >
+                  <thead>
+                    <tr>
+                      <th scope="col">Business Name</th>
+                      <th scope="col">Owner</th>
+                      <th scope="col">Email ID</th>
+                      <th scope="col">Mobile Number</th>
+                      <th scope="col">Status</th>
+                      <th scope="col">Review</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% tabledata.forEach((data)=>{%>
+                    <tr>
+                      <td> <%= data.business_name %> </td>
+                      <td><%= data.owner %></td>
+                      <td><%= data.email_id %></td>
+                      <td><%= data.mobile_number %></td>
+                      <td style="color: <%= data.status === '1' ? 'green' : 'red' %>">
+                        <%= data.status === '1' ? 'ACTIVE' : 'INACTIVE' %>
+                      </td>
+                     <td>Edit</td>
+                    </tr>
+                    <%})%>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        <footer class="footer">
+          <div class="container-fluid text-center">
+            <span
+              class="text-muted d-block text-center text-sm-start d-sm-inline-block"
+              >Admin Dashboard!
+            </span>
+          </div>
+        </footer>
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+
+
+<%- include("../shared/footer.ejs") %>

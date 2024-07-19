@@ -1,0 +1,489 @@
+<%- include("../shared/header.ejs") %>
+
+    <!-- partial -->
+    <div class="main-panel dashboard-main">
+      <div class="content-wrapper">
+        <div class="row">
+          <div class="col-12 grid-margin stretch-card">
+            <div class="card p-3">
+              <div class="dash-style">
+                <div class="row my-3">
+                  <div class="col-md-7 mt-2">
+                    <div class="dash-customer-onbording-chart">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div
+                            class="d-flex justify-content-between align-items-center onbordingChart-contant p-3"
+                          >
+                            <h4>Customer Onboarding</h4>
+                            <div class="dropdown">
+                              <button
+                                class="date_picker_filter dropdown-toggle"
+                                type="button"
+                                id="dropdownFilterMonthly"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                              >
+                                Monthly
+                              </button>
+                              <ul
+                                class="dropdown-menu toggle_data_picker"
+                                aria-labelledby="dropdownFilterMonthly"
+                              >
+                                <li class="dropdown-item py-3">
+                                  <span>Monthly</span>
+                                </li>
+                                <li class="dropdown-item py-3">
+                                  <span> Weekly</span>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="d-flex p-md-3">
+                            <div
+                              class="d-flex justify-content-center align-items-center aside-text-business"
+                            >
+                              <span>Number Of Business Partners</span>
+                            </div>
+                            <div class="w-100">
+                              <canvas id="onbordingChart"></canvas>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-5 mt-2">
+                    <div class="dash-customer-onbording-chart">
+                      <div
+                        class="d-flex justify-content-between align-items-center onbordingChart-contant p-3"
+                      >
+                        <div class="application-status-summary">
+                          <h4>Applications Summary</h4>
+                          <span>By Status</span>
+                        </div>
+                        <div class="filter-role-all-applications">
+                          <div class="dropdown">
+                            <button
+                              class="date_picker_filter dropdown-toggle"
+                              type="button"
+                              id="dropdownFilterApplications"
+                              data-bs-toggle="dropdown"
+                              aria-expanded="false"
+                            >
+                              All Applications
+                            </button>
+                            <ul
+                              class="dropdown-menu toggle_data_picker p-2"
+                              aria-labelledby="dropdownFilterApplications"
+                            >
+                              <li>
+                                <div class="form-check form-group">
+                                  <label class="form-check-label">
+                                    <input
+                                      type="checkbox"
+                                      class="form-check-input" />
+                                    ROLES <i class="input-helper"></i
+                                  ></label>
+                                </div>
+                                <div class="form-group ps-3">
+                                  <div class="form-check">
+                                    <label class="form-check-label">
+                                      <input
+                                        type="checkbox"
+                                        class="form-check-input" />
+                                      Enterprise Admin
+                                      <i class="input-helper"></i
+                                    ></label>
+                                  </div>
+                                  <div class="form-check">
+                                    <label class="form-check-label">
+                                      <input
+                                        type="checkbox"
+                                        class="form-check-input" />
+                                      Area Sales Executive
+                                      <i class="input-helper"></i
+                                    ></label>
+                                  </div>
+                                  <div class="form-check">
+                                    <label class="form-check-label">
+                                      <input
+                                        type="checkbox"
+                                        class="form-check-input" />
+                                      Regional Sales Manager
+                                      <i class="input-helper"></i
+                                    ></label>
+                                  </div>
+                                  <div class="form-check">
+                                    <label class="form-check-label">
+                                      <input
+                                        type="checkbox"
+                                        class="form-check-input" />
+                                      Area Sales Manager
+                                      <i class="input-helper"></i
+                                    ></label>
+                                  </div>
+                                </div>
+                              </li>
+                              <li>
+                                <h6 class="ms-1">DATE</h6>
+                                <div class="dropdown-item form-group">
+                                  <label>Start Date *</label>
+                                  <input
+                                    type="date"
+                                    class="form-control-lg form-control"
+                                  />
+                                </div>
+                                <div class="dropdown-item form-group">
+                                  <label>End Date *</label>
+                                  <input
+                                    type="date"
+                                    class="form-control-lg form-control"
+                                  />
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="invite-notifecation-section m-2">
+                        <div class="row">
+                          <div class="col">
+                            <div class="dash-noti-left">
+                              <div class="d-flex align-items-center m-2">
+                                <span class="noti-icon btn-primary"
+                                  ><i
+                                    class="mdi mdi-account-plus text-light"
+                                  ></i
+                                ></span>
+                                <p>INVITE INITIATED</p>
+                              </div>
+                              <div
+                                class="d-flex align-items-center dash-count-noti p-2"
+                              >
+                                <h5>39</h5>
+                                <span class="cont-invite">Invites</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="dash-noti-left">
+                              <div class="d-flex align-items-center m-2">
+                                <span class="noti-icon btn-warning"
+                                  ><i class="mdi mdi-history text-light"></i
+                                ></span>
+                                <p>INVITE REVIEW</p>
+                              </div>
+                              <div
+                                class="d-flex align-items-center dash-count-noti p-2"
+                              >
+                                <h5>0</h5>
+                                <span class="cont-invite">Applications</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row my-3">
+                          <div class="col">
+                            <div class="dash-noti-left">
+                              <div class="d-flex align-items-center m-2">
+                                <span class="noti-icon btn-danger text-light"
+                                  ><i class="mdi mdi-close-circle-outline"></i
+                                ></span>
+                                <p>INVITE SENT</p>
+                              </div>
+                              <div
+                                class="d-flex align-items-center dash-count-noti p-2"
+                              >
+                                <h5>13</h5>
+                                <span class="cont-invite">Applications</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="dash-noti-left">
+                              <div class="d-flex align-items-center m-2">
+                                <span class="noti-icon btn-warning text-light"
+                                  ><i class="mdi mdi-history"></i
+                                ></span>
+                                <p>INVITE REJECTED</p>
+                              </div>
+                              <div
+                                class="d-flex align-items-center dash-count-noti p-2"
+                              >
+                                <h5>39</h5>
+                                <span class="cont-invite">Invites</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row my-3">
+                          <div class="col">
+                            <div class="dash-noti-left">
+                              <div class="d-flex align-items-center m-2">
+                                <span class="noti-icon btn-info text-light"
+                                  ><i class="mdi mdi-receipt"></i
+                                ></span>
+                                <p>INVITE EXPIRED</p>
+                              </div>
+                              <div
+                                class="d-flex align-items-center dash-count-noti p-2"
+                              >
+                                <h5>239</h5>
+                                <span class="cont-invite">Invites</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="dash-noti-left">
+                              <div class="d-flex align-items-center m-2">
+                                <span class="noti-icon btn-info text-light"
+                                  ><i class="mdi mdi-receipt"></i
+                                ></span>
+                                <p>DOCUMENT CAPTURE</p>
+                              </div>
+                              <div
+                                class="d-flex align-items-center dash-count-noti p-2"
+                              >
+                                <h5>39</h5>
+                                <span class="cont-invite">Applications</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row my-3">
+                          <div class="col">
+                            <div class="dash-noti-left">
+                              <div class="d-flex align-items-center m-2">
+                                <span class="noti-icon btn-warning text-light"
+                                  ><i class="mdi mdi-history"></i
+                                ></span>
+                                <p>UNDER REVIEW</p>
+                              </div>
+                              <div
+                                class="d-flex align-items-center dash-count-noti p-2"
+                              >
+                                <h5>09</h5>
+                                <span class="cont-invite">Applications</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="dash-noti-left">
+                              <div class="d-flex align-items-center m-2">
+                                <span class="noti-icon btn-info text-light"
+                                  ><i class="mdi mdi-history"></i
+                                ></span>
+                                <p>E-SIGN PENDING</p>
+                              </div>
+                              <div
+                                class="d-flex align-items-center dash-count-noti p-2"
+                              >
+                                <h5>119</h5>
+                                <span class="cont-invite">Applications</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row my-3">
+                          <div class="col">
+                            <div class="dash-noti-left">
+                              <div class="d-flex align-items-center m-2">
+                                <span class="noti-icon btn-success"
+                                  ><i class="mdi mdi-history"></i
+                                ></span>
+                                <p>E-SIGN COMPLETED</p>
+                              </div>
+                              <div
+                                class="d-flex align-items-center dash-count-noti p-2"
+                              >
+                                <h5>39</h5>
+                                <span class="cont-invite">Invites</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="dash-noti-left">
+                              <div class="d-flex align-items-center m-2">
+                                <span class="noti-icon btn-success"
+                                  ><i class="mdi mdi-check-circle-outline"></i
+                                ></span>
+                                <p>COMPLETED</p>
+                              </div>
+                              <div
+                                class="d-flex align-items-center dash-count-noti p-2"
+                              >
+                                <h5>39</h5>
+                                <span class="cont-invite">Invites</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row my-3">
+                          <div class="col">
+                            <div class="dash-noti-left">
+                              <div class="d-flex align-items-center m-2">
+                                <span class="noti-icon btn-danger text-light"
+                                  ><i class="mdi mdi-close-circle-outline"></i
+                                ></span>
+                                <p>REJECTED</p>
+                              </div>
+                              <div
+                                class="d-flex align-items-center dash-count-noti p-2"
+                              >
+                                <h5>39</h5>
+                                <span class="cont-invite">Invites</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div
+                    class="col-md-7 mt-2 justify-content-center align-items-center"
+                  >
+                    <div class="map-country-section p-3">
+                      <div class="row">
+                        <div class="col-md-8 col-sm-6 pe-0">
+                          <div class="heat-map-top-text">
+                            <h4>Heat Map</h4>
+                            <span
+                              >AN OVERVIEW OF DENSITY OF BUSINESS PARTNERS IN
+                              INDIA</span
+                            >
+                          </div>
+                          <div class="align-items-center overflow-hidden">
+                            <div id="visualization_map"></div>
+                            <h6 class="map-business-title ms-1">
+                              Business-Partners
+                            </h6>
+                          </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 map-aside-content">
+                          <div class="map-aside-top-state">
+                            <div class="row mt-2">
+                              <h4>Top 4 Grossing States</h4>
+                              <div class="col-md-6 align-items-center mb-2">
+                                <p>Uttar Pradesh</p>
+                                <h4>39</h4>
+                                <p>Maharashtra</p>
+                                <h4>49</h4>
+                              </div>
+                              <div class="col-md-6 align-items-center mb-2">
+                                <p>Bihar</p>
+                                <h4>57</h4>
+                                <p>Rajasthan</p>
+                                <h4>67</h4>
+                              </div>
+                            </div>
+                            <div class="row mt-2">
+                              <h4>Other Grossing States</h4>
+                              <div class="col-md-6 align-items-center mb-2">
+                                <p>West Bengal</p>
+                                <h4>39</h4>
+                                <p>Madhya Pradesh</p>
+                                <h4>9</h4>
+                                <p>Gujrat</p>
+                                <h4>7</h4>
+                                <p>Delhi</p>
+                                <h4>9</h4>
+                              </div>
+                              <div class="col-md-6 align-items-center mb-2">
+                                <p>Tamil Nadu</p>
+                                <h4>17</h4>
+                                <p>Odisha</p>
+                                <h4>19</h4>
+                                <p>Assam</p>
+                                <h4>4</h4>
+                                <p>Mumbai</p>
+                                <h4>6</h4>
+                              </div>
+                            </div>
+                            <div class="view-other-states">
+                              <a href="#">+ View Other States</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-5 mt-2">
+                    <div class="dash-customer-onbording-chart">
+                      <div
+                        class="d-flex justify-content-between align-items-center onbordingChart-contant p-3"
+                      >
+                        <div class="application-status-summary">
+                          <h4>Applications Turn Around Time</h4>
+                          <span>COMPLETED APPLICATIONS BY NUMBER OF DAYS</span>
+                        </div>
+                        <div class="dropdown">
+                          <button
+                            class="date_picker_filter dropdown-toggle"
+                            type="button"
+                            id="dropdownFilter"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                          >
+                            Filter
+                          </button>
+                          <ul
+                            class="dropdown-menu toggle_data_picker"
+                            aria-labelledby="dropdownFilter"
+                          >
+                            <li class="dropdown-item">
+                              <label>Start Date *</label>
+                              <input
+                                type="date"
+                                class="form-control-lg form-control"
+                              />
+                            </li>
+                            <li class="dropdown-item">
+                              <label>End Date *</label>
+                              <input
+                                type="date"
+                                class="form-control-lg form-control"
+                              />
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="d-flex p-md-3">
+                        <div
+                          class="d-flex justify-content-center align-items-center aside-text-business"
+                        >
+                          <span>Completed Applications</span>
+                        </div>
+                        <div class="w-100">
+                          <canvas id="Completed_applications"></canvas>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- content-wrapper ends -->
+      <!-- partial:../../partials/_footer.html -->
+      <footer class="footer">
+        <div class="container-fluid text-center">
+          <span
+            class="text-muted d-block text-center text-sm-start d-sm-inline-block"
+            >Admin Dashboard!
+          </span>
+        </div>
+      </footer>
+      <!-- partial -->
+    </div>
+    <!-- main-panel ends -->
+  </div>
+  <!-- page-body-wrapper ends -->
+</div>
+
+<%- include("../shared/footer.ejs") %>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Distributor Details</title>
+    <!-- plugins:css -->
+    <link
+      rel="stylesheet"
+      href="../../public/vendors/mdi/css/materialdesignicons.min.css"
+    />
+    <!-- <link rel="stylesheet" href="./assets/vendors/css/vendor.bundle.base.css"> -->
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="../../public/css/style.css" />
+    <link rel="stylesheet" href="../../public/css/style.css" />
+
+    <link rel="stylesheet" href="../../public/css/responsive.css" />
+    <!-- End layout styles -->
+    <link rel="stylesheet" href="../../public/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../public/DataTables/datatables.min.css" />
+  </head>
+  <body>
+    <div class="container-scroller">
+      <!-- partial:../../partials/_navbar.html -->
+      <nav
+        class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row"
+      >
+        <div
+          class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center"
+        >
+          <a class="navbar-brand brand-logo logo-hide" href="/">
+            <img src="../../public/images/Group 46 (1).jpg" alt="logo" />
+          </a>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-stretch">
+          <button
+            class="navbar-toggler navbar-toggler align-self-center"
+            type="button"
+            data-toggle="minimize"
+          >
+            <span class="mdi mdi-menu"></span>
+          </button>
+          <div
+            class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center"
+          >
+            <a class="navbar-brand brand-logo" href="/">
+              <img src="../../public/images/Group 46 (1).jpg" alt="logo" />
+            </a>
+          </div>
+          <ul class="navbar-nav navbar-nav-right">
+            <li class="nav-item nav-profile dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                id="profileDropdown"
+                href="#"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <div class="nav-profile-img">
+                  <img
+                    src="../../public/images/faces/user-avatar.webp"
+                    alt="image"
+                  />
+                  <span class="availability-status online"></span>
+                </div>
+                <div class="nav-profile-text">
+                  <p class="mb-1 text-black">ABC Distributor</p>
+                </div>
+              </a>
+              <div
+                class="dropdown-menu navbar-dropdown"
+                aria-labelledby="profileDropdown"
+              >
+                <a class="dropdown-item" href="#">
+                  <i class="mdi mdi-cached me-2 text-success"></i>
+                  Activity Log
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="./pages/login/login.html">
+                  <i class="mdi mdi-logout me-2 text-primary"></i>
+                  Signout
+                </a>
+              </div>
+            </li>
+          </ul>
+          <button
+            class="navbar-toggler navbar-toggler-right d-lg-none align-self-center"
+            type="button"
+            data-toggle="offcanvas"
+          >
+            <span class="mdi mdi-menu"></span>
+          </button>
+        </div>
+      </nav>
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:../../partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/userrole">
+                <i class="mdi mdi-home menu-icon"></i>
+                <span class="menu-title">Details & Document Upload</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/doc_correction">
+                <i class="mdi mdi-library-books menu-icon"></i>
+                <span class="menu-title">Document Correction</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <!-- partial -->
+        <div class="main-panel role-user-status">
+          <div class="content-wrapper">
+            <div class="row">
+              <div class="col-12 grid-margin stretch-card">
+                <div class="card p-3 table-responsive">
+                  <div class="document-correction">
+                    <div
+                      class="d-flex mb-md-5 heading-text justify-content-center py-4"
+                    >
+                      <span class="position-relative">Document Correction</span>
+                    </div>
+                    <div class="row g-3 align-items-center">
+                      <div class="col-md-6 form-group">
+                        <label>Document to be Corrected :</label>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <input
+                            type="text"
+                            class="form-control"
+                            name="father_name"
+                            id="father_name"
+                            placeholder="Document Name"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row g-3 align-items-center">
+                      <div class="col-md-6 form-group">
+                        <label>Remarks For Correction :</label>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <input
+                            type="text"
+                            class="form-control"
+                            name="father_name"
+                            id="father_name"
+                            placeholder="Remarks Here"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row g-3 align-items-center">
+                      <div class="col-md-6 form-group">
+                        <label>Document Reupload :</label>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group mb-2">
+                          <input
+                            type="file"
+                            class="form-control"
+                            id="images"
+                            name="upload_aadhar"
+                          />
+                        </div>
+                        <span class="extinguisher_img align-items-center">
+                          Accepted Formats:
+                          <ul class="d-flex align-items-center p-0 m-0">
+                            <li>.FG</li>
+                            <li>JPEG</li>
+                            <li>PNG</li>
+                            <li>PDF</li>
+                          </ul>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- content-wrapper ends -->
+          <!-- partial:../../partials/_footer.html -->
+          <footer class="footer">
+            <div class="container-fluid text-center">
+              <span
+                class="text-muted d-block text-center text-sm-start d-sm-inline-block"
+              >
+                Role User Dashbord!
+              </span>
+            </div>
+          </footer>
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <script src="/src/public/js/jquery.min.js"></script>
+
+    <!-- endinject -->
+    <!-- inject:js -->
+    <script src="../../public/vendors/js/vendor.bundle.base.js"></script>
+    <script src="../../public/js/bootstrap.min.js"></script>
+    <script src="../../public/js/off-canvas.js"></script>
+    <script src="../../public/js/hoverable-collapse.js"></script>
+    <script src="../../public/js/misc.js"></script>
+
+    <script src="../../public/DataTables/jquery.dataTables.js"></script>
+
+    <script src="../../public/js/chart.umd.min.js"></script>
+    <script src="../../public/js/main.js"></script>
+    <script src="../../public/countryjs/map_loader.js"></script>
+    <script src="../../public/countryjs/map_custom.js"></script>
+  </body>
+</html>

@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Distributor Details</title>
+    <!-- plugins:css -->
+    <link
+      rel="stylesheet"
+      href="../../public/vendors/mdi/css/materialdesignicons.min.css"
+    />
+    <!-- <link rel="stylesheet" href="./assets/vendors/css/vendor.bundle.base.css"> -->
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="../../public/css/style.css" />
+    <link rel="stylesheet" href="../../public/css/style.css" />
+
+    <link rel="stylesheet" href="../../public/css/responsive.css" />
+    <!-- End layout styles -->
+    <link rel="stylesheet" href="../../public/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../public/DataTables/datatables.min.css" />
+
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 15px;
+        text-align: left;
+      }
+
+      th,
+      td {
+        padding: 12px;
+        border-bottom: 1px solid #ddd;
+      }
+
+      th {
+        background-color: #f2f2f2;
+      }
+
+      tr:hover {
+        background-color: #f1f1f1;
+      }
+
+      td a {
+        color: blue;
+        text-decoration: none;
+      }
+
+      td a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container-scroller">
+      <!-- partial:../../partials/_navbar.html -->
+      <nav
+        class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row"
+      >
+        <div
+          class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center"
+        >
+          <a class="navbar-brand brand-logo logo-hide" href="/"
+            ><img src="../../public/images/Group 46 (1).jpg" alt="logo"
+          /></a>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-stretch">
+          <button
+            class="navbar-toggler navbar-toggler align-self-center"
+            type="button"
+            data-toggle="minimize"
+          >
+            <span class="mdi mdi-menu"></span>
+          </button>
+          <div
+            class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center"
+          >
+            <a class="navbar-brand brand-logo" href="/"
+              ><img src="../../public/images/Group 46 (1).jpg" alt="logo"
+            /></a>
+          </div>
+          <ul class="navbar-nav navbar-nav-right">
+            <li class="nav-item nav-profile dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                id="profileDropdown"
+                href="#"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <div class="nav-profile-img">
+                  <img
+                    src="../../public/images/faces/user-avatar.webp"
+                    alt="image"
+                  />
+                  <span class="availability-status online"></span>
+                </div>
+                <div class="nav-profile-text">
+                  <p class="mb-1 text-black">ABC Distributor</p>
+                </div>
+              </a>
+              <div
+                class="dropdown-menu navbar-dropdown"
+                aria-labelledby="profileDropdown"
+              >
+                <a class="dropdown-item" href="#">
+                  <i class="mdi mdi-cached me-2 text-success"></i> Activity Log
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/login_role">
+                  <i class="mdi mdi-logout me-2 text-primary"></i> Signout
+                </a>
+              </div>
+            </li>
+          </ul>
+          <button
+            class="navbar-toggler navbar-toggler-right d-lg-none align-self-center"
+            type="button"
+            data-toggle="offcanvas"
+          >
+            <span class="mdi mdi-menu"></span>
+          </button>
+        </div>
+      </nav>
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:../../partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/userrole">
+                <i class="mdi mdi-home menu-icon"></i>
+                <span class="menu-title">Details & Document Upload</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/doc_correction">
+                <i class="mdi mdi-library-books menu-icon"></i>
+                <span class="menu-title">Document Correction</span>
+              </a>
+            </li>
+            <!-- <li class="nav-item">
+            <a class="nav-link" href="./pages/prospective_distributors/prospective_distributors.html">
+              <i class="mdi mdi-content-save-all menu-icon"></i>
+              <span class="menu-title">Prospective Distributors</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="pages/business_forms/business_detail.html">
+              <i class="mdi mdi-contacts menu-icon"></i>
+              <span class="menu-title">Invite</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./pages/tables/opportunity.html">
+              <i class="mdi mdi-human-greeting menu-icon"></i>
+              <span class="menu-title">Opportunity</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./pages/tables/approvers_inbox.html">
+              <i class="mdi mdi-message menu-icon"></i>
+              <span class="menu-title"> Approver's Inbox</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false"
+              aria-controls="ui-basic">
+              <i class="mdi mdi-account-box-outline menu-icon"></i>
+              <span class="menu-title">Application List</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-basic">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="./pages/application/document_captur.html">Document
+                    Captur</a></li>
+                <li class="nav-item"> <a class="nav-link" href="./pages/application/under_review.html">Under
+                    Review</a></li>
+                <li class="nav-item"> <a class="nav-link" href="./pages/application/completed.html">Completed</a>
+                </li>
+                <li class="nav-item"> <a class="nav-link" href="./pages/application/rejected.html">Rejected</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./pages/distributors/distributors_list.html">
+              <i class="mdi mdi-library-books menu-icon"></i>
+              <span class="menu-title"> Distributors List</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./pages/role_management/role_management.html">
+              <i class="mdi mdi-roller-skate menu-icon"></i>
+              <span class="menu-title"> Role Management</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./pages/role_management/user_management.html">
+              <i class="mdi mdi-source-repository menu-icon"></i>
+              <span class="menu-title"> User Management</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./pages/role_management/territory_managemant.html">
+              <i class="mdi mdi-progress-wrench menu-icon"></i>
+              <span class="menu-title"> Territory Management</span>
+            </a>
+          </li> -->
+          </ul>
+        </nav>
+        <!-- partial -->
+        <div class="main-panel role-user-status">
+          <div class="content-wrapper">
+            <div class="row">
+              <div class="col-12 grid-margin stretch-card">
+                <div class="card p-3 table-responsive">
+                  <div class="distributor-first">
+                    <!-- ***************role-user-wizard-form-strat************ -->
+                    <section class="wizard-section" id="form1_role_user">
+                      <div class="row no-gutters">
+                        <div class="col-lg-12 col-md-12">
+                          <div class="form-wizard m-md-3">
+                            <form
+                              action="/userrole/role2"
+                              method="post"
+                              enctype="multipart/form-data"
+                              id="myForm"
+                            >
+                              <div class="form-wizard-header">
+                                <ul
+                                  class="list-unstyled form-wizard-steps clearfix d-flex justify-content-center"
+                                >
+                                  <li class="active"><span>1</span></li>
+                                  <li><span>2</span></li>
+                                  <li><span>3</span></li>
+                                  <li><span>4</span></li>
+                                  <li><span>5</span></li>
+                                  <li><span>6</span></li>
+                                  <li><span>7</span></li>
+                                  <li><span>8</span></li>
+                                  <li><span>9</span></li>
+                                  <li><span>10</span></li>
+                                </ul>
+                                <ul
+                                  class="list-unstyled clearfix distributor-wizad-status-name d-flex justify-content-center"
+                                >
+                                  <li class="active">Personal Details</li>
+                                  <li>Business Details</li>
+                                  <li>INFRA</li>
+                                  <li>Expenses Estimation</li>
+                                  <li>TDS Declaration</li>
+                                  <li>BDBPL - TDS Declaration</li>
+                                  <li>ITR</li>
+                                  <li>GSTR</li>
+                                  <li>Bank Details</li>
+                                  <li>Summary</li>
+                                </ul>
+                              </div>
+
+                              <!-- ************bussiness-details************** -->
+                              <fieldset class="wizard-fieldset show">
+                                <div
+                                  class="d-flex mb-md-5 heading-text justify-content-center py-3"
+                                >
+                                  <span class="position-relative"
+                                    >Business Details</span
+                                  >
+                                </div>
+                                <div class="form-group">
+                                  <div class="row g-3 align-items-center">
+                                    <div class="col-md-6">
+                                      <label> Distributor Type *</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                      <div class="wizard-form-radio">
+                                        <input
+                                          name="radio-new-distributor"
+                                          id="new_distributor"
+                                          type="radio"
+                                          required
+                                        />
+                                        <label for="new_distributor"
+                                          >NEW DISTRIBUTOR</label
+                                        >
+                                      </div>
+                                      <div class="wizard-form-radio">
+                                        <input
+                                          name="radio-new-distributor"
+                                          id="existing_DISTRIBUTOR"
+                                          type="radio"
+                                          required
+                                        />
+                                        <label for="existing_DISTRIBUTOR"
+                                          >EXISTING DISTRIBUTOR</label
+                                        >
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="row g-3 align-items-center">
+                                  <div class="col-md-6 form-group">
+                                    <label>GSTIN *</label>
+                                  </div>
+                                  <div class="col-md-6">
+                                    <div class="form-group">
+                                      <input
+                                        type="text"
+                                        class="form-control"
+                                        id="gst_number"
+                                        name="gst_number"
+                                        required
+                                      />
+                                      <label
+                                        for="gst_number"
+                                        class="wizard-form-text-label"
+                                        >Enter GSTIN Number*</label
+                                      >
+                                      <div class="wizard-form-error"></div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="row g-3 align-items-center">
+                                  <div class="col-md-6 form-group">
+                                    <label
+                                      >Upload GST Registration Certificate
+                                      *</label
+                                    >
+                                  </div>
+                                  <div class="col-md-6">
+                                    <div class="form-group mb-2">
+                                      <input
+                                        type="file"
+                                        class="form-control"
+                                        id="images"
+                                        name="gst_upload_img"
+                                        required
+                                      />
+                                      <div class="wizard-form-error"></div>
+                                    </div>
+                                    <span
+                                      class="extinguisher_img align-items-center"
+                                      >Accepted Formats:
+                                      <ul
+                                        class="d-flex align-items-center p-0 m-0"
+                                      >
+                                        <li>.FG</li>
+                                        <li>JPEG</li>
+                                        <li>PNG</li>
+                                        <li>PDF</li>
+                                      </ul>
+                                    </span>
+                                  </div>
+                                </div>
+
+                                <div class="row g-3 align-items-center">
+                                  <div class="col-md-6 form-group">
+                                    <label
+                                      >Shop & Establishment Certificate *</label
+                                    >
+                                  </div>
+                                  <div class="col-md-6">
+                                    <div class="form-group mb-2">
+                                      <input
+                                        type="file"
+                                        class="form-control"
+                                        id="images"
+                                        name="shop_upload_img"
+                                        required
+                                      />
+                                      <div class="wizard-form-error"></div>
+                                    </div>
+                                    <span
+                                      class="extinguisher_img align-items-center"
+                                      >Accepted Formats:
+                                      <ul
+                                        class="d-flex align-items-center p-0 m-0"
+                                      >
+                                        <li>.FG</li>
+                                        <li>JPEG</li>
+                                        <li>PNG</li>
+                                        <li>PDF</li>
+                                      </ul>
+                                    </span>
+                                  </div>
+                                </div>
+
+                                <div class="row g-3 align-items-center">
+                                  <div class="col-md-6 form-group">
+                                    <label
+                                      >Shop Act/Gumastara/Panchayat NOC Document
+                                      *</label
+                                    >
+                                  </div>
+                                  <div class="col-md-6">
+                                    <div class="form-group mb-2">
+                                      <input
+                                        type="file"
+                                        class="form-control"
+                                        id="panchayat_noc"
+                                        name="panchayat_noc"
+                                        required
+                                      />
+                                      <div class="wizard-form-error"></div>
+                                    </div>
+                                    <span
+                                      class="extinguisher_img align-items-center"
+                                      >Accepted Formats:
+                                      <ul
+                                        class="d-flex align-items-center p-0 m-0"
+                                      >
+                                        <li>.FG</li>
+                                        <li>JPEG</li>
+                                        <li>PNG</li>
+                                        <li>PDF</li>
+                                      </ul>
+                                    </span>
+                                  </div>
+                                </div>
+
+                                <div class="form-group">
+                                  <div class="row g-3 align-items-center">
+                                    <div class="col-md-6">
+                                      <label
+                                        >Udyam Registration Certificate is
+                                        Available*</label
+                                      >
+                                    </div>
+                                    <div class="col-md-6">
+                                      <div class="wizard-form-radio">
+                                        <input
+                                          name="radio-Udyam"
+                                          id="Udyam_yes"
+                                          value="yes"
+                                          type="radio"
+                                          onclick="toggleUdyamFile(true)"
+                                          required
+                                        />
+                                        <label for="Udyam_yes">Yes</label>
+                                      </div>
+                                      <div class="wizard-form-radio">
+                                        <input
+                                          name="radio-Udyam"
+                                          id="Udyam_no"
+                                          value="no"
+                                          type="radio"
+                                          onclick="toggleUdyamFile(false)"
+                                          required
+                                        />
+                                        <label for="Udyam_no">No</label>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div
+                                  id="udyamFileSection"
+                                  class="form-group"
+                                  style="display: none"
+                                >
+                                  <div class="row g-3 align-items-center">
+                                    <div class="col-md-6"></div>
+                                    <div class="col-md-6">
+                                      <input
+                                        type="file"
+                                        class="form-control"
+                                        id="udyam_certificate"
+                                        name="udyam_certificate"
+                                      />
+                                      <div class="wizard-form-error"></div>
+                                      <span class="extinguisher_img"
+                                        >Accepted Formats:
+                                        <ul class="d-flex">
+                                          <li>.FG</li>
+                                          <li>JPEG</li>
+                                          <li>PNG</li>
+                                          <li>PDF</li>
+                                        </ul>
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="row g-3 align-items-center">
+                                  <div class="col-md-6 form-group">
+                                    <label>NACH Form *</label>
+                                  </div>
+                                  <div class="col-md-6">
+                                    <div class="form-group mb-2">
+                                      <input
+                                        type="file"
+                                        class="form-control"
+                                        id="nach_form"
+                                        name="nach_form"
+                                        required
+                                      />
+                                      <div class="wizard-form-error"></div>
+                                    </div>
+                                    <span class="extinguisher_img"
+                                      >Accepted Formats:
+                                      <ul class="d-flex">
+                                        <li>.FG</li>
+                                        <li>JPEG</li>
+                                        <li>PNG</li>
+                                        <li>PDF</li>
+                                      </ul>
+                                    </span>
+                                  </div>
+                                </div>
+                                <div class="row g-3 d-flex justify-content-end">
+                                  <div class="col-md-6">
+                                    <div class="pda-download">
+                                      <h5>Disclaimer*</h5>
+                                      <ul>
+                                        <li>
+                                          "For Seal", "Authorised signatory
+                                          seal" To be used. Round seal on NACH
+                                          form is not Accepted
+                                        </li>
+                                        <li>
+                                          Put the signature inside the
+                                          designated box only. Don't Put the
+                                          seal on the box
+                                        </li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="row g-3 align-items-center">
+                                  <div class="col-md-6 form-group">
+                                    <label>Cancelled Cheque *</label>
+                                  </div>
+                                  <div class="col-md-6">
+                                    <div class="form-group mb-2">
+                                      <input
+                                        type="file"
+                                        class="form-control"
+                                        id="cancellled_cheque"
+                                        name="cancellled_cheque"
+                                        required
+                                      />
+                                      <div class="wizard-form-error"></div>
+                                    </div>
+                                    <span class="extinguisher_img"
+                                      >Accepted Formats:
+                                      <ul class="d-flex">
+                                        <li>.FG</li>
+                                        <li>JPEG</li>
+                                        <li>PNG</li>
+                                        <li>PDF</li>
+                                      </ul>
+                                    </span>
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <div class="row g-3 align-items-center">
+                                    <div class="col-md-6">
+                                      <label> FSSAI Type *</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                      <div class="wizard-form-radio">
+                                        <input
+                                          name="radio_fssai"
+                                          id="fssai_license"
+                                          type="radio"
+                                          value="License"
+                                          required
+                                        />
+                                        <label for="fssai_license"
+                                          >License</label
+                                        >
+                                      </div>
+                                      <div class="wizard-form-radio">
+                                        <input
+                                          name="radio_fssai"
+                                          id="fssai_challan"
+                                          type="radio"
+                                          value="Applied Copy"
+                                          required
+                                        />
+                                        <label for="fssai_challan"
+                                          >Applied Copy</label
+                                        >
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="row g-3 align-items-center">
+                                  <div class="col-md-6 form-group">
+                                    <label
+                                      >FSSAI Reg. No.(Category 15,5,6,7)
+                                      *</label
+                                    >
+                                  </div>
+                                  <div class="col-md-6">
+                                    <div class="form-group">
+                                      <input
+                                        type="tel"
+                                        class="form-control"
+                                        id="fassi_reg"
+                                        name="fassi_reg"
+                                        required
+                                      />
+                                      <label
+                                        for="fassi_reg"
+                                        class="wizard-form-text-label"
+                                        >Enter FSSAI Reg. Number*</label
+                                      >
+                                      <div class="wizard-form-error"></div>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="row g-3 align-items-center">
+                                  <div class="col-md-6 form-group">
+                                    <label>FSSAI License Certificate A*</label>
+                                  </div>
+                                  <div class="col-md-6">
+                                    <div class="form-group mb-2">
+                                      <input
+                                        type="file"
+                                        class="form-control"
+                                        id="fssai_license_a"
+                                        name="fssai_license_a"
+                                        required
+                                      />
+                                      <div class="wizard-form-error"></div>
+                                    </div>
+                                    <span
+                                      class="extinguisher_img align-items-center"
+                                      >Accepted Formats:
+                                      <ul
+                                        class="d-flex align-items-center p-0 m-0"
+                                      >
+                                        <li>.FG</li>
+                                        <li>JPEG</li>
+                                        <li>PNG</li>
+                                        <li>PDF</li>
+                                      </ul>
+                                    </span>
+                                  </div>
+                                </div>
+
+                                <div class="row g-3 align-items-center">
+                                  <div class="col-md-6 form-group">
+                                    <label>FSSAI License Certificate B *</label>
+                                  </div>
+                                  <div class="col-md-6">
+                                    <div class="form-group mb-2">
+                                      <input
+                                        type="file"
+                                        class="form-control"
+                                        id="fssai_license_b"
+                                        name="fssai_license_b"
+                                        required
+                                      />
+                                      <div class="wizard-form-error"></div>
+                                    </div>
+                                    <span
+                                      class="extinguisher_img align-items-center"
+                                      >Accepted Formats:
+                                      <ul
+                                        class="d-flex align-items-center p-0 m-0"
+                                      >
+                                        <li>.FG</li>
+                                        <li>JPEG</li>
+                                        <li>PNG</li>
+                                        <li>PDF</li>
+                                      </ul>
+                                    </span>
+                                  </div>
+                                </div>
+
+                                <div class="row g-3 align-items-center">
+                                  <div class="col-md-6 form-group">
+                                    <label
+                                      >Date of Incorporation (Business Start
+                                      Date) *</label
+                                    >
+                                  </div>
+                                  <div class="col-md-6">
+                                    <div class="form-group">
+                                      <input
+                                        type="date"
+                                        class="form-control"
+                                        id="business_start_date"
+                                        name="business_start_date"
+                                        required
+                                      />
+                                      <div class="wizard-form-error"></div>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="row g-3 align-items-center">
+                                  <div class="col-md-6 form-group">
+                                    <label
+                                      >FSSAI License - Valid Form Date *</label
+                                    >
+                                  </div>
+                                  <div class="col-md-6">
+                                    <div class="form-group">
+                                      <input
+                                        type="date"
+                                        class="form-control"
+                                        id="fssai_valid_date"
+                                        name="fssai_valid_date"
+                                        required
+                                      />
+                                      <div class="wizard-form-error"></div>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="row g-3 align-items-center">
+                                  <div class="col-md-6 form-group">
+                                    <label
+                                      >FSSAI License - Date of Expiry *</label
+                                    >
+                                  </div>
+                                  <div class="col-md-6">
+                                    <div class="form-group">
+                                      <input
+                                        type="date"
+                                        class="form-control"
+                                        id="expiry_date"
+                                        name="expiry_date"
+                                        required
+                                      />
+                                      <div class="wizard-form-error"></div>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="row g-3 align-items-center">
+                                  <div class="col-md-6 form-group">
+                                    <label
+                                      >Sister Concern Firm Associated with
+                                      AWL(if any) *</label
+                                    >
+                                  </div>
+                                  <div class="col-md-6">
+                                    <div class="form-group">
+                                      <input
+                                        type="text"
+                                        class="form-control"
+                                        id="sister_concern"
+                                        name="sister_concern"
+                                        required
+                                      />
+                                      <div class="wizard-form-error"></div>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="row g-3 align-items-center">
+                                  <div class="col-md-6 form-group">
+                                    <label
+                                      >Code of Sister Concern Firm Associated
+                                      with AWL(if any) *</label
+                                    >
+                                  </div>
+                                  <div class="col-md-6">
+                                    <div class="form-group">
+                                      <input
+                                        type="text"
+                                        class="form-control"
+                                        id="code_concern"
+                                        name="code_concern"
+                                        required
+                                      />
+                                      <div class="wizard-form-error"></div>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="row g-3 align-items-center">
+                                  <div class="col-md-6 form-group">
+                                    <label>Business PAN *</label>
+                                  </div>
+                                  <div class="col-md-6">
+                                    <div class="form-group">
+                                      <input
+                                        type="text"
+                                        class="form-control"
+                                        id="business_pan"
+                                        name="business_pan"
+                                        required
+                                      />
+                                      <label
+                                        for="business_pan"
+                                        class="wizard-form-text-label"
+                                        >Enter Pan Number*</label
+                                      >
+                                      <div class="wizard-form-error"></div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="row g-3 align-items-center">
+                                  <div class="col-md-6 form-group">
+                                    <label
+                                      >Upload Scanned Copy of Business PAN CARD
+                                      *</label
+                                    >
+                                  </div>
+                                  <div class="col-md-6">
+                                    <div class="form-group mb-2">
+                                      <input
+                                        type="file"
+                                        class="form-control"
+                                        id="upload_business_pan"
+                                        name="upload_business_pan"
+                                        required
+                                      />
+                                      <div class="wizard-form-error"></div>
+                                    </div>
+                                    <span
+                                      class="extinguisher_img align-items-center"
+                                      >Accepted Formats:
+                                      <ul
+                                        class="d-flex align-items-center p-0 m-0"
+                                      >
+                                        <li>.FG</li>
+                                        <li>JPEG</li>
+                                        <li>PNG</li>
+                                        <li>PDF</li>
+                                      </ul>
+                                    </span>
+                                  </div>
+                                </div>
+                                <div class="row g-3 align-items-center">
+                                  <div class="col-md-6 form-group">
+                                    <label
+                                      >Pan Card Declaration on Company
+                                      letterhead *</label
+                                    >
+                                  </div>
+                                  <div class="col-md-6">
+                                    <div class="form-group mb-2">
+                                      <input
+                                        type="file"
+                                        class="form-control"
+                                        id="pan_card"
+                                        name="pan_card_letterhead"
+                                        required
+                                      />
+                                      <div class="wizard-form-error"></div>
+                                    </div>
+                                    <span
+                                      class="extinguisher_img align-items-center"
+                                      >Accepted Formats:
+                                      <ul
+                                        class="d-flex align-items-center p-0 m-0"
+                                      >
+                                        <li>.FG</li>
+                                        <li>JPEG</li>
+                                        <li>PNG</li>
+                                        <li>PDF</li>
+                                      </ul>
+                                    </span>
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <div class="row g-3 align-items-center">
+                                    <div class="col-md-6">
+                                      <label>
+                                        Ownership of the property
+                                        (Office/Godown) *</label
+                                      >
+                                    </div>
+                                    <div class="col-md-6">
+                                      <div class="wizard-form-radio">
+                                        <input
+                                          name="radio_ownership"
+                                          id="ownership_own"
+                                          type="radio"
+                                          value="own"
+                                          required
+                                        />
+                                        <label for="ownership_own">Own</label>
+                                      </div>
+                                      <div class="wizard-form-radio">
+                                        <input
+                                          name="radio_ownership"
+                                          id="ownership_hented"
+                                          type="radio"
+                                          value="rented"
+                                          required
+                                        />
+                                        <label for="ownership_hented"
+                                          >Rented</label
+                                        >
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="form-group clearfix d-flex justify-content-center mt-md-5"
+                                >
+                                  <a
+                                    href="/userrole/role1"
+                                    class="form-wizard-previous-btn btn me-2"
+                                    >Back To Personal Details</a
+                                  >
+                                  <button
+                                    type="submit"
+                                  >
+                                    Save & Proceed
+                                  </button>
+                                </div>
+                              </fieldset>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                    <!-- ***************role-user-wizard-form-end************ -->
+                    <!-- ***************role-user-wizard-form-strat************ -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <footer class="footer">
+            <div class="container-fluid text-center">
+              <span
+                class="text-muted d-block text-center text-sm-start d-sm-inline-block"
+                >Role User Dashbord!
+              </span>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+
+
+ 
+   <script>
+      const tabsContainer = document.getElementById("tabs-container");
+
+      for (let i = 0; i < 3; i++) {
+        const investorButton = document.createElement("button");
+        investorButton.setAttribute("type", "button");
+        investorButton.setAttribute("class", "btn custom-btn me-3 mb-3");
+        investorButton.setAttribute("id", `tab-investor-${i}`);
+        investorButton.textContent = `Partner ${i + 1}`;
+
+        tabsContainer.appendChild(investorButton);
+      }
+
+      function toggleUdyamFile(show) {
+        var udyamFileSection = document.getElementById("udyamFileSection");
+        if (show) {
+          udyamFileSection.style.display = "block";
+        } else {
+          udyamFileSection.style.display = "none";
+        }
+      }
+    </script>
+
+ 
+
+
+    <script src="/src/public/js/jquery.min.js"></script>
+
+    <!-- endinject -->
+    <!-- inject:js -->
+    <script src="../../public/vendors/js/vendor.bundle.base.js"></script>
+    <script src="../../public/js/bootstrap.min.js"></script>
+    <script src="../../public/js/off-canvas.js"></script>
+    <script src="../../public/js/hoverable-collapse.js"></script>
+    <script src="../../public/js/misc.js"></script>
+
+    <script src="../../public/DataTables/jquery.dataTables.js"></script>
+
+    <script src="../../public/js/chart.umd.min.js"></script>
+    <script src="../../public/js/main.js"></script>
+    <script src="../../public/countryjs/map_loader.js"></script>
+    <script src="../../public/countryjs/map_custom.js"></script>
+  </body>
+</html>

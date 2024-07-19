@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Login</title>
+    <!-- plugins:css -->
+    <link
+      rel="stylesheet"
+      href="../../public/vendors/mdi/css/materialdesignicons.min.css"
+    />
+
+    <link rel="stylesheet" href="../../public/css/style.css" />
+
+    <link rel="stylesheet" href="../../public/css/responsive.css" />
+    <link rel="stylesheet" href="../../public/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../public/DataTables/datatables.min.css" />
+  </head>
+
+  <% if (message) { %>
+  <div class="alert1">
+    <p><%= message %></p>
+  </div>
+  <% } %>
+  <body class="body">
+    <div class="container-fluid login-main-panel">
+      <div class="container">
+        <div class="row py-4">
+          <div
+            class="col-md-6 p-0 d-flex align-items-center justify-content-center"
+          >
+            <div class="login-img">
+              <img
+                src="../../public/images/fortune_-banner-1000x600.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div
+            class="col-md-6 p-0 d-flex align-items-center justify-content-center"
+          >
+            <div class="login-content">
+              <form action="/login_role" method="POST">
+                <div
+                  class="login-logo d-flex align-items-center justify-content-center pb-4"
+                >
+                <img  class="logo_img" src="../../public/images/login_logo.jpg"></img>
+              </div>
+                <div class="mb-3">
+                  <label class="form-label">Email address</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    name="email"
+                    placeholder="Enter Email Address"
+                    required
+                  />
+                </div>
+                <div class="mb-3 position-relative">
+                  <label class="form-label">Password</label>
+                  <input
+                    type="password"
+                    id="password"
+                    class="form-control"
+                    name="password"
+                    placeholder="Enter Your Password"
+                    required
+                  />
+                  <span class="password-icon">
+                    <i class="bi bi-eye-slash" id="togglePassword"></i
+                  ></span>
+                </div>
+                <div class="login-btn d-flex justify-content-center">
+                  <button type="submit" class="btn">Login</button>
+                </div>
+                <div
+                  class="login-forgot-password d-flex justify-content-between"
+                >
+                  <a href="/forgot_password">Forgot Password</a>
+                  <a href="/registration">New User ? Create Account</a>
+                </div>
+                <div class="login-note text-center">
+                  <p>
+                    NOTE First-Time Users Please Use Forgot-Password to Set Your
+                    Password
+                  </p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <script src="/src/public/js/jquery.min.js"></script>
+    <script src="../../public/vendors/js/vendor.bundle.base.js"></script>
+    <script src="../../public/js/bootstrap.min.js"></script>
+
+    <script>
+      const togglePassword = document.querySelector("#togglePassword");
+      const password = document.querySelector("#password");
+
+      togglePassword.addEventListener("click", function () {
+        // toggle the type attribute
+        const type =
+          password.getAttribute("type") === "password" ? "text" : "password";
+        password.setAttribute("type", type);
+
+        this.classList.toggle("bi-eye");
+      });
+
+      // prevent form submit
+      // const form = document.querySelector("form");
+      // form.addEventListener("submit", function (e) {
+      //   e.preventDefault();
+      // });
+    </script>
+
+    <script>
+      const messageElement = document.querySelector(".alert1");
+      if (messageElement) {
+        setTimeout(() => {
+          messageElement.style.display = "none";
+        }, 2000);
+      }
+      window.onload = function () {
+        function cloneAndAppendImages() {
+          var container = document.getElementById("imageContainer");
+          var images = container.querySelectorAll(".col");
+          var width = 0;
+
+          images.forEach(function (image) {
+            width += image.offsetWidth; 
+          });
+
+          images.forEach(function (image) {
+            var clone = image.cloneNode(true);
+            container.appendChild(clone);
+          });
+
+          container.style.width = width * 2 + "px"; 
+        }
+
+        cloneAndAppendImages(); 
+
+        function resetScroll() {
+          var container = document.getElementById("imageContainer");
+          var scrollPosition = container.scrollLeft;
+
+          if (scrollPosition >= container.scrollWidth / 2) {
+            container.scrollLeft = 0; 
+          }
+        }
+
+        setInterval(resetScroll, 8);
+      };
+    </script>
+  </body>
+</html>           
