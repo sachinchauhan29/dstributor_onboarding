@@ -5,7 +5,7 @@ const connection = mysql.createPool({
   host: "localhost",
   user: "root",
   password: "",
-  database: "onboard(db1)",
+  database: "dstributor_onboarding",
 });
 
 module.exports = connection;
