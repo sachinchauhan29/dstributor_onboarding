@@ -5,79 +5,88 @@
         opacity: 0.6;
     }
 </style>
-<%- include("../shared/header.ejs") %>
-            <div class="main-panel distributors-status-first">
-                <div class="content-wrapper">
-                    <div class="row">
-                        <div class="col-12 grid-margin stretch-card">
-                            <div class="card p-3 table-responsive">
-                                <div>
-                                    <h4 class="add-distributor-text my-4">Distributor Details</h4>
-                                </div>
-                                <div class="distributor-first">
-                                    <!-- ***************distributor-wizard-form-strat************ -->
-                                    <section class="wizard-section">
-                                        <div class="row no-gutters">
-                                            <div class="col-lg-12 col-md-12">
-                                                <div class="form-wizard m-md-3">
-                                                    <form action="/invite/addDistributor" method="POST" role="form" enctype="multipart/form-data">
-                                                        <div class="form-wizard-header">
-                                                            <ul
-                                                                class="list-unstyled form-wizard-steps clearfix d-flex justify-content-center">
-                                                                <li class="active"><span>1</span></li>
-                                                                <li><span>2</span></li>
-                                                                <li><span>3</span></li>
-                                                            </ul>
-                                                            <ul
-                                                                class="list-unstyled clearfix distributor-wizad-status-name d-flex justify-content-center">
-                                                                <li class="active">
-                                                                    <p>Distributor Details</p>
-                                                                </li>
-                                                                <li>
-                                                                    <p>INFRA</p>
-                                                                </li>
-                                                                <li>
-                                                                    <p>Move To The Next Stage</p>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                        <fieldset class="wizard-fieldset show">
-                                                            <div class="form-group">
-                                                                <div class="row g-3 align-items-center">
-                                                                    <div class="col-md-6">
-                                                                        <label>Distributor Status *</label>
-                                                                    </div>
-                                                                    <div class="col-md-6">
-                                                                        <div class="wizard-form-radio">
-                                                                            <input name="radio-name1" id="existing" type="radio" value="existing">
-                                                                            <label for="existing">Existing</label>
-                                                                        </div>
-                                                                        <div class="wizard-form-radio">
-                                                                            <input name="radio-name1" id="new_one" type="radio" value="new_one">
-                                                                            <label for="new_one">New One</label>
-                                                                        </div>
-                                                                    </div>
+<%- include("../shared/header.ejs", { token: token }) %>
+    <div class="main-panel distributors-status-first">
+        <div class="content-wrapper">
+            <div class="row">
+                <div class="col-12 grid-margin stretch-card">
+                    <div class="card p-3 table-responsive">
+                        <div>
+                            <h4 class="add-distributor-text my-4">Distributor Details</h4>
+                        </div>
+                        <div class="distributor-first">
+                            <!-- ***************distributor-wizard-form-strat************ -->
+                            <section class="wizard-section">
+                                <div class="row no-gutters">
+                                    <div class="col-lg-12 col-md-12">
+                                        <div class="form-wizard m-md-3">
+                                            <form action="/invite/addDistributor" method="POST" role="form"
+                                                enctype="multipart/form-data">
+                                                <div class="form-wizard-header">
+                                                    <ul
+                                                        class="list-unstyled form-wizard-steps clearfix d-flex justify-content-center">
+                                                        <li class="active"><span>1</span></li>
+                                                        <li><span>2</span></li>
+                                                        <li><span>3</span></li>
+                                                    </ul>
+                                                    <ul
+                                                        class="list-unstyled clearfix distributor-wizad-status-name d-flex justify-content-center">
+                                                        <li class="active">
+                                                            <p>Distributor Details</p>
+                                                        </li>
+                                                        <li>
+                                                            <p>INFRA</p>
+                                                        </li>
+                                                        <li>
+                                                            <p>Move To The Next Stage</p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <fieldset class="wizard-fieldset show">
+                                                    <div class="form-group">
+                                                        <div class="row g-3 align-items-center">
+                                                            <div class="col-md-6">
+                                                                <label>Distributor Status *</label>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="wizard-form-radio">
+                                                                    <input name="radio-name1" id="existing" type="radio"
+                                                                        value="existing">
+                                                                    <label for="existing">Existing</label>
+                                                                </div>
+                                                                <div class="wizard-form-radio">
+                                                                    <input name="radio-name1" id="new_one" type="radio"
+                                                                        value="new_one">
+                                                                    <label for="new_one">New One</label>
                                                                 </div>
                                                             </div>
-                                                            <div class="row g-3 align-items-center">
-                                                                <div class="col-md-6 form-group">
-                                                                    <label>Enter Your GST Number *</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row g-3 align-items-center">
+                                                        <div class="col-md-6 form-group">
+                                                            <label>Enter Your GST Number *</label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="row">
+                                                                <div class="col-md-9">
+                                                                    <div class="form-group">
+                                                                        <input type="text" class="form-control"
+                                                                            name="gst_number" id="gst_number">
+                                                                        <label for="gst_number"
+                                                                            class="wizard-form-text-label">Enter Your
+                                                                            GST Number *</label>
+                                                                        <div class="wizard-form-error"></div>
+                                                                    </div>
                                                                 </div>
-                                                                <div class="col-md-6">
-                                                                    <div class="row">
-                                                                        <div class="col-md-9">
-                                                                            <div class="form-group">
-                                                                                <input type="text" class="form-control" name="gst_number" id="gst_number">
-                                                                                <label for="gst_number" class="wizard-form-text-label">Enter Your GST Number *</label>
-                                                                                <div class="wizard-form-error"></div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-md-3">
-                                                                            <div class="form-group">
-                                                                                <button type="button" class="btn btn-danger distributor-verify-btn" data-bs-toggle="modal" data-bs-target="#gst_number_verify">
-                                                                                    Verify
-                                                                                </button>
-                                                                                <!-- <div class="modal fade" id="gst_number_verify" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="gst_number_verifyLabel" aria-hidden="true">
+                                                                <div class="col-md-3">
+                                                                    <div class="form-group">
+                                                                        <button type="button"
+                                                                            class="btn btn-danger distributor-verify-btn"
+                                                                            data-bs-toggle="modal"
+                                                                            data-bs-target="#gst_number_verify">
+                                                                            Verify
+                                                                        </button>
+                                                                        <!-- <div class="modal fade" id="gst_number_verify" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="gst_number_verifyLabel" aria-hidden="true">
                                                                                     <div class="modal-dialog modal-dialog-centered">
                                                                                         <div class="modal-content">
                                                                                             <div class="modal-body p-md-5">
@@ -98,585 +107,612 @@
                                                                                         </div>
                                                                                     </div>
                                                                                 </div> -->
-                                                                            </div>
-                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="row g-3 align-items-center">
+                                                            <div class="col-md-6">
+                                                                <label>Business Type *</label>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="wizard-form-radio">
+                                                                    <input name="radio-name" id="proprietorship"
+                                                                        type="radio" value="proprietorship">
+                                                                    <label for="proprietorship">Proprietorship</label>
+                                                                </div>
+                                                                <div class="wizard-form-radio">
+                                                                    <input name="radio-name" id="private" type="radio"
+                                                                        value="private">
+                                                                    <label for="private">Private Limited Company</label>
+                                                                </div>
+                                                                <div class="wizard-form-radio">
+                                                                    <input name="radio-name" id="partnership"
+                                                                        type="radio" value="partnership">
+                                                                    <label for="partnership">Partnership</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row g-3 align-items-center">
+                                                        <div class="col-md-6 form-group">
+                                                            <label>Enter Number of Partners/Directors *</label>
+                                                        </div>
+                                                        <div class="col-md-6">
                                                             <div class="form-group">
-                                                                <div class="row g-3 align-items-center">
-                                                                    <div class="col-md-6">
-                                                                        <label>Business Type *</label>
-                                                                    </div>
-                                                                    <div class="col-md-6">
-                                                                        <div class="wizard-form-radio">
-                                                                            <input name="radio-name" id="proprietorship" type="radio" value="proprietorship">
-                                                                            <label for="proprietorship">Proprietorship</label>
-                                                                        </div>
-                                                                        <div class="wizard-form-radio">
-                                                                            <input name="radio-name" id="private" type="radio" value="private">
-                                                                            <label for="private">Private Limited Company</label>
-                                                                        </div>
-                                                                        <div class="wizard-form-radio">
-                                                                            <input name="radio-name" id="partnership" type="radio" value="partnership">
-                                                                            <label for="partnership">Partnership</label>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
+                                                                <input type="tel" name="number_partner"
+                                                                    class="form-control" id="number_partner">
+                                                                <label for="number_partner"
+                                                                    class="wizard-form-text-label">Enter Number of
+                                                                    Partners/Directors *</label>
+                                                                <div class="wizard-form-error"></div>
                                                             </div>
-                                                            <div class="row g-3 align-items-center">
-                                                                <div class="col-md-6 form-group">
-                                                                    <label>Enter Number of Partners/Directors *</label>
-                                                                </div>
-                                                                <div class="col-md-6">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row g-3 align-items-center">
+                                                        <div class="col-md-6 form-group">
+                                                            <label>Enter Personal Details *</label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="row">
+                                                                <div class="col-6">
                                                                     <div class="form-group">
-                                                                        <input type="tel" name="number_partner" class="form-control" id="number_partner">
-                                                                        <label for="number_partner" class="wizard-form-text-label">Enter Number of Partners/Directors *</label>
-                                                                        <div class="wizard-form-error"></div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row g-3 align-items-center">
-                                                                <div class="col-md-6 form-group">
-                                                                    <label>Enter Personal Details *</label>
-                                                                </div>
-                                                                <div class="col-md-6">
-                                                                    <div class="row">
-                                                                        <div class="col-6">
-                                                                            <div class="form-group">
-                                                                                <input type="text" name="Personal_details" class="form-control" id="Personal_details">
-                                                                                <label for="Personal_details" class="wizard-form-text-label">Enter Name *</label>
-                                                                                <div class="wizard-form-error"></div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-6">
-                                                                            <div class="form-group">
-                                                                                <input type="tel" pattern="[0-9]{10}" minlength="10" maxlength="10" class="form-control" id="mobile_number" name="mobile_number" required>
-                                                                                <label for="mobile_number" class="wizard-form-text-label">Enter Mobile Number *</label>
-                                                                                <div class="wizard-form-error"></div>
-                                                                            </div>
-                                                                            
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row g-3 align-items-center">
-                                                                <div class="col-lg-6 col-md-6 col-sm-6 form-group">
-                                                                    <label>Department *</label>
-                                                                </div>
-                                                                <div class="col-lg-6 col-md-6 col-sm-6">
-                                                                    <div class="form-group">
-                                                                        <select class="form-control form-select" name="department">
-                                                                            <option value="">Choose Department</option>
-                                                                            <option value="0001-Managing Director">0001-Managing Director</option>
-                                                                            <option value="0002-Purchasing">0002-Purchasing</option>
-                                                                            <option value="0003-Sales">0003-Sales</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row g-3 align-items-center">
-                                                                <div class="col-lg-6 col-md-6 col-sm-6 form-group">
-                                                                    <label>Department Function *</label>
-                                                                </div>
-                                                                <div class="col-lg-6 col-md-6 col-sm-6">
-                                                                    <div class="form-group">
-                                                                        <select class="form-control form-select" name="dpeartment_fun">
-                                                                            <option value="">Choose Department Function</option>
-                                                                            <option value="0001-Executive Bord">0001-Executive Bord</option>
-                                                                            <option value="0002-Head of Personnel">0002-Head of Personnel</option>
-                                                                            <option value="0001-Managing Director">0001-Managing Director</option>
-                                                                            <option value="0002-Purchasing Manager">0002-Purchasing Manager</option>
-                                                                            <option value="0003-Sales">0003-Sales</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group clearfix d-flex justify-content-center">
-                                                                <a href="javascript:;" class="form-wizard-next-btn btn next-btn disabled-link">Next</a>                                                            </div>
-                                                        </fieldset>
-                                                        <fieldset class="wizard-fieldset" id="fieldset-2">
-                                                            <div class="row g-3 align-items-center">
-                                                                <div class="col-md-6 form-group">
-                                                                    <label>Expected Outlet Coverage *</label>
-                                                                </div>
-                                                                <div class="col-md-6">
-                                                                    <div class="form-group">
-                                                                        <input type="tel" class="form-control "
-                                                                            id="Expected_outlet" name="Expected_outlet" >
-                                                                        <label for="Expected_outlet"
-                                                                            class="wizard-form-text-label">Expected
-                                                                            Outlet Coverage *</label>
-                                                                        <div class="wizard-form-error"></div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row g-3 align-items-center">
-                                                                <div class="col-md-6 form-group">
-                                                                    <label>No. Of Days Of investment *</label>
-                                                                </div>
-                                                                <div class="col-md-6">
-                                                                    <div class="form-group">
-                                                                        <input type="tel" class="form-control "
-                                                                            id="day_investment" name="day_investment" >
-                                                                        <label for="day_investment"
-                                                                            class="wizard-form-text-label">No. Of Days
-                                                                            Of investment *</label>
-                                                                        <div class="wizard-form-error"></div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row g-3 align-items-center">
-                                                                <div class="col-md-6 form-group">
-                                                                    <label>Market Credit (Number Of Days) *</label>
-                                                                </div>
-                                                                <div class="col-md-6">
-                                                                    <div class="form-group">
-                                                                        <input type="tel" class="form-control "
-                                                                            id="market_credit" name="market_credit" >
-                                                                        <label for="market_credit"
-                                                                            class="wizard-form-text-label">Market Credit
-                                                                            (Number Of Days) *</label>
-                                                                        <div class="wizard-form-error"></div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row g-3 align-items-center">
-                                                                <div class="col-md-6 form-group">
-                                                                    <label>Power Backup (in Hrs) *</label>
-                                                                </div>
-                                                                <div class="col-md-6">
-
-                                                                    <div class="form-group">
-
-                                                                        <div class="slidecontainer">
-                                                                            <input type="range"
-                                                                                class="form-range slider" min="0"
-                                                                                max="24" step="1" value="24"
-                                                                                id="myRangeHrs" name="slider">
-                                                                            <p>Hrs: <span id="updateHrs"></span></p>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group d-flex justify-content-between">
-                                                                <label> Chiller (Should be Power on for 24 Hrs)
-                                                                    *</label>
-                                                                <div>
-                                                                    <div class="wizard-form-radio">
-                                                                        <input name="radio-chiller" id="chiller_yes"
-                                                                            type="radio" value="chiller_yes">
-                                                                        <label for="chiller_yes">Yes</label>
-                                                                    </div>
-                                                                    <div class="wizard-form-radio">
-                                                                        <input name="radio-chiller" id="chiller_no"
-                                                                            type="radio" value="chiller_no">
-                                                                        <label for="chiller_no">No</label>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group d-flex justify-content-between">
-                                                                <label> Type Floor of Coverage for stock Keeping
-                                                                    *</label>
-                                                                <div>
-                                                                    <div class="wizard-form-radio">
-                                                                        <input name="radio-floor-stock" id="pallets"
-                                                                            type="radio" value="pallets">
-                                                                        <label for="pallets">Pallets</label>
-                                                                    </div>
-                                                                    <div class="wizard-form-radio">
-                                                                        <input name="radio-floor-stock" id="vinyl"
-                                                                            type="radio" value="vinyl">
-                                                                        <label for="vinyl">Vinyl</label>
-                                                                    </div>
-                                                                    <div class="wizard-form-radio">
-                                                                        <input name="radio-floor-stock" id="tarpolene"
-                                                                            type="radio" value="tarpolene">
-                                                                        <label for="tarpolene">Tarpolene</label>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group d-flex justify-content-between">
-                                                                <label> Walls Plastered *</label>
-                                                                <div>
-                                                                    <div class="wizard-form-radio">
-                                                                        <input name="radio-walls-plastered"
-                                                                            id="walls_plastered_yes" type="radio" value="yes">
-                                                                        <label for="walls_plastered_yes">Yes</label>
-                                                                    </div>
-                                                                    <div class="wizard-form-radio">
-                                                                        <input name="radio-walls-plastered"
-                                                                            id="walls_plastered_no" type="radio" value="no" >
-                                                                        <label for="walls_plastered_no">No</label>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group d-flex justify-content-between">
-                                                                <label> Ventilation (Window) *</label>
-                                                                <div>
-                                                                    <div class="wizard-form-radio">
-                                                                        <input name="ventilation" id="ventilation_yes"
-                                                                            type="radio" value="yes" >
-                                                                        <label for="ventilation_yes">Yes</label>
-                                                                    </div>
-                                                                    <div class="wizard-form-radio">
-                                                                        <input name="ventilation"
-                                                                            id="walls_plastered_no" type="radio" value="no">
-                                                                        <label for="walls_plastered_no">No</label>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group d-flex justify-content-between">
-                                                                <label> Pest Control (Every 8 Months) *</label>
-                                                                <div>
-                                                                    <div class="wizard-form-radio">
-                                                                        <input name="past_control"
-                                                                            id="past_control_agree" type="radio" value="agree" >
-                                                                        <label for="past_control_agree">I agree</label>
-                                                                    </div>
-                                                                    <div class="wizard-form-radio">
-                                                                        <input name="past_control"
-                                                                            id="walls_plastered_dont" type="radio" value="dont" >
-                                                                        <label for="walls_plastered_dont">I don't have
-                                                                            pest control</label>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row g-3 align-items-center">
-                                                                <div class="col-md-6 form-group">
-                                                                    <label>Fire Extinguisher With Certificate *</label>
-                                                                </div>
-                                                                <div class="col-md-6">
-                                                                    <div class="form-group mb-2">
-                                                                        <input type="file" class="form-control "
-                                                                            id="images" name="images" >
-                                                                        <div class="wizard-form-error"></div>
-                                                                    </div>
-                                                                    <span
-                                                                        class="extinguisher_img align-items-center">Accepted
-                                                                        Formats:
-                                                                        <ul class="d-flex align-items-center p-0 m-0">
-                                                                            <li>.FG</li>
-                                                                            <li>JPEG</li>
-                                                                            <li>PNG</li>
-                                                                            <li>PDF</li>
-                                                                        </ul>
-                                                                    </span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row g-3">
-                                                                <div class="col-md-6 form-group">
-                                                                    <label>IT Infra + PDA Download the Document Template
-                                                                        *</label>
-                                                                </div>
-                                                                <div class="col-md-6 pda-download">
-                                                                    <ul>
-                                                                        <li>Intel Processer / Core i3 / i5</li>
-                                                                        <li>Intel Desktop Boord</li>
-                                                                        <li>RAM - 4GB/8GB</li>
-                                                                        <li>UPS With Good Condtion</li>
-                                                                        <li>Laser Printer For Bill Printing</li>
-                                                                        <li>Intel Processer / Core i3 / i5</li>
-                                                                        <li>Intel Desktop Boord</li>
-                                                                        <li>RAM - 4GB/8GB</li>
-                                                                        <li>UPS With Good Condtion</li>
-                                                                        <li>Laser Printer For Bill Printing</li>
-                                                                        <div class="form-group">
-                                                                            <div
-                                                                                class="wizard-form d-flex justify-content-start align-items-center">
-                                                                                <input type="checkbox"
-                                                                                    class="form-check-input"
-                                                                                    id="i_confirm" name="requirements">
-                                                                                <label class="form-check-label "
-                                                                                    for="i_confirm">I Confirm I have the
-                                                                                    minimum requirements</label>
-                                                                            </div>
-                                                                        </div>
-                                                                    </ul>
-
-                                                                </div>
-                                                            </div>
-                                                            <div
-                                                                class="form-group clearfix d-flex justify-content-center">
-                                                                <a href="javascript:;"
-                                                                    class="form-wizard-previous-btn btn me-2">Previous</a>
-                                                                <a href="javascript:;"
-                                                                    class="form-wizard-next-btn btn">Next</a>
-                                                            </div>
-                                                        </fieldset>
-                                                        <fieldset class="wizard-fieldset" id="fieldset-3">
-                                                            <div class="row g-3 align-items-center">
-                                                                <div class="col-md-6">
-                                                                    <label> Move To The Next Stage *</label>
-                                                                </div>
-                                                                <div class="col-md-6">
-                                                                    <div class="wizard-form-radio">
-                                                                        <input name="radio-save-future" id="save_fature_yes" type="radio" value="yes" required>
-                                                                        <label for="save_fature_yes">Yes</label>
-                                                                    </div>
-                                                                    <div class="wizard-form-radio">
-                                                                        <input name="radio-save-future" id="save_future" type="radio" value="save_for_future" required>
-                                                                        <label for="save_future">Save For Future</label>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row g-3 align-items-center">
-                                                                <div class="col-md-6 form-group">
-                                                                    <label>Enter Distributor Email ID *</label>
-                                                                </div>
-                                                                <div class="col-md-6">
-                                                                    <div class="form-group">
-                                                                        <input type="email" class="form-control" id="distributor_email_id" name="distributor_email_id"
-                                                                            required>
-                                                                        <label for="distributor_email_id" class="wizard-form-text-label">Enter Distributor Email ID
+                                                                        <input type="text" name="Personal_details"
+                                                                            class="form-control" id="Personal_details">
+                                                                        <label for="Personal_details"
+                                                                            class="wizard-form-text-label">Enter Name
                                                                             *</label>
                                                                         <div class="wizard-form-error"></div>
                                                                     </div>
                                                                 </div>
+                                                                <div class="col-6">
+                                                                    <div class="form-group">
+                                                                        <input type="tel" pattern="[0-9]{10}"
+                                                                            minlength="10" maxlength="10"
+                                                                            class="form-control" id="mobile_number"
+                                                                            name="mobile_number" required>
+                                                                        <label for="mobile_number"
+                                                                            class="wizard-form-text-label">Enter Mobile
+                                                                            Number *</label>
+                                                                        <div class="wizard-form-error"></div>
+                                                                    </div>
+
+                                                                </div>
                                                             </div>
-                                                            <div class="form-group clearfix d-flex justify-content-center">
-                                                                <a href="javascript:;" class="form-wizard-previous-btn btn me-2">Previous</a>
-                                                                <button type="submit" class="form-wizard-next-btn btn">Submit</button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row g-3 align-items-center">
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 form-group">
+                                                            <label>Department *</label>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6">
+                                                            <div class="form-group">
+                                                                <select class="form-control form-select"
+                                                                    name="department">
+                                                                    <option value="">Choose Department</option>
+                                                                    <option value="0001-Managing Director">0001-Managing
+                                                                        Director</option>
+                                                                    <option value="0002-Purchasing">0002-Purchasing
+                                                                    </option>
+                                                                    <option value="0003-Sales">0003-Sales</option>
+                                                                </select>
                                                             </div>
-                                                        </fieldset>
-                                                        
-                                                    </form>
-                                                </div>
-                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row g-3 align-items-center">
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 form-group">
+                                                            <label>Department Function *</label>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6">
+                                                            <div class="form-group">
+                                                                <select class="form-control form-select"
+                                                                    name="dpeartment_fun">
+                                                                    <option value="">Choose Department Function</option>
+                                                                    <option value="0001-Executive Bord">0001-Executive
+                                                                        Bord</option>
+                                                                    <option value="0002-Head of Personnel">0002-Head of
+                                                                        Personnel</option>
+                                                                    <option value="0001-Managing Director">0001-Managing
+                                                                        Director</option>
+                                                                    <option value="0002-Purchasing Manager">
+                                                                        0002-Purchasing Manager</option>
+                                                                    <option value="0003-Sales">0003-Sales</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group clearfix d-flex justify-content-center">
+                                                        <a href="javascript:;"
+                                                            class="form-wizard-next-btn btn next-btn disabled-link">Next</a>
+                                                    </div>
+                                                </fieldset>
+                                                <fieldset class="wizard-fieldset" id="fieldset-2">
+                                                    <div class="row g-3 align-items-center">
+                                                        <div class="col-md-6 form-group">
+                                                            <label>Expected Outlet Coverage *</label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <input type="tel" class="form-control "
+                                                                    id="Expected_outlet" name="Expected_outlet">
+                                                                <label for="Expected_outlet"
+                                                                    class="wizard-form-text-label">Expected
+                                                                    Outlet Coverage *</label>
+                                                                <div class="wizard-form-error"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row g-3 align-items-center">
+                                                        <div class="col-md-6 form-group">
+                                                            <label>No. Of Days Of investment *</label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <input type="tel" class="form-control "
+                                                                    id="day_investment" name="day_investment">
+                                                                <label for="day_investment"
+                                                                    class="wizard-form-text-label">No. Of Days
+                                                                    Of investment *</label>
+                                                                <div class="wizard-form-error"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row g-3 align-items-center">
+                                                        <div class="col-md-6 form-group">
+                                                            <label>Market Credit (Number Of Days) *</label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <input type="tel" class="form-control "
+                                                                    id="market_credit" name="market_credit">
+                                                                <label for="market_credit"
+                                                                    class="wizard-form-text-label">Market Credit
+                                                                    (Number Of Days) *</label>
+                                                                <div class="wizard-form-error"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row g-3 align-items-center">
+                                                        <div class="col-md-6 form-group">
+                                                            <label>Power Backup (in Hrs) *</label>
+                                                        </div>
+                                                        <div class="col-md-6">
+
+                                                            <div class="form-group">
+
+                                                                <div class="slidecontainer">
+                                                                    <input type="range" class="form-range slider"
+                                                                        min="0" max="24" step="1" value="24"
+                                                                        id="myRangeHrs" name="slider">
+                                                                    <p>Hrs: <span id="updateHrs"></span></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group d-flex justify-content-between">
+                                                        <label> Chiller (Should be Power on for 24 Hrs)
+                                                            *</label>
+                                                        <div>
+                                                            <div class="wizard-form-radio">
+                                                                <input name="radio-chiller" id="chiller_yes"
+                                                                    type="radio" value="chiller_yes">
+                                                                <label for="chiller_yes">Yes</label>
+                                                            </div>
+                                                            <div class="wizard-form-radio">
+                                                                <input name="radio-chiller" id="chiller_no" type="radio"
+                                                                    value="chiller_no">
+                                                                <label for="chiller_no">No</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group d-flex justify-content-between">
+                                                        <label> Type Floor of Coverage for stock Keeping
+                                                            *</label>
+                                                        <div>
+                                                            <div class="wizard-form-radio">
+                                                                <input name="radio-floor-stock" id="pallets"
+                                                                    type="radio" value="pallets">
+                                                                <label for="pallets">Pallets</label>
+                                                            </div>
+                                                            <div class="wizard-form-radio">
+                                                                <input name="radio-floor-stock" id="vinyl" type="radio"
+                                                                    value="vinyl">
+                                                                <label for="vinyl">Vinyl</label>
+                                                            </div>
+                                                            <div class="wizard-form-radio">
+                                                                <input name="radio-floor-stock" id="tarpolene"
+                                                                    type="radio" value="tarpolene">
+                                                                <label for="tarpolene">Tarpolene</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group d-flex justify-content-between">
+                                                        <label> Walls Plastered *</label>
+                                                        <div>
+                                                            <div class="wizard-form-radio">
+                                                                <input name="radio-walls-plastered"
+                                                                    id="walls_plastered_yes" type="radio" value="yes">
+                                                                <label for="walls_plastered_yes">Yes</label>
+                                                            </div>
+                                                            <div class="wizard-form-radio">
+                                                                <input name="radio-walls-plastered"
+                                                                    id="walls_plastered_no" type="radio" value="no">
+                                                                <label for="walls_plastered_no">No</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group d-flex justify-content-between">
+                                                        <label> Ventilation (Window) *</label>
+                                                        <div>
+                                                            <div class="wizard-form-radio">
+                                                                <input name="ventilation" id="ventilation_yes"
+                                                                    type="radio" value="yes">
+                                                                <label for="ventilation_yes">Yes</label>
+                                                            </div>
+                                                            <div class="wizard-form-radio">
+                                                                <input name="ventilation" id="walls_plastered_no"
+                                                                    type="radio" value="no">
+                                                                <label for="walls_plastered_no">No</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group d-flex justify-content-between">
+                                                        <label> Pest Control (Every 8 Months) *</label>
+                                                        <div>
+                                                            <div class="wizard-form-radio">
+                                                                <input name="past_control" id="past_control_agree"
+                                                                    type="radio" value="agree">
+                                                                <label for="past_control_agree">I agree</label>
+                                                            </div>
+                                                            <div class="wizard-form-radio">
+                                                                <input name="past_control" id="walls_plastered_dont"
+                                                                    type="radio" value="dont">
+                                                                <label for="walls_plastered_dont">I don't have
+                                                                    pest control</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row g-3 align-items-center">
+                                                        <div class="col-md-6 form-group">
+                                                            <label>Fire Extinguisher With Certificate *</label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group mb-2">
+                                                                <input type="file" class="form-control " id="images"
+                                                                    name="images">
+                                                                <div class="wizard-form-error"></div>
+                                                            </div>
+                                                            <span class="extinguisher_img align-items-center">Accepted
+                                                                Formats:
+                                                                <ul class="d-flex align-items-center p-0 m-0">
+                                                                    <li>.FG</li>
+                                                                    <li>JPEG</li>
+                                                                    <li>PNG</li>
+                                                                    <li>PDF</li>
+                                                                </ul>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row g-3">
+                                                        <div class="col-md-6 form-group">
+                                                            <label>IT Infra + PDA Download the Document Template
+                                                                *</label>
+                                                        </div>
+                                                        <div class="col-md-6 pda-download">
+                                                            <ul>
+                                                                <li>Intel Processer / Core i3 / i5</li>
+                                                                <li>Intel Desktop Boord</li>
+                                                                <li>RAM - 4GB/8GB</li>
+                                                                <li>UPS With Good Condtion</li>
+                                                                <li>Laser Printer For Bill Printing</li>
+                                                                <li>Intel Processer / Core i3 / i5</li>
+                                                                <li>Intel Desktop Boord</li>
+                                                                <li>RAM - 4GB/8GB</li>
+                                                                <li>UPS With Good Condtion</li>
+                                                                <li>Laser Printer For Bill Printing</li>
+                                                                <div class="form-group">
+                                                                    <div
+                                                                        class="wizard-form d-flex justify-content-start align-items-center">
+                                                                        <input type="checkbox" class="form-check-input"
+                                                                            id="i_confirm" name="requirements">
+                                                                        <label class="form-check-label "
+                                                                            for="i_confirm">I Confirm I have the
+                                                                            minimum requirements</label>
+                                                                    </div>
+                                                                </div>
+                                                            </ul>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group clearfix d-flex justify-content-center">
+                                                        <a href="javascript:;"
+                                                            class="form-wizard-previous-btn btn me-2">Previous</a>
+                                                        <a href="javascript:;" class="form-wizard-next-btn btn">Next</a>
+                                                    </div>
+                                                </fieldset>
+                                                <fieldset class="wizard-fieldset" id="fieldset-3">
+                                                    <div class="row g-3 align-items-center">
+                                                        <div class="col-md-6">
+                                                            <label> Move To The Next Stage *</label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="wizard-form-radio">
+                                                                <input name="radio-save-future" id="save_fature_yes"
+                                                                    type="radio" value="yes" required>
+                                                                <label for="save_fature_yes">Yes</label>
+                                                            </div>
+                                                            <div class="wizard-form-radio">
+                                                                <input name="radio-save-future" id="save_future"
+                                                                    type="radio" value="save_for_future" required>
+                                                                <label for="save_future">Save For Future</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row g-3 align-items-center">
+                                                        <div class="col-md-6 form-group">
+                                                            <label>Enter Distributor Email ID *</label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <input type="email" class="form-control"
+                                                                    id="distributor_email_id"
+                                                                    name="distributor_email_id" required>
+                                                                <label for="distributor_email_id"
+                                                                    class="wizard-form-text-label">Enter Distributor
+                                                                    Email ID
+                                                                    *</label>
+                                                                <div class="wizard-form-error"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group clearfix d-flex justify-content-center">
+                                                        <a href="javascript:;"
+                                                            class="form-wizard-previous-btn btn me-2">Previous</a>
+                                                        <button type="submit"
+                                                            class="form-wizard-next-btn btn">Submit</button>
+                                                    </div>
+                                                </fieldset>
+
+                                            </form>
                                         </div>
-                                    </section>
-                                    <!-- ***************distributor-wizard-form-end************ -->
+                                    </div>
                                 </div>
-                            </div>
+                            </section>
+                            <!-- ***************distributor-wizard-form-end************ -->
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- main-panel ends -->
         </div>
-        <!-- page-body-wrapper ends -->
-    </div>    
-    
+    </div>
+    <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+    </div>
+
 
 
     <script>
-        document.getElementById('images').addEventListener('change', function(event) {
-        const allowedExtensions = ['fg', 'jpeg', 'jpg', 'png'];
-        const fileInput = event.target;
-        const files = fileInput.files;
-        const invalidFiles = [];
+        document.getElementById('images').addEventListener('change', function (event) {
+            const allowedExtensions = ['fg', 'jpeg', 'jpg', 'png'];
+            const fileInput = event.target;
+            const files = fileInput.files;
+            const invalidFiles = [];
 
-        for (let i = 0; i < files.length; i++) {
-            const file = files[i];
-            const fileExtension = file.name.split('.').pop().toLowerCase();
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+                const fileExtension = file.name.split('.').pop().toLowerCase();
 
-            if (!allowedExtensions.includes(fileExtension)) {
-            invalidFiles.push(file.name);
+                if (!allowedExtensions.includes(fileExtension)) {
+                    invalidFiles.push(file.name);
+                }
             }
-        }
 
-        if (invalidFiles.length > 0) {
-            alert(`The following files have invalid formats and were not accepted: ${invalidFiles.join(', ')}`);
-            fileInput.value = ''; // Clear the file input
-        }
+            if (invalidFiles.length > 0) {
+                alert(`The following files have invalid formats and were not accepted: ${invalidFiles.join(', ')}`);
+                fileInput.value = ''; // Clear the file input
+            }
         });
     </script>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<script>
-    
-    $(document).ready(function() {
+    <script>
 
-        function validateFields() {
-            var isValid = true;
-            
-            if (!$('input[name="radio-name1"]:checked').val()) {
-                isValid = false;
-            }
+        $(document).ready(function () {
 
-            var gstNumber = $('#gst_number').val().trim();
-            if (gstNumber === '') {
-                isValid = false;
-            } else {
-                var gstValue = gstNumber.toUpperCase();
-                var gstPattern = /^([0-9]{2}[a-zA-Z]{4}([a-zA-Z]{1}|[0-9]{1})[0-9]{4}[a-zA-Z]{1}([a-zA-Z]|[0-9]){3}){0,15}$/;
-                if (!gstPattern.test(gstValue)) {
+            function validateFields() {
+                var isValid = true;
+
+                if (!$('input[name="radio-name1"]:checked').val()) {
                     isValid = false;
+                }
+
+                var gstNumber = $('#gst_number').val().trim();
+                if (gstNumber === '') {
+                    isValid = false;
+                } else {
+                    var gstValue = gstNumber.toUpperCase();
+                    var gstPattern = /^([0-9]{2}[a-zA-Z]{4}([a-zA-Z]{1}|[0-9]{1})[0-9]{4}[a-zA-Z]{1}([a-zA-Z]|[0-9]){3}){0,15}$/;
+                    if (!gstPattern.test(gstValue)) {
+                        isValid = false;
+                    }
+                }
+
+                if (!$('input[name="radio-name"]:checked').val()) {
+                    isValid = false;
+                }
+
+                var numberPartner = $('#number_partner').val().trim();
+                if (numberPartner === '' || isNaN(numberPartner)) {
+                    isValid = false;
+                }
+
+                if ($('#Personal_details').val().trim() === '' || $('#mobile_number').val().trim() === '') {
+                    isValid = false;
+                } else {
+                    var mobileNumber = $('#mobile_number').val().trim();
+                    var mobileNumberPattern = /^\d{10}$/;
+                    if (!mobileNumberPattern.test(mobileNumber)) {
+                        //   alert('Please ensure all personal details are filled out correctly and the mobile number is exactly 10 digits long.');
+                        isValid = false;
+                    }
+                }
+
+                // if (!isValid) {
+                //     alert('Please ensure all personal details are filled out correctly and the mobile number is exactly 10 digits long.');
+                // }
+
+
+                if ($('select[name="department"]').val().trim() === '') {
+                    isValid = false;
+                }
+
+                if ($('select[name="dpeartment_fun"]').val().trim() === '') {
+                    isValid = false;
+                }
+
+
+                if (isValid) {
+                    $('.next-btn').removeClass('disabled-link');
+                } else {
+                    $('.next-btn').addClass('disabled-link');
                 }
             }
 
-            if (!$('input[name="radio-name"]:checked').val()) {
-                isValid = false;
-            }
+            $('input, select').on('input change', function () {
+                validateFields();
+            });
 
-            var numberPartner = $('#number_partner').val().trim();
-            if (numberPartner === '' || isNaN(numberPartner)) {
-                isValid = false;
-            }
-
-            if ($('#Personal_details').val().trim() === '' || $('#mobile_number').val().trim() === '') {
-                isValid = false;
-            } else {
-                var mobileNumber = $('#mobile_number').val().trim();
-                var mobileNumberPattern = /^\d{10}$/;
-                if (!mobileNumberPattern.test(mobileNumber)) {
-                //   alert('Please ensure all personal details are filled out correctly and the mobile number is exactly 10 digits long.');
-                    isValid = false;
-                }
-            }
-
-            // if (!isValid) {
-            //     alert('Please ensure all personal details are filled out correctly and the mobile number is exactly 10 digits long.');
-            // }
-
-
-            if ($('select[name="department"]').val().trim() === '') {
-                isValid = false;
-            }
-
-            if ($('select[name="dpeartment_fun"]').val().trim() === '') {
-                isValid = false;
-            }
-
-
-            if (isValid) {
-            $('.next-btn').removeClass('disabled-link');
-        } else {
-            $('.next-btn').addClass('disabled-link');
-        }        }
-
-        $('input, select').on('input change', function() {
             validateFields();
         });
-
-        validateFields();
-    });
- </script>
+    </script>
 
 
 
-<script>
-    $(document).ready(function() {
-        function validateFieldset2() {
-            var isValid = true;
+    <script>
+        $(document).ready(function () {
+            function validateFieldset2() {
+                var isValid = true;
 
-            if ($('#Expected_outlet').val().trim() === '') {
-                isValid = false;
+                if ($('#Expected_outlet').val().trim() === '') {
+                    isValid = false;
+                }
+                if ($('#day_investment').val().trim() === '') {
+                    isValid = false;
+                }
+                if ($('#market_credit').val().trim() === '') {
+                    isValid = false;
+                }
+                if (!$('input[name="radio-chiller"]:checked').val()) {
+                    isValid = false;
+                }
+                if (!$('input[name="radio-floor-stock"]:checked').val()) {
+                    isValid = false;
+                }
+                if (!$('input[name="radio-walls-plastered"]:checked').val()) {
+                    isValid = false;
+                }
+                if (!$('input[name="ventilation"]:checked').val()) {
+                    isValid = false;
+                }
+                if (!$('input[name="past_control"]:checked').val()) {
+                    isValid = false;
+                }
+                var fileInput = $('#images');
+                if (fileInput.get(0).files.length === 0) {
+                    isValid = false;
+                }
+                if (!$('#i_confirm').is(':checked')) {
+                    isValid = false;
+                }
+                return isValid;
             }
-            if ($('#day_investment').val().trim() === '') {
-                isValid = false;
-            }
-            if ($('#market_credit').val().trim() === '') {
-                isValid = false;
-            }
-            if (!$('input[name="radio-chiller"]:checked').val()) {
-                isValid = false;
-            }
-            if (!$('input[name="radio-floor-stock"]:checked').val()) {
-                isValid = false;
-            }
-            if (!$('input[name="radio-walls-plastered"]:checked').val()) {
-                isValid = false;
-            }
-            if (!$('input[name="ventilation"]:checked').val()) {
-                isValid = false;
-            }
-            if (!$('input[name="past_control"]:checked').val()) {
-                isValid = false;
-            }
-            var fileInput = $('#images');
-            if (fileInput.get(0).files.length === 0) {
-                isValid = false;
-            }
-            if (!$('#i_confirm').is(':checked')) {
-                isValid = false;
-            }
-            return isValid;
-        }
 
-        validateAndToggleNextButton();
-
-        $('#fieldset-2 input, #fieldset-2 textarea, #fieldset-2 select').on('input change', function() {
             validateAndToggleNextButton();
-        });
 
-        $('#fieldset-2 input[type="radio"]').on('change', function() {
-            validateAndToggleNextButton();
-        });
+            $('#fieldset-2 input, #fieldset-2 textarea, #fieldset-2 select').on('input change', function () {
+                validateAndToggleNextButton();
+            });
 
-        $('#images').on('change', function() {
-            validateAndToggleNextButton();
-        });
+            $('#fieldset-2 input[type="radio"]').on('change', function () {
+                validateAndToggleNextButton();
+            });
 
-        function validateAndToggleNextButton() {
-            var isValid = validateFieldset2();
+            $('#images').on('change', function () {
+                validateAndToggleNextButton();
+            });
 
-            if (isValid) {
-                $('#fieldset-2 .form-wizard-next-btn').show();
-            } else {
-                $('#fieldset-2 .form-wizard-next-btn').hide();
+            function validateAndToggleNextButton() {
+                var isValid = validateFieldset2();
+
+                if (isValid) {
+                    $('#fieldset-2 .form-wizard-next-btn').show();
+                } else {
+                    $('#fieldset-2 .form-wizard-next-btn').hide();
+                }
             }
-        }
-    });
-</script> 
+        });
+    </script>
 
 
-<script>
-    $(document).ready(function() {
-        function validateFieldset3() {
-            var isValid = true;
+    <script>
+        $(document).ready(function () {
+            function validateFieldset3() {
+                var isValid = true;
 
-            if (!$('input[name="radio-save-future"]:checked').val()) {
-                isValid = false;
+                if (!$('input[name="radio-save-future"]:checked').val()) {
+                    isValid = false;
+                }
+
+                var email = $('#distributor_email_id').val().trim();
+                var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    isValid = false;
+                }
+
+                return isValid;
             }
 
-            var email = $('#distributor_email_id').val().trim();
-            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                isValid = false;
-            }
-
-            return isValid;
-        }
-
-        validateAndToggleSubmitButton();
-
-        $('#fieldset-3 input, #fieldset-3 textarea').on('input change', function() {
             validateAndToggleSubmitButton();
-        });
 
-        $('#fieldset-3 input[type="radio"]').on('change', function() {
-            validateAndToggleSubmitButton();
-        });
+            $('#fieldset-3 input, #fieldset-3 textarea').on('input change', function () {
+                validateAndToggleSubmitButton();
+            });
 
-        $('#fieldset-3').on('submit', function(event) {
-            if (!validateFieldset3()) {
-                event.preventDefault(); 
+            $('#fieldset-3 input[type="radio"]').on('change', function () {
+                validateAndToggleSubmitButton();
+            });
+
+            $('#fieldset-3').on('submit', function (event) {
+                if (!validateFieldset3()) {
+                    event.preventDefault();
+                }
+            });
+
+            function validateAndToggleSubmitButton() {
+                var isValid = validateFieldset3();
+
+                if (isValid) {
+                    $('#fieldset-3 .form-wizard-next-btn').prop('disabled', false);
+                } else {
+                    $('#fieldset-3 .form-wizard-next-btn').prop('disabled', true);
+                }
             }
         });
+    </script>
 
-        function validateAndToggleSubmitButton() {
-            var isValid = validateFieldset3();
-
-            if (isValid) {
-                $('#fieldset-3 .form-wizard-next-btn').prop('disabled', false);
+    <script>
+        document.getElementById('mobile_number').addEventListener('input', function () {
+            let mobileNumber = this.value.replace(/[^\d]/g, '');
+            if (mobileNumber.length !== 10) {
+                this.setCustomValidity('Mobile number must be exactly 10 digits long.');
             } else {
-                $('#fieldset-3 .form-wizard-next-btn').prop('disabled', true);
+                this.setCustomValidity('');
             }
-        }
-    });
-</script>
+        });
+    </script>
 
-<script>
-    document.getElementById('mobile_number').addEventListener('input', function () {
-        let mobileNumber = this.value.replace(/[^\d]/g, ''); 
-        if (mobileNumber.length !== 10) {
-            this.setCustomValidity('Mobile number must be exactly 10 digits long.');
-        } else {
-            this.setCustomValidity('');
-        }
-    });
-</script>
-
-<%- include("../shared/footer.ejs") %>
+    <%- include("../shared/footer.ejs") %>

@@ -1,0 +1,447 @@
+<%- include("../shared/header.ejs") %>
+
+
+    <div class="main-panel">
+      <div class="content-wrapper">
+        <div class="row">
+          <div class="col-12 grid-margin stretch-card">
+            <div class="card">
+              <div class="card-body user-management table-responsive">
+                <div>
+                  <h3 class="role-hadding">User Management</h3>
+                </div>
+                <div class="row my-2 d-flex">
+                  <div class="col-md-6 col-sm-12">
+                    <div class="input-group-table-role rounded">
+                      <input
+                        type="search"
+                        id="search_table_input"
+                        class="form-control"
+                        placeholder="Search"
+                        aria-label="Search"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="col-md-6 col-sm-12 my-1 d-flex justify-content-md-end justify-content-sm-end user-dawnload"
+                  >
+                    <a class="btn"
+                      >Dawnload Template<span
+                        class="p-1 ms-2 rounded-circle border border-primary"
+                        ><i
+                          class="mdi mdi-format-vertical-align-bottom"
+                        ></i></span
+                    ></a>
+                    <a class="role-btn"
+                      ><img
+                        src="../../assets/images/excel-logo.png"
+                        alt=""
+                        width="40"
+                      />
+                      IMPORT USERS</a
+                    >
+                  </div>
+                </div>
+                <table
+                  id="user_management_id_table"
+                  class="display table table-hover stripe row-border order-column"
+                  style="width: 100%"
+                >
+                  <thead>
+                    <tr>
+                      <th>NAME</th>
+                      <th>ROLE(S)</th>
+                      <th>MOBILE Number</th>
+                      <th>TERRITORY</th>
+                      <th>SUPERVISOR</th>
+                      <th>LINE OF BUSINESS</th>
+                      <th>CHANNEL</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody id="search_table_data">
+                    <tr>
+                      <td class="user-icon">
+                        <i class="mdi mdi-account-circle"></i>
+                        <div>
+                          <span class="d-block">Mohit</span>
+                          <span>Mohit@gmail.com</span>
+                        </div>
+                      </td>
+                      <td>State Trader, Zonal Trader</td>
+                      <td>+91 7820375543</td>
+                      <td>SOUTH2</td>
+                      <td>Amit Rana</td>
+                      <td>Popular, Premium</td>
+                      <td></td>
+                      <td class="role-icon">
+                        <div class="role-dropdown">
+                          <i class="role-dropbtn mdi mdi-dots-vertical"></i>
+                          <div class="role-dropdown-content">
+                            <a href="#" class="d-flex align-items-center"
+                              ><i class="mdi mdi-lead-pencil"></i
+                              ><span class="mx-2">Edit</span></a
+                            >
+                            <a href="#" class="d-flex align-items-center"
+                              ><i class="mdi mdi-delete"></i
+                              ><span class="mx-2">Delete</span></a
+                            >
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="user-icon">
+                        <i class="mdi mdi-account-circle"></i>
+                        <div>
+                          <span class="d-block">Mohit</span>
+                          <span>Mohit@gmail.com</span>
+                        </div>
+                      </td>
+                      <td>State Trader, Zonal Trader</td>
+                      <td>+91 7820375543</td>
+                      <td>SOUTH2</td>
+                      <td>Amit Rana</td>
+                      <td>Popular, Premium</td>
+                      <td></td>
+                      <td class="role-icon">
+                        <div class="role-dropdown">
+                          <i class="role-dropbtn mdi mdi-dots-vertical"></i>
+                          <div class="role-dropdown-content">
+                            <a href="#" class="d-flex align-items-center"
+                              ><i class="mdi mdi-lead-pencil"></i
+                              ><span class="mx-2">Edit</span></a
+                            >
+                            <a href="#" class="d-flex align-items-center"
+                              ><i class="mdi mdi-delete"></i
+                              ><span class="mx-2">Delete</span></a
+                            >
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="user-icon">
+                        <i class="mdi mdi-account-circle"></i>
+                        <div>
+                          <span class="d-block">Mohit</span>
+                          <span>Mohit@gmail.com</span>
+                        </div>
+                      </td>
+                      <td>State Trader, Zonal Trader</td>
+                      <td>+91 7820375543</td>
+                      <td>SOUTH2</td>
+                      <td>Amit Rana</td>
+                      <td>Popular, Premium</td>
+                      <td></td>
+                      <td class="role-icon">
+                        <div class="role-dropdown">
+                          <i class="role-dropbtn mdi mdi-dots-vertical"></i>
+                          <div class="role-dropdown-content">
+                            <a href="#" class="d-flex align-items-center"
+                              ><i class="mdi mdi-lead-pencil"></i
+                              ><span class="mx-2">Edit</span></a
+                            >
+                            <a href="#" class="d-flex align-items-center"
+                              ><i class="mdi mdi-delete"></i
+                              ><span class="mx-2">Delete</span></a
+                            >
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="user-icon">
+                        <i class="mdi mdi-account-circle"></i>
+                        <div>
+                          <span class="d-block">Mohit</span>
+                          <span>Mohit@gmail.com</span>
+                        </div>
+                      </td>
+                      <td>State Trader, Zonal Trader</td>
+                      <td>+91 7820375543</td>
+                      <td>SOUTH2</td>
+                      <td>Amit Rana</td>
+                      <td>Popular, Premium</td>
+                      <td></td>
+                      <td class="role-icon">
+                        <div class="role-dropdown">
+                          <i class="role-dropbtn mdi mdi-dots-vertical"></i>
+                          <div class="role-dropdown-content">
+                            <a href="#" class="d-flex align-items-center"
+                              ><i class="mdi mdi-lead-pencil"></i
+                              ><span class="mx-2">Edit</span></a
+                            >
+                            <a href="#" class="d-flex align-items-center"
+                              ><i class="mdi mdi-delete"></i
+                              ><span class="mx-2">Delete</span></a
+                            >
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="user-icon">
+                        <i class="mdi mdi-account-circle"></i>
+                        <div>
+                          <span class="d-block">Mohit</span>
+                          <span>Mohit@gmail.com</span>
+                        </div>
+                      </td>
+                      <td>State Trader, Zonal Trader</td>
+                      <td>+91 7820375543</td>
+                      <td>SOUTH2</td>
+                      <td>Amit Rana</td>
+                      <td>Popular, Premium</td>
+                      <td></td>
+                      <td class="role-icon">
+                        <div class="role-dropdown">
+                          <i class="role-dropbtn mdi mdi-dots-vertical"></i>
+                          <div class="role-dropdown-content">
+                            <a href="#" class="d-flex align-items-center"
+                              ><i class="mdi mdi-lead-pencil"></i
+                              ><span class="mx-2">Edit</span></a
+                            >
+                            <a href="#" class="d-flex align-items-center"
+                              ><i class="mdi mdi-delete"></i
+                              ><span class="mx-2">Delete</span></a
+                            >
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="user-icon">
+                        <i class="mdi mdi-account-circle"></i>
+                        <div>
+                          <span class="d-block">Mohit</span>
+                          <span>Mohit@gmail.com</span>
+                        </div>
+                      </td>
+                      <td>State Trader, Zonal Trader</td>
+                      <td>+91 7820375543</td>
+                      <td>SOUTH2</td>
+                      <td>Amit Rana</td>
+                      <td>Popular, Premium</td>
+                      <td></td>
+                      <td class="role-icon">
+                        <div class="role-dropdown">
+                          <i class="role-dropbtn mdi mdi-dots-vertical"></i>
+                          <div class="role-dropdown-content">
+                            <a href="#" class="d-flex align-items-center"
+                              ><i class="mdi mdi-lead-pencil"></i
+                              ><span class="mx-2">Edit</span></a
+                            >
+                            <a href="#" class="d-flex align-items-center"
+                              ><i class="mdi mdi-delete"></i
+                              ><span class="mx-2">Delete</span></a
+                            >
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="user-icon">
+                        <i class="mdi mdi-account-circle"></i>
+                        <div>
+                          <span class="d-block">Mohit</span>
+                          <span>Mohit@gmail.com</span>
+                        </div>
+                      </td>
+                      <td>State Trader, Zonal Trader</td>
+                      <td>+91 7820375543</td>
+                      <td>SOUTH2</td>
+                      <td>Amit Rana</td>
+                      <td>Popular, Premium</td>
+                      <td></td>
+                      <td class="role-icon">
+                        <div class="role-dropdown">
+                          <i class="role-dropbtn mdi mdi-dots-vertical"></i>
+                          <div class="role-dropdown-content">
+                            <a href="#" class="d-flex align-items-center"
+                              ><i class="mdi mdi-lead-pencil"></i
+                              ><span class="mx-2">Edit</span></a
+                            >
+                            <a href="#" class="d-flex align-items-center"
+                              ><i class="mdi mdi-delete"></i
+                              ><span class="mx-2">Delete</span></a
+                            >
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="user-icon">
+                        <i class="mdi mdi-account-circle"></i>
+                        <div>
+                          <span class="d-block">Mohit</span>
+                          <span>Mohit@gmail.com</span>
+                        </div>
+                      </td>
+                      <td>State Trader, Zonal Trader</td>
+                      <td>+91 7820375543</td>
+                      <td>SOUTH2</td>
+                      <td>Amit Rana</td>
+                      <td>Popular, Premium</td>
+                      <td></td>
+                      <td class="role-icon">
+                        <div class="role-dropdown">
+                          <i class="role-dropbtn mdi mdi-dots-vertical"></i>
+                          <div class="role-dropdown-content">
+                            <a href="#" class="d-flex align-items-center"
+                              ><i class="mdi mdi-lead-pencil"></i
+                              ><span class="mx-2">Edit</span></a
+                            >
+                            <a href="#" class="d-flex align-items-center"
+                              ><i class="mdi mdi-delete"></i
+                              ><span class="mx-2">Delete</span></a
+                            >
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="user-icon">
+                        <i class="mdi mdi-account-circle"></i>
+                        <div>
+                          <span class="d-block">Mohit</span>
+                          <span>Mohit@gmail.com</span>
+                        </div>
+                      </td>
+                      <td>State Trader, Zonal Trader</td>
+                      <td>+91 7820375543</td>
+                      <td>SOUTH2</td>
+                      <td>Amit Rana</td>
+                      <td>Popular, Premium</td>
+                      <td></td>
+                      <td class="role-icon">
+                        <div class="role-dropdown">
+                          <i class="role-dropbtn mdi mdi-dots-vertical"></i>
+                          <div class="role-dropdown-content">
+                            <a href="#" class="d-flex align-items-center"
+                              ><i class="mdi mdi-lead-pencil"></i
+                              ><span class="mx-2">Edit</span></a
+                            >
+                            <a href="#" class="d-flex align-items-center"
+                              ><i class="mdi mdi-delete"></i
+                              ><span class="mx-2">Delete</span></a
+                            >
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="user-icon">
+                        <i class="mdi mdi-account-circle"></i>
+                        <div>
+                          <span class="d-block">Mohit</span>
+                          <span>Mohit@gmail.com</span>
+                        </div>
+                      </td>
+                      <td>State Trader, Zonal Trader</td>
+                      <td>+91 7820375543</td>
+                      <td>SOUTH2</td>
+                      <td>Amit Rana</td>
+                      <td>Popular, Premium</td>
+                      <td></td>
+                      <td class="role-icon">
+                        <div class="role-dropdown">
+                          <i class="role-dropbtn mdi mdi-dots-vertical"></i>
+                          <div class="role-dropdown-content">
+                            <a href="#" class="d-flex align-items-center"
+                              ><i class="mdi mdi-lead-pencil"></i
+                              ><span class="mx-2">Edit</span></a
+                            >
+                            <a href="#" class="d-flex align-items-center"
+                              ><i class="mdi mdi-delete"></i
+                              ><span class="mx-2">Delete</span></a
+                            >
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="user-icon">
+                        <i class="mdi mdi-account-circle"></i>
+                        <div>
+                          <span class="d-block">Mohit</span>
+                          <span>Mohit@gmail.com</span>
+                        </div>
+                      </td>
+                      <td>State Trader, Zonal Trader</td>
+                      <td>+91 7820375543</td>
+                      <td>SOUTH2</td>
+                      <td>Amit Rana</td>
+                      <td>Popular, Premium</td>
+                      <td></td>
+                      <td class="role-icon">
+                        <div class="role-dropdown">
+                          <i class="role-dropbtn mdi mdi-dots-vertical"></i>
+                          <div class="role-dropdown-content">
+                            <a href="#" class="d-flex align-items-center"
+                              ><i class="mdi mdi-lead-pencil"></i
+                              ><span class="mx-2">Edit</span></a
+                            >
+                            <a href="#" class="d-flex align-items-center"
+                              ><i class="mdi mdi-delete"></i
+                              ><span class="mx-2">Delete</span></a
+                            >
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="user-icon">
+                        <i class="mdi mdi-account-circle"></i>
+                        <div>
+                          <span class="d-block">Mohit</span>
+                          <span>Mohit@gmail.com</span>
+                        </div>
+                      </td>
+                      <td>State Trader, Zonal Trader</td>
+                      <td>+91 7820375543</td>
+                      <td>SOUTH2</td>
+                      <td>Amit Rana</td>
+                      <td>Popular, Premium</td>
+                      <td></td>
+                      <td class="role-icon">
+                        <div class="role-dropdown">
+                          <i class="role-dropbtn mdi mdi-dots-vertical"></i>
+                          <div class="role-dropdown-content">
+                            <a href="#" class="d-flex align-items-center"
+                              ><i class="mdi mdi-lead-pencil"></i
+                              ><span class="mx-2">Edit</span></a
+                            >
+                            <a href="#" class="d-flex align-items-center"
+                              ><i class="mdi mdi-delete"></i
+                              ><span class="mx-2">Delete</span></a
+                            >
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- content-wrapper ends -->
+      <!-- partial:../../partials/_footer.html -->
+      <footer class="footer">
+        <div class="container-fluid text-center">
+          <span
+            class="text-muted d-block text-center text-sm-start d-sm-inline-block"
+            >Lorem ipsum dolor veniam eveniet ut est distinctio nulla!</span
+          >
+        </div>
+      </footer>
+      <!-- partial -->
+    </div>
+    <!-- main-panel ends -->
+  </div>
+  <!-- page-body-wrapper ends -->
+</div>
+
+<%- include("../shared/footer.ejs") %>

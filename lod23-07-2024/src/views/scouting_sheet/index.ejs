@@ -1,0 +1,241 @@
+<%- include("../shared/header.ejs") %>
+
+
+    <div class="main-panel scouting_sheet">
+        <div class="content-wrapper">
+            <div class="row">
+                <div class="col-12 grid-margin stretch-card">
+                    <div class="card p-4 table-responsive">
+                        <div class="row mt-4 text-center">
+                            <table class="table-bordered table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Categories For Evaluation</th>
+                                        <th scope="col">Not Satisfactory</th>
+                                        <th scope="col">Marginal</th>
+                                        <th scope="col">Meets All Expectations</th>
+                                        <th scope="col">Exceeds Expectations</th>
+                                        <th scope="col">Exceptional</th>
+                                        <th scope="col">Score</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><span>Points</span></td>
+                                        <td>1</td>
+                                        <td>2</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>5</td>
+                                        <td><span>Average Score</span></td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+                        </div>
+                        <div class="my-2">
+                            <button type="button" class="role-btn float-end" id="addRow">Add</button>
+
+                        </div>
+                        <div class="row my-4 text-center">
+                            <form action="/scoutingsheet/add_scouti" method="post" enctype="multipart/form-data"
+                                class="p-0">
+                                <table class="table-bordered table table-hover" id="applicantTable">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Applicants Name</th>
+                                            <th scope="col">Email Name</th>
+                                            <th scope="col">Experience and Reputation</th>
+                                            <th scope="col">Market Coverage</th>
+                                            <th scope="col">Financial Stability</th>
+                                            <th scope="col">Product Knowledge</th>
+                                            <th scope="col">Distribution Network</th>
+                                            <th scope="col">Customer Base</th>
+                                            <th scope="col">Sales and Marketing Capabilities</th>
+                                            <th scope="col">Support and Training</th>
+                                            <th scope="col">Terms and Conditions</th>
+                                            <th scope="col">Average Score</th>
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><span>Srinivasa</span></td>
+                                            <td>sachincha2222@gmail.com</td>
+                                            <td>4</td>
+                                            <td>2</td>
+                                            <td>5</td>
+                                            <td>3</td>
+                                            <td>4</td>
+                                            <td>2</td>
+                                            <td>1</td>
+                                            <td>3</td>
+                                            <td>5</td>
+                                            <td>3.3</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" class="form-control" value="" name="name" required />
+                                            </td>
+                                            <td><input type="text" class="form-control" value="" name="email"
+                                                    required />
+                                            </td>
+                                            <td><input type="tel" class="form-control" name="experienceReputation"
+                                                    required /></td>
+                                            <td><input type="tel" class="form-control" name="marketCoverage" required />
+                                            </td>
+                                            <td><input type="tel" class="form-control" name="financialStability"
+                                                    required /></td>
+                                            <td><input type="tel" class="form-control" name="productKnowledge"
+                                                    required />
+                                            </td>
+                                            <td><input type="tel" class="form-control" name="distributionNetwork"
+                                                    required /></td>
+                                            <td><input type="tel" class="form-control" name="customerbase" required />
+                                            </td>
+                                            <td><input type="tel" class="form-control" name="salesMarketing" required />
+                                            </td>
+                                            <td><input type="tel" class="form-control" name="supportTraining"
+                                                    required />
+                                            </td>
+                                            <td><input type="tel" class="form-control" name="termsConditions"
+                                                    required />
+                                            </td>
+                                            <td><input type="tel" class="form-control" name="averageScore" readonly>
+                                            </td>
+
+                                            <td><button type="button" class="btn btn-danger remove-row">Remove</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="my-3">
+
+                                    <button type="submit" class="role-btn float-end">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        <footer class="footer">
+            <div class="container-fluid text-center">
+                <span class="text-muted d-block text-center text-sm-start d-sm-inline-block">Admin
+                    Dashboard!
+                </span>
+            </div>
+        </footer>
+        <!-- partial -->
+    </div>
+
+
+    <!-- main-panel ends -->
+
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+
+    <%- include("../shared/footer.ejs") %>
+
+        <script>
+            const Toast = Swal.mixin({
+                toast: true,
+                position: "top-end",
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.onmouseenter = Swal.stopTimer;
+                    toast.onmouseleave = Swal.resumeTimer;
+                }
+            });
+
+            function showToast(icon, title) {
+                Toast.fire({
+                    icon: icon,
+                    title: title
+                });
+            }
+            <% if (message) { %>
+                showToast("error", "<%= message %>");
+            <% } else if (success) { %>
+                showToast("success", "<%= success %>");
+                    <% } else if (averagescoremsg) { %>
+                showToast("error", "<%= averagescoremsg %>");
+                            <% } %>
+
+        </script>
+
+
+
+        <script>
+                let addedRows = 0;
+            let removedRows = 0;
+            const maxRows = 2;
+
+            function calculateAverage(row) {
+                const inputs = row.querySelectorAll('input[type="tel"]');
+                let sum = 0;
+                let count = 0;
+
+                inputs.forEach(input => {
+                    const value = parseFloat(input.value);
+                    if (!isNaN(value)) {
+                        sum += value;
+                        count++;
+                    }
+                });
+
+                const average = sum / 9;
+                const averageInput = row.querySelector('input[name="averageScore"]');
+                averageInput.value = !isNaN(average) ? average.toFixed(2) : '';
+            }
+
+            document.getElementById('addRow').addEventListener('click', function () {
+                if (addedRows < maxRows) {
+                    const table = document.getElementById('applicantTable').getElementsByTagName('tbody')[0];
+                    const newRow = table.rows[1].cloneNode(true);
+                    const inputs = newRow.getElementsByTagName('input');
+
+                    for (let i = 0; i < inputs.length; i++) {
+                        inputs[i].value = '';
+                        if (inputs[i].type === 'tel') {
+                            inputs[i].addEventListener('input', function () {
+                                calculateAverage(newRow);
+                            });
+                        }
+                    }
+
+                    table.appendChild(newRow);
+                    addedRows++;
+                } else {
+                    alert('You can only add up to ' + maxRows + ' rows.');
+                }
+            });
+
+            document.getElementById('applicantTable').addEventListener('click', function (event) {
+                if (event.target.classList.contains('remove-row')) {
+                    if (removedRows < maxRows) {
+                        const row = event.target.closest('tr');
+                        row.remove();
+                        removedRows++;
+                    } else {
+                        alert('You can only remove up to ' + maxRows + ' rows.');
+                    }
+                }
+            });
+
+            document.querySelectorAll('input[type="tel"]').forEach(input => {
+                input.addEventListener('input', function () {
+                    const row = input.closest('tr');
+                    calculateAverage(row);
+                });
+            });
+        </script>
+
+        </html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Login</title>
+    <!-- plugins:css -->
+    <link
+      rel="stylesheet"
+      href="../../public/vendors/mdi/css/materialdesignicons.min.css"
+    />
+    <link rel="stylesheet" href="../../public/css/style.css" />
+    <link rel="stylesheet" href="../../public/css/responsive.css" />
+    <link rel="stylesheet" href="../../public/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../public/DataTables/datatables.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <style>
+      .input-container {
+        position: relative;
+      }
+      .fa-check {
+        position: absolute;
+        right: 10px;
+        top: 70%;
+        transform: translateY(-50%);
+        color: green;
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <% if (message) { %>
+    <div class="alert1">
+      <p><%= message %></p>
+    </div>
+    <% } %>
+
+    <div class="alert1" id="message-panel" style="display: none"></div>
+
+    <div class="container-fluid login-main-panel">
+      <div class="container">
+        <div class="row py-4">
+          <div
+            class="col-md-6 p-0 d-flex align-items-center justify-content-center"
+          >
+            <div class="login-img">
+              <img
+                src="../../public/images/loginImg/login-aside1.avif"
+                alt=""
+              />
+            </div>
+          </div>
+          <div
+            class="col-md-6 p-0 d-flex align-items-center justify-content-center"
+          >
+            <div class="login-content">
+              <form id="otpForm" action="/verify" method="POST">
+                <div
+                  class="login-logo d-flex align-items-center justify-content-center pb-4"
+                >
+                  <img src="../../assets/images/Group 46 (1).jpg" alt="" />
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Email address</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    name="email"
+                    placeholder="Enter Email Address"
+                    value="<%= email %>"
+                  />
+                </div>
+                <div class="mb-3 input-container">
+                  <label class="form-label">ENTER OTP</label>
+                  <input
+                    type="tel"
+                    name="otp"
+                    maxlength="6"
+                    pattern="\d{6}"
+                    class="form-control"
+                    placeholder="Enter OTP"
+                    required
+                  />
+                  <i id="otp-success-icon" class="fa-solid fa-check"></i>
+                </div>
+                <div
+                  class="mb-3 position-relative"
+                  id="password-field"
+                  style="display: none"
+                >
+                  <label class="form-label">Password</label>
+                  <input
+                    type="password"
+                    id="password"
+                    class="form-control"
+                    name="password"
+                    placeholder="Enter Your Password"
+                    required
+                  />
+                  <span class="password-icon">
+                    <i class="bi bi-eye-slash" id="togglePassword"></i
+                  ></span>
+                </div>
+                <div class="login-btn d-flex justify-content-center">
+                  <button type="button" id="verifyOtpButton" class="btn">
+                    VERIFY OTP
+                  </button>
+                </div>
+                <div
+                  class="login-forgot-password d-flex justify-content-center"
+                >
+                  <a href="/login_role">Already a User? Log in</a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- main-panel ends -->
+    <script src="/src/public/js/jquery.min.js"></script>
+    <script src="../../public/vendors/js/vendor.bundle.base.js"></script>
+    <script src="../../public/js/bootstrap.min.js"></script>
+    <!-- End custom js for this page -->
+
+    <script>
+      const passwordField = document.querySelector("#password-field");
+      const verifyOtpButton = document.querySelector("#verifyOtpButton");
+      const successIcon = document.getElementById("otp-success-icon");
+      const otpForm = document.querySelector("#otpForm");
+
+      const togglePassword = document.querySelector("#togglePassword");
+      const password = document.querySelector("#password");
+
+      togglePassword.addEventListener("click", function () {
+        const type =
+          password.getAttribute("type") === "password" ? "text" : "password";
+        password.setAttribute("type", type);
+        this.classList.toggle("bi-eye");
+      });
+
+      verifyOtpButton.addEventListener("click", async function (event) {
+        if (verifyOtpButton.textContent === "REGISTER") {
+          event.preventDefault();
+          await handleRegister();
+          return;
+        }
+
+        event.preventDefault();
+        const email = document.querySelector('input[name="email"]').value;
+        const otp = document.querySelector('input[name="otp"]').value;
+
+        try {
+          const response = await fetch("/verify", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ email, otp }),
+          });
+
+          const data = await response.json();
+          if (data.success) {
+            successIcon.style.display = "block";
+            passwordField.style.display = "block";
+            verifyOtpButton.textContent = "REGISTER";
+          } else {
+            successIcon.style.display = "none";
+            var messagePanel = document.getElementById("message-panel");
+            messagePanel.textContent =
+              data.message || "OTP verification failed";
+            messagePanel.style.display = "block";
+            setTimeout(() => {
+              messagePanel.style.display = "none";
+            }, 3000);
+          }
+        } catch (error) {
+          console.error("Error verifying OTP:", error);
+        }
+      });
+
+      async function handleRegister() {
+        const email = document.querySelector('input[name="email"]').value;
+        const otp = document.querySelector('input[name="otp"]').value;
+        const password = document.querySelector('input[name="password"]').value;
+
+        try {
+          const response = await fetch("/verifed", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ email, otp, password }),
+          });
+
+          const data = await response.json();
+          if (data.success) {
+            var messagePanel = document.getElementById("message-panel");
+            messagePanel.textContent =
+              data.message || "Registration succesfull";
+            messagePanel.style.display = "block";
+            setTimeout(() => {
+              messagePanel.style.display = "none";
+              if (data.role == "distributor") {
+                window.history.replaceState(null, null, "/userrole/role2");
+                window.location.href = "/userrole/role2";
+              } else {
+                window.history.replaceState(null, null, "/dashboard");
+                window.location.href = "/dashboard";
+              }
+            }, 1000);
+          } else {
+            var messagePanel = document.getElementById("message-panel");
+            messagePanel.textContent = data.message || "Registration failed";
+            messagePanel.style.display = "block";
+            setTimeout(() => {
+              messagePanel.style.display = "none";
+            }, 3000);
+          }
+        } catch (error) {
+          console.error("Error during registration:", error);
+        }
+      }
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const alertMessage = "<%= alert %>";
+        if (alertMessage) {
+          const alertElement = document.getElementById("popup-alert");
+          alertElement.style.display = "block";
+
+          setTimeout(function () {
+            alertElement.style.display = "none";
+          }, 5000);
+        }
+      });
+    </script>
+  </body>
+</html>

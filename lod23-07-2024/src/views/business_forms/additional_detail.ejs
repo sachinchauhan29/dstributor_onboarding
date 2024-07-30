@@ -1,0 +1,105 @@
+<%- include("../shared/header.ejs") %>
+
+
+      <!-- partial -->
+      <!-- partial-business-form -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+            <div class="row">
+                <div class="col-12 grid-margin stretch-card">
+                    <div class="card position-relative">
+                        <div class="card-body additional-detail-btn">
+                            <div class="business-hading d-flex justify-content-between">
+                                <h3>INVITE DISTRIBUTOR PARTNER</h3>
+                                <BUtton class="btn">Invite History</BUtton>
+                            </div>
+                            <p class="card-description"> Tell us about the business to send the invitie.</p>
+                            <div id="additional_hide">
+                                <div class="invice-history mb-md-5">
+                                    <a id="business_forms_hide" href="#" class="me-3"> Business Details</a>
+                                    <a id="additional_forms_hide" href="#" class="active-line"> Additional
+                                        Details</a>
+                                </div>
+                                <form class="forms-business">
+                                    <div class="additional-detail-hading mb-3">
+                                        <h3 class="text-center">Basic Details</h3>
+                                    </div>
+                                    <div class="row g-3">
+                                        <div class=" col form-group">
+                                            <label>*Owner's Name</label>
+                                            <input type="text" class="form-control-lg form-control px-3">
+                                            <span class="mt-5">Enter Owner's Name</span>
+                                        </div>
+                                        <div class=" col form-group">
+                                            <label>Select Zone</label>
+                                            <select class=" form-select form-control form-control-lg px-3">
+                                                <option selected>Choose Zone </option>
+                                                <option value="1">Central</option>
+                                                <option value="2">East</option>
+                                                <option value="3">North</option>
+                                                <option value="3">North1</option>
+                                                <option value="3">South</option>
+                                                <option value="3">South1</option>
+                                                <option value="3">West</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class=" form-group business-mobile-style">
+                                        <label>*Census Code</label>
+                                        <input type="text" class="form-control form-control-lg px-3 ">
+                                        <span class="mt-5">Enter Census Code</span>
+                                    </div>
+                                    <div class="row g-3">
+                                        <div class=" col form-group">
+                                            <label>*City Name</label>
+                                            <input type="text" class="form-control-lg form-control px-3">
+                                            <span class="mt-5">Enter City Name</span>
+                                        </div>
+                                        <div class=" col form-group">
+                                            <label>Delivering Plant</label>
+                                            <select class=" form-select form-control form-control-lg px-3">
+                                                <option selected>Please Choose</option>
+                                                <option value="1">AWL-DEFOT-Central</option>
+                                                <option value="2">AWL-DEFOT-East</option>
+                                                <option value="3">AWL-DEFOT-North</option>
+                                                <option value="3">AWL-DEFOT-North1</option>
+                                                <option value="3">AWL-DEFOT-South</option>
+                                                <option value="3">AWL-DEFOT-South1</option>
+                                                <option value="3">AWL-DEFOT-West</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="additional-btn d-flex justify-content-end">
+                                        <div class="d-flex">
+                                            <button class="btn me-2">CANCEL</button>
+
+                                            <button class="btn">SAVE AS DRAFT</button>
+                                        </div>
+                                    </div>
+                                </form>
+                                <div class="additional-btn additional-back position-absolute">
+                                    <button class="btn me-2 " onclick="window.history.back()">Back</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        <footer class="footer">
+            <div class="container-fluid text-center">
+                <span class="text-muted d-block text-center text-sm-start d-sm-inline-block">Lorem ipsum dolor
+                    veniam
+                    eveniet ut est distinctio nulla!</span>
+            </div>
+        </footer>
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+ 
+  <%- include("../shared/footer.ejs") %>

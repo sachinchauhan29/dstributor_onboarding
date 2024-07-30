@@ -15,15 +15,18 @@ const distributor_listroute = require("../routes/distributor_list/distributor_li
 const role_managment_route = require("../routes/role_management/role_managment.route.js");
 const territory_managment_route = require("../routes/territory_management/territory_management.route.js");
 const user_managment_route = require("../routes/user_management/user_managament.route.js");
-const login_role_route  = require("../routes/login_role/loginRoleUser.route.js");
-const welcome_route  = require("../routes/welcome/welcome.route.js");
-const userRoleroute  = require("../routes/roleUser/roleUser.route.js");
-const thankyouroute  = require("../routes/thanku/thanku.route.js");
-const doc_correctionroute  = require("../routes/doc_correction/doc_correction.route.js");
+const login_role_route = require("../routes/login_role/loginRoleUser.route.js");
+const welcome_route = require("../routes/welcome/welcome.route.js");
+const userRoleroute = require("../routes/roleUser/roleUser.route.js");
+const thankyouroute = require("../routes/thanku/thanku.route.js");
+const doc_correctionroute = require("../routes/doc_correction/doc_correction.route.js");
+//const approvalformroute = require("../routes/approvalform/approvalform.route.js")
 const loginroute = require("../routes/login/login.route.js")
+
+const page404route = require('../routes/page404/page404.route.js')
 const router = express.Router();
 
-const routes=[
+const routes = [
     {
         path: '/',
         route: loginroute
@@ -46,68 +49,76 @@ const routes=[
     // },
     {
         path: '/scoutingsheet',
-        route: scoutingsheetroute 
+        route: scoutingsheetroute
     },
     {
         path: '/opportunity',
-        route: opportunityroute 
+        route: opportunityroute
     },
     {
         path: '/approvers',
-        route: approversindexroute 
+        route: approversindexroute
     },
     {
         path: '/application_completed',
-        route: application_completedroute 
+        route: application_completedroute
     },
     {
         path: '/application_doccpature',
-        route: application_doc_capture_route 
+        route: application_doc_capture_route
     },
     {
         path: '/application_rejected',
-        route: application_rejected 
+        route: application_rejected
     },
     {
         path: '/application_underreview',
-        route: application_underreview 
+        route: application_underreview
     },
     {
         path: '/distributor_list',
-        route:  distributor_listroute
+        route: distributor_listroute
     },
     {
         path: '/role_managment',
-        route:  role_managment_route
+        route: role_managment_route
     },
     {
         path: '/territory_managment',
-        route:  territory_managment_route
+        route: territory_managment_route
     },
     {
         path: '/user_management',
-        route:  user_managment_route
+        route: user_managment_route
     },
     {
         path: '/login_role',
-        route:  login_role_route
+        route: login_role_route
     },
     {
         path: '/welcome',
-        route:  welcome_route
+        route: welcome_route
     },
     {
         path: '/userrole',
-        route:  userRoleroute
+        route: userRoleroute
     },
     {
         path: '/thankyou',
-        route:  thankyouroute
+        route: thankyouroute
     },
     {
         path: '/doc_correction',
-        route:  doc_correctionroute
+        route: doc_correctionroute
+    },
+    {
+        path: '/page404',
+        route: page404route
     }
+    // {
+    //     path: '/approvalform',
+    //     route: approvalformroute
+    // }
 ]
 routes.forEach((route) => {
     router.use(route.path, route.route);

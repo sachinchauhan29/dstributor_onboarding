@@ -1,48 +1,71 @@
 <%- include("../shared/header.ejs") %>
 
-            <div class="main-panel">
-                <div class="content-wrapper">
-                    <div class="row">
-                        <div class="col-12 grid-margin stretch-card">
-                            <div class="card approvers-table">
-                                <div class="card-body opportunity-table-top table-responsive">
-                                    <div class="row">
-                                        <div class="row my-2 d-flex">
-                                            <div class="col-md-6 col-sm-6">
-                                                <div class="input-group-table  rounded">
-                                                    <input type="search" id="search_table_input" class="form-control "
-                                                        placeholder="Search" aria-label="Search" />
-                                                </div>
-                                            </div>
-                                            <div
-                                                class="col-md-6 col-sm-6 my-1 d-flex justify-content-md-end  justify-content-sm-end">
-                                                <div class="form-group">
-                                                    <select class="form-select form-control-lg form-control">
-                                                        <option value="1">All Opportunity </option>
-                                                        <option value="2">Status-Pending </option>
-                                                        <option value="3">Status-Submitted</option>
-                                                        <option value="4">Status-Approved</option>
-                                                        <option value="5">Status-Rejected</option>
-                                                    </select>
-                                                </div>
-                                            </div>
+    <div class="main-panel">
+        <div class="content-wrapper">
+            <div class="row">
+                <div class="col-12 grid-margin stretch-card">
+                    <div class="card approvers-table">
+                        <div class="card-body opportunity-table-top table-responsive">
+                            <div class="row">
+                                <div class="row my-2 d-flex">
+                                    <div class="col-md-6 col-sm-6">
+                                        <div class="input-group-table  rounded">
+                                            <input type="search" id="search_table_input" class="form-control "
+                                                placeholder="Search" aria-label="Search" />
                                         </div>
                                     </div>
-                                    <table id="opportunity-table" class="display table table-hover" style="width:100% ">
-                                        <thead>
-                                            <tr>
-                                                <th>BUSINESS PARTNER</th>
-                                                <th>TYPE</th>
-                                                <th>STATUS</th>
-                                                <th>ASSIGNEES</th>
-                                                <th>TERRITORY</th>
-                                                <th>START DATE</th>
-                                                <th>LAST UPDATED DATE</th>
-                                                <th></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody id="search_table_data">
-                                            <tr>
+                                    <div
+                                        class="col-md-6 col-sm-6 my-1 d-flex justify-content-md-end  justify-content-sm-end">
+                                        <div class="form-group">
+                                            <select class="form-select form-control-lg form-control">
+                                                <option value="1">All Opportunity </option>
+                                                <option value="2">Status-Pending </option>
+                                                <option value="3">Status-Submitted</option>
+                                                <option value="4">Status-Approved</option>
+                                                <option value="5">Status-Rejected</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <table id="opportunity-table" class="display table table-hover" style="width:100% ">
+                                <thead>
+                                    <tr>
+                                        <th>BUSINESS PARTNER</th>
+                                        <th>TYPE</th>
+                                        <th>STATUS</th>
+                                        <th>ASSIGNEES</th>
+                                        <th>TERRITORY</th>
+                                        <th>START DATE</th>
+                                        <th>LAST UPDATED DATE</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="search_table_data">
+
+                                    <% approversdistributordetails.forEach((data)=> { %>
+                                        <tr>
+                                            <td>
+                                                <%= data.business_type %>
+                                            </td>
+                                            <td>CENTRAL</td>
+                                            <td><span class=" btn-1">Under Review</span></td>
+                                            <td><span class="btn-2">HD DISTRIBUTION</span></td>
+                                            <td>CENTRAL</td>
+                                            <td>Aug 04 2023</td>
+
+                                            <td>
+                                                <%= data.created_date ? new
+                                                    Date(data.created_date).toLocaleDateString('en-IN') : '' %>
+                                            </td>
+                                            <td class="doite"><a
+                                                    href="/approvers/view/?id=<%= data.id%>">
+                                                    <i class="mdi mdi-eye"></i></a>
+                                            </td>
+                                        </tr>
+                                        <%})%>
+
+                                            <!-- <tr>
                                                 <td><a class="text-decoration-underline first-colum">Ganesh Traders</a>
                                                 </td>
                                                 <td>CD Addition</td>
@@ -54,276 +77,28 @@
                                                 <td class="doite"><a href="/approvers/view">
                                                         <i class="mdi mdi-eye"></i></a>
                                                 </td>
-                                            </tr>
-                                            <tr>
-                                                <td><a class="text-decoration-underline first-colum">5s Ventures</a>
-                                                </td>
-                                                <td>CD Addition</td>
-                                                <td><span class=" btn-1">Under Review</span></td>
-                                                <td><span class="btn-2">HD DISTRIBUTION</span></td>
-                                                <td>SOUTH1</td>
-                                                <td>Nov 01, 2023</td>
-                                                <td>Nov 21, 2023</td>
-                                                <td class="doite"><a href="./approvers/view">
-                                                        <i class="mdi mdi-eye"></i></a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><a class="text-decoration-underline first-colum">Nayak Stores</a>
-                                                </td>
-                                                <td>New Town</td>
-                                                <td><span class=" btn-1">Under Review</span></td>
-                                                <td><span class="btn-2">HD DISTRIBUTION</span></td>
-                                                <td>INDIA</td>
-                                                <td>Nov 05, 2023</td>
-                                                <td>Nov 28, 2023</td>
-                                                <td class="doite"><a href="./approvers/view">
-                                                        <i class="mdi mdi-eye"></i></a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><a class="text-decoration-underline first-colum">Nr Traders</a>
-                                                </td>
-                                                <td>CD Replacement</td>
-                                                <td><span class=" btn-1">Under Review</span></td>
-                                                <td><span class="btn-2">HD DISTRIBUTION</span></td>
-                                                <td>WEST</td>
-                                                <td>Jan 09, 2023</td>
-                                                <td>Feb 14, 2023</td>
-                                                <td class="doite"><a href="./approvers/view">
-                                                        <i class="mdi mdi-eye"></i></a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><a class="text-decoration-underline first-colum">Ganesh Traders</a>
-                                                </td>
-                                                <td>CD Addition</td>
-                                                <td><span class=" btn-1">Under Review</span></td>
-                                                <td><span class="btn-2">HD DISTRIBUTION</span></td>
-                                                <td>CENTRAL</td>
-                                                <td>Aug 04 2023</td>
-                                                <td>Sep 27 2023</td>
-                                                <td class="doite"><a href="./approvers/view">
-                                                        <i class="mdi mdi-eye"></i></a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><a class="text-decoration-underline first-colum">5s Ventures</a>
-                                                </td>
-                                                <td>CD Addition</td>
-                                                <td><span class=" btn-1">Under Review</span></td>
-                                                <td><span class="btn-2">HD DISTRIBUTION</span></td>
-                                                <td>SOUTH1</td>
-                                                <td>Nov 01, 2023</td>
-                                                <td>Nov 21, 2023</td>
-                                                <td class="doite"><a href="./approvers/view">
-                                                        <i class="mdi mdi-eye"></i></a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><a class="text-decoration-underline first-colum">Nayak Stores</a>
-                                                </td>
-                                                <td>New Town</td>
-                                                <td><span class=" btn-1">Under Review</span></td>
-                                                <td><span class="btn-2">HD DISTRIBUTION</span></td>
-                                                <td>INDIA</td>
-                                                <td>Nov 05, 2023</td>
-                                                <td>Nov 28, 2023</td>
-                                                <td class="doite"><a href="./approvers/view">
-                                                        <i class="mdi mdi-eye"></i></a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><a class="text-decoration-underline first-colum">Nr Traders</a>
-                                                </td>
-                                                <td>CD Replacement</td>
-                                                <td><span class=" btn-1">Under Review</span></td>
-                                                <td><span class="btn-2">HD DISTRIBUTION</span></td>
-                                                <td>WEST</td>
-                                                <td>Jan 09, 2023</td>
-                                                <td>Feb 14, 2023</td>
-                                                <td class="doite"><a href="./approvers/view">
-                                                        <i class="mdi mdi-eye"></i></a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><a class="text-decoration-underline first-colum">Ganesh Traders</a>
-                                                </td>
-                                                <td>CD Addition</td>
-                                                <td><span class=" btn-1">Under Review</span></td>
-                                                <td><span class="btn-2">HD DISTRIBUTION</span></td>
-                                                <td>CENTRAL</td>
-                                                <td>Aug 04 2023</td>
-                                                <td>Sep 27 2023</td>
-                                                <td class="doite"><a href="./approvers/view">
-                                                        <i class="mdi mdi-eye"></i></a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><a class="text-decoration-underline first-colum">5s Ventures</a>
-                                                </td>
-                                                <td>CD Addition</td>
-                                                <td><span class=" btn-1">Under Review</span></td>
-                                                <td><span class="btn-2">HD DISTRIBUTION</span></td>
-                                                <td>SOUTH1</td>
-                                                <td>Nov 01, 2023</td>
-                                                <td>Nov 21, 2023</td>
-                                                <td class="doite"><a href="./approvers/view">
-                                                        <i class="mdi mdi-eye"></i></a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><a class="text-decoration-underline first-colum">Nayak Stores</a>
-                                                </td>
-                                                <td>New Town</td>
-                                                <td><span class=" btn-1">Under Review</span></td>
-                                                <td><span class="btn-2">HD DISTRIBUTION</span></td>
-                                                <td>INDIA</td>
-                                                <td>Nov 05, 2023</td>
-                                                <td>Nov 28, 2023</td>
-                                                <td class="doite"><a href="./approvers/view">
-                                                        <i class="mdi mdi-eye"></i></a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><a class="text-decoration-underline first-colum">Nr Traders</a>
-                                                </td>
-                                                <td>CD Replacement</td>
-                                                <td><span class=" btn-1">Under Review</span></td>
-                                                <td><span class="btn-2">HD DISTRIBUTION</span></td>
-                                                <td>WEST</td>
-                                                <td>Jan 09, 2023</td>
-                                                <td>Feb 14, 2023</td>
-                                                <td class="doite"><a href="./approvers/view">
-                                                        <i class="mdi mdi-eye"></i></a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><a class="text-decoration-underline first-colum">Ganesh Traders</a>
-                                                </td>
-                                                <td>CD Addition</td>
-                                                <td><span class=" btn-1">Under Review</span></td>
-                                                <td><span class="btn-2">HD DISTRIBUTION</span></td>
-                                                <td>CENTRAL</td>
-                                                <td>Aug 04 2023</td>
-                                                <td>Sep 27 2023</td>
-                                                <td class="doite"><a href="./approvers/view">
-                                                        <i class="mdi mdi-eye"></i></a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><a class="text-decoration-underline first-colum">5s Ventures</a>
-                                                </td>
-                                                <td>CD Addition</td>
-                                                <td><span class=" btn-1">Under Review</span></td>
-                                                <td><span class="btn-2">HD DISTRIBUTION</span></td>
-                                                <td>SOUTH1</td>
-                                                <td>Nov 01, 2023</td>
-                                                <td>Nov 21, 2023</td>
-                                                <td class="doite"><a href="./approvers/view">
-                                                        <i class="mdi mdi-eye"></i></a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><a class="text-decoration-underline first-colum">Nayak Stores</a>
-                                                </td>
-                                                <td>New Town</td>
-                                                <td><span class=" btn-1">Under Review</span></td>
-                                                <td><span class="btn-2">HD DISTRIBUTION</span></td>
-                                                <td>INDIA</td>
-                                                <td>Nov 05, 2023</td>
-                                                <td>Nov 28, 2023</td>
-                                                <td class="doite"><a href="./approvers/view">
-                                                        <i class="mdi mdi-eye"></i></a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><a class="text-decoration-underline first-colum">Nr Traders</a>
-                                                </td>
-                                                <td>CD Replacement</td>
-                                                <td><span class=" btn-1">Under Review</span></td>
-                                                <td><span class="btn-2">HD DISTRIBUTION</span></td>
-                                                <td>WEST</td>
-                                                <td>Jan 09, 2023</td>
-                                                <td>Feb 14, 2023</td>
-                                                <td class="doite"><a href="./approvers/view">
-                                                        <i class="mdi mdi-eye"></i></a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><a class="text-decoration-underline first-colum">Ganesh Traders</a>
-                                                </td>
-                                                <td>CD Addition</td>
-                                                <td><span class=" btn-1">Under Review</span></td>
-                                                <td><span class="btn-2">HD DISTRIBUTION</span></td>
-                                                <td>CENTRAL</td>
-                                                <td>Aug 04 2023</td>
-                                                <td>Sep 27 2023</td>
-                                                <td class="doite"><a href="./approvers/view">
-                                                        <i class="mdi mdi-eye"></i></a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><a class="text-decoration-underline first-colum">5s Ventures</a>
-                                                </td>
-                                                <td>CD Addition</td>
-                                                <td><span class=" btn-1">Under Review</span></td>
-                                                <td><span class="btn-2">HD DISTRIBUTION</span></td>
-                                                <td>SOUTH1</td>
-                                                <td>Nov 01, 2023</td>
-                                                <td>Nov 21, 2023</td>
-                                                <td class="doite"><a href="../application/application_details.html">
-                                                        <i class="mdi mdi-eye"></i></a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><a class="text-decoration-underline first-colum">Nayak Stores</a>
-                                                </td>
-                                                <td>New Town</td>
-                                                <td><span class=" btn-1">Under Review</span></td>
-                                                <td><span class="btn-2">HD DISTRIBUTION</span></td>
-                                                <td>INDIA</td>
-                                                <td>Nov 05, 2023</td>
-                                                <td>Nov 28, 2023</td>
-                                                <td class="doite"><a href="../application/application_details.html">
-                                                        <i class="mdi mdi-eye"></i></a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><a class="text-decoration-underline first-colum">Nr Traders</a>
-                                                </td>
-                                                <td>CD Replacement</td>
-                                                <td><span class=" btn-1">Under Review</span></td>
-                                                <td><span class="btn-2">HD DISTRIBUTION</span></td>
-                                                <td>WEST</td>
-                                                <td>Jan 09, 2023</td>
-                                                <td>Feb 14, 2023</td>
-                                                <td class="doite"><a href="../application/application_details.html">
-                                                        <i class="mdi mdi-eye"></i></a>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-
-                                    </table>
-                                </div>
-                            </div>
+                                            </tr> -->
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
-                <!-- content-wrapper ends -->
-                <!-- partial:../../partials/_footer.html -->
-                <footer class="footer">
-                    <div class="container-fluid text-center">
-                        <span class="text-muted d-block text-center text-sm-start d-sm-inline-block">Lorem ipsum dolor
-                            veniam
-                            eveniet ut est distinctio nulla!</span>
-                    </div>
-                </footer>
-                <!-- partial -->
             </div>
-            <!-- main-panel ends -->
         </div>
-        <!-- page-body-wrapper ends -->
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        <footer class="footer">
+            <div class="container-fluid text-center">
+                <span class="text-muted d-block text-center text-sm-start d-sm-inline-block">Lorem ipsum dolor
+                    veniam
+                    eveniet ut est distinctio nulla!</span>
+            </div>
+        </footer>
+        <!-- partial -->
+    </div>
+    <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
     </div>
     <!-- container-scroller -->
     <!-- plugins:js -->

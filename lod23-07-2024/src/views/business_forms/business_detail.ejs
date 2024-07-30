@@ -1,0 +1,230 @@
+<%- include("../shared/header.ejs") %>
+
+      <!-- partial -->
+      <!-- partial-business-form -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="col-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body business-btn">
+                  <div class="business-hading d-flex justify-content-between">
+                    <h3>INVITE DISTRIBUTOR PARTNER</h3>
+                    <BUtton class="btn">Invite History</BUtton>
+                  </div>
+                  <p class="card-description"> Tell us about the business to send the invite.</p>
+                  <div id="business_hide">
+                    <div class="invice-history mb-md-5" id="business_hide1">
+                      <a href="#" class="me-3 active-line "> Business
+                        Details</a>
+                      <!-- <a id="additional_forms_hide" href="#"> Additional Details</a> -->
+                      <a href="#"> Additional Details</a>
+
+                    </div>
+                    
+                    <form id="businessForm" class="forms-business" action="/prospective_buisnessform" method="post">
+                      <!-- Business Details Section -->
+                      <div id="businessDetails">
+                        <div class="form-group">
+                          <label class="col-form-label">Select New or Existing Business Partner*</label>
+                          <div class="d-flex">
+                            <div class="form-check">
+                              <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="membershipRadios"
+                                       id="membershipRadios1" value="" checked> New
+                              </label>
+                            </div>
+                            <div class="form-check mx-4">
+                              <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="membershipRadios"
+                                       id="membershipRadios2" value="option2"> Existing
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row g-3 align-items-center">
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label>Select Application Type*</label>
+                              <select class="form-select form-control-lg form-control px-3" name="application_type" required>
+                                <option selected disabled>Choose Application Type</option>
+                                <option value="1">Delhi</option>
+                                <option value="2">Mumbai</option>
+                                <option value="3">New Delhi</option>
+                                <option value="4">Andhra Pradesh</option>
+                                <option value="5">Bihar</option>
+                                <option value="6">Arunachal Pradesh</option>
+                                <option value="7">Chhattisgarh</option>
+                                <option value="8">Gujarat</option>
+                                <option value="9">Jammu and Kashmir</option>
+                                <option value="10">Assam</option>
+                                <option value="11">Himachal Pradesh</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label>Business Name*</label>
+                              <input type="text" class="form-control-lg form-control px-3"
+                                     placeholder="Enter Business Name" name="business_name" required>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group business-mobile-style">
+                          <label>Applicant Mobile*</label>
+                          <input type="tel" class="form-control form-control-lg px-3" placeholder="Enter Mobile Number"
+                                 name="mobile_no" required pattern="\d{10}" title="Mobile number must be exactly 10 digits">
+                          <span id="mobileError" class="error"></span>
+                        </div>
+                        <div class="row g-3">
+                          <div class="col form-group">
+                            <label>Applicant Email ID*</label>
+                            <input type="email" class="form-control-lg form-control px-3" placeholder="Enter Your Email" name="email_id" required>
+                          </div>
+                          <div class="col form-group">
+                            <label>Select Applicant Country*</label>
+                            <select class="form-select form-control form-control-lg px-3" name="country" required>
+                              <option selected disabled>Choose Country</option>
+                              <option value="1">Afghanistan</option>
+                              <option value="2">Albania</option>
+                              <option value="3">Argentina</option>
+                              <option value="4">Armenia</option>
+                              <option value="5">Australia</option>
+                              <option value="6">Bangladesh</option>
+                              <option value="7">Mexico</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="additional-btn d-flex justify-content-end">
+                          <div class="d-flex">
+                            <button id="goToNext" type="button" class="btn me-2">GO TO NEXT</button>
+                          </div>
+                        </div>
+                      </div>
+      
+                      <!-- Additional Details Section -->
+                      <div id="additionalForm" style="display: none;">
+                        <div class="invice-history mb-md-5">
+                          <a href="/prospective_buisnessform" class="me-3">Business Details</a>
+                          <a id="additional_forms_hide" href="#" class="active-line">Additional Details</a>
+                        </div>
+                        <div class="additional-detail-hading mb-3">
+                          <h3 class="text-center">Basic Details</h3>
+                        </div>
+                        <div class="row g-3">
+                          <div class="col form-group">
+                            <label>*Owner's Name</label>
+                            <input type="text" class="form-control-lg form-control px-3" name="owner_name">
+                            <span class="mt-5">Enter Owner's Name</span>
+                          </div>
+                          <div class="col form-group">
+                            <label>Select Zone</label>
+                            <select class="form-select form-control form-control-lg px-3" name="zone">
+                              <option selected disabled>Choose Zone</option>
+                              <option value="1">Central</option>
+                              <option value="2">East</option>
+                              <option value="3">North</option>
+                              <option value="4">North1</option>
+                              <option value="5">South</option>
+                              <option value="6">South1</option>
+                              <option value="7">West</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="form-group business-mobile-style">
+                          <label>*Census Code</label>
+                          <input type="text" class="form-control form-control-lg px-3" name="census">
+                          <span class="mt-5">Enter Census Code</span>
+                        </div>
+                        <div class="row g-3">
+                          <div class="col form-group">
+                            <label>*City Name</label>
+                            <input type="text" class="form-control-lg form-control px-3" name="city_name">
+                            <span class="mt-5">Enter City Name</span>
+                          </div>
+                          <div class="col form-group">
+                            <label>Delivering Plant</label>
+                            <select class="form-select form-control form-control-lg px-3" name="plant">
+                              <option selected disabled>Please Choose</option>
+                              <option value="1">AWL-DEFOT-Central</option>
+                              <option value="2">AWL-DEFOT-East</option>
+                              <option value="3">AWL-DEFOT-North</option>
+                              <option value="4">AWL-DEFOT-North1</option>
+                              <option value="5">AWL-DEFOT-South</option>
+                              <option value="6">AWL-DEFOT-South1</option>
+                              <option value="7">AWL-DEFOT-West</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="additional-btn d-flex justify-content-end">
+                          <div class="d-flex">
+                            <button class="btn me-2" type="button">CANCEL</button>
+                            <button class="btn mx-2" type="button">SAVE AS DRAFT</button>
+                            <button type="submit" class="btn">SUBMIT</button>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+
+                    <div class="additional-back-btn position-absolute">
+                      <button class="btn" onclick="window.history.go()">BACK</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        <footer class="footer">
+          <div class="container-fluid text-center">
+            <span class="text-muted d-block text-center text-sm-start d-sm-inline-block">Lorem ipsum dolor veniam
+              eveniet ut est distinctio nulla!</span>
+          </div>
+        </footer>
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+  <!-- plugins:js -->
+
+  <script>
+    document.getElementById("goToNext").addEventListener("click", function() {
+      var form = document.getElementById("businessForm");
+      var isValid = form.checkValidity();
+
+      
+    if (isValid) {
+    document.getElementById("businessDetails").style.display = "none";
+    document.getElementById("additionalForm").style.display = "block";
+    document.getElementById("business_hide1").style.display = "none";
+
+    // Add required attributes to additional details fields
+    document.querySelector("input[name='owner_name']").setAttribute("required", "required");
+    document.querySelector("input[name='census']").setAttribute("required", "required");
+    document.querySelector("input[name='city_name']").setAttribute("required", "required");
+    document.querySelector("select[name='zone']").setAttribute("required", "required");
+    document.querySelector("select[name='plant']").setAttribute("required", "required");
+  } else {
+    form.reportValidity();
+  }
+    });
+    
+    document.getElementById("additional_forms_hide").addEventListener("click", function() {
+      document.getElementById("businessDetails").style.display = "block";
+      document.getElementById("additionalForm").style.display = "none";
+      
+      // Remove required attributes from additional details fields
+      document.querySelector("input[name='owner_name']").removeAttribute("required");
+      document.querySelector("input[name='census']").removeAttribute("required");
+      document.querySelector("input[name='city_name']").removeAttribute("required");
+      document.querySelector("select[name='zone']").removeAttribute("required");
+      document.querySelector("select[name='plant']").removeAttribute("required");
+    });
+    </script>
+  
+  <%- include("../shared/footer.ejs") %>

@@ -82,26 +82,32 @@
                                             </td>
                                             <td><input type="tel" class="form-control" name="experienceReputation"
                                                     required /></td>
-                                            <td><input type="tel" class="form-control" name="marketCoverage" required />
+                                            <td><input type="tel" class="form-control" name="marketCoverage" required
+                                                    max="5" oninput="validateInput(this)" />
                                             </td>
                                             <td><input type="tel" class="form-control" name="financialStability"
-                                                    required /></td>
-                                            <td><input type="tel" class="form-control" name="productKnowledge"
-                                                    required />
+                                                    required max="5" oninput="validateInput(this)" /></td>
+                                            <td><input type="tel" class="form-control" name="productKnowledge" required
+                                                    max="5" oninput="validateInput(this)" />
                                             </td>
                                             <td><input type="tel" class="form-control" name="distributionNetwork"
                                                     required /></td>
-                                            <td><input type="tel" class="form-control" name="customerbase" required />
+                                            <td><input type="tel" class="form-control" name="customerbase" required
+                                                    max="5" oninput="validateInput(this)" />
                                             </td>
-                                            <td><input type="tel" class="form-control" name="salesMarketing" required />
+                                            <td><input type="tel" class="form-control" name="salesMarketing" required
+                                                    max="5" oninput="validateInput(this)" />
                                             </td>
-                                            <td><input type="tel" class="form-control" name="supportTraining"
-                                                    required />
+                                            <td>
+                                                <input type="tel" class="form-control" name="supportTraining" required
+                                                    max="5" oninput="validateInput(this)" />
                                             </td>
-                                            <td><input type="tel" class="form-control" name="termsConditions"
-                                                    required />
+                                            <td><input type="tel" maxlength="1" class="form-control"
+                                                    name="termsConditions" required />
                                             </td>
                                             <td><input type="tel" class="form-control" name="averageScore" readonly>
+                                                <input type="hidden" class="form-control" name="averagestatus" readonly>
+
                                             </td>
 
                                             <td><button type="button" class="btn btn-danger remove-row">Remove</button>
@@ -161,20 +167,20 @@
                     title: title
                 });
             }
-            <% if (message) { %>
-                showToast("error", "<%= message %>");
-            <% } else if (success) { %>
-                showToast("success", "<%= success %>");
-                    <% } else if (averagescoremsg) { %>
-                showToast("error", "<%= averagescoremsg %>");
-                            <% } %>
+            "  <% if (message) { %>"
+            showToast("error", "<%= message %>");
+            "<% } else if (success) { %>"
+            showToast("success", "<%= success %>");
+            " <% } else if (averagescoremsg) { %>"
+            showToast("error", "<%= averagescoremsg %>");
+            "  <% } %>"
 
         </script>
 
 
 
         <script>
-                let addedRows = 0;
+            let addedRows = 0;
             let removedRows = 0;
             const maxRows = 2;
 
@@ -194,8 +200,19 @@
                 const average = sum / 9;
                 const averageInput = row.querySelector('input[name="averageScore"]');
                 averageInput.value = !isNaN(average) ? average.toFixed(2) : '';
+                const averageStatusInput = row.querySelector('input[name="averagestatus"]');
+                if (!isNaN(average)) {
+                    averageStatusInput.value = average > 3 ? '1' : '0';
+                } else {
+                    averageStatusInput.value = '';
+                }
             }
-
+            function validateInput(input) {
+                if (input.value > 5) {
+                    alert("The value cannot be greater than 5.");
+                    input.value = '';
+                }
+            }
             document.getElementById('addRow').addEventListener('click', function () {
                 if (addedRows < maxRows) {
                     const table = document.getElementById('applicantTable').getElementsByTagName('tbody')[0];

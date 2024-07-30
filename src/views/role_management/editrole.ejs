@@ -1,0 +1,242 @@
+<%- include("../shared/header.ejs", { token: token }) %>
+
+
+    <div class="main-panel">
+        <div class="content-wrapper">
+            <div class="row">
+                <div class="col-12 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body role-management table-responsive">
+
+                            <div>
+                                <h3 class="role-hadding">Edit ROLE</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body role-management table-responsive">
+                            <form action="/role_managment/editrole" method="post" enctype="multipart/form-data">
+                                <div class="row">
+
+                                    <div class="col-lg-4 col-12">
+                                        <div class="form-group">
+                                            <label for="role">Select role</label>
+                                            <select name="role" class="form-control" required>
+                                                <option value="" <% if (editroleview.role==='' ) { %>selected<% } %>
+                                                        >Select role</option>
+                                                <option value="ase" <% if (editroleview.role==='ase' ) { %>selected<% }
+                                                        %>>ASE</option>
+                                                <option value="asm" <% if (editroleview.role==='asm' ) { %>selected<% }
+                                                        %>>ASM</option>
+                                                <option value="rsm" <% if (editroleview.role==='rsm' ) { %>selected<% }
+                                                        %>>RSM</option>
+                                                <option value="ZGTM" <% if (editroleview.role==='ZGTM' ) { %>selected<%
+                                                        } %>>ZGTM</option>
+                                                <option value="ZSM" <% if (editroleview.role==='ZSM' ) { %>selected<% }
+                                                        %>>ZSM</option>
+                                                <option value="HODistributionHelpDesk" <% if
+                                                    (editroleview.role==='HODistributionHelpDesk' ) { %>selected<% } %>
+                                                        >HO Distribution Help Desk</option>
+                                                <option value="ClusterHead" <% if (editroleview.role==='ClusterHead' ) {
+                                                    %>selected<% } %>>Cluster Head</option>
+                                                <option value="SND HOD" <% if (editroleview.role==='SND HOD' ) { %>
+                                                    selected<% } %>>SND HOD</option>
+                                                <option value="MDM" <% if (editroleview.role==='MDM' ) { %>selected<% }
+                                                        %>>MDM</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-12">
+                                        <div class="form-group">
+                                            <label for="displayname">Display Name</label>
+                                            <input type="text" name="displayname" class="form-control" id="displayname"
+                                                value="<%= editroleview.displayname %>" placeholder="Enter displayname"
+                                                required />
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-12">
+                                        <div class="form-group">
+                                            <label for="DASHBOARD">DASHBOARD</label>
+                                            <select class="form-control" name="Dashboard" id="DASHBOARD" required>
+                                                <option value="1" <% if (editroleview.Dashboard==='1' ) { %>selected<% }
+                                                        %>>Yes</option>
+                                                <option value="0" <% if (editroleview.Dashboard==='0' ) { %>selected<% }
+                                                        %>>No</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-12">
+                                        <div class="form-group">
+                                            <label for="ProspectiveDistributors">Prospective Distributors</label>
+                                            <select class="form-control" name="ProspectiveDistributors"
+                                                id="ProspectiveDistributors" required>
+                                                <option value="1" <% if (editroleview.ProspectiveDistributors==='1' ) {
+                                                    %>selected<% } %>>Yes</option>
+                                                <option value="0" <% if (editroleview.ProspectiveDistributors==='0' ) {
+                                                    %>selected<% } %>>No</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-12">
+                                        <div class="form-group">
+                                            <label for="Invite">Invite</label>
+                                            <select class="form-control" name="Invite" id="Invite" required>
+                                                <option value="1" <% if (editroleview.Invite==='1' ) { %>selected<% } %>
+                                                        >Yes</option>
+                                                <option value="0" <% if (editroleview.Invite==='0' ) { %>selected<% } %>
+                                                        >No</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-12">
+                                        <div class="form-group">
+                                            <label for="ScoutingSheet">ScoutingSheet</label>
+                                            <select class="form-control" name="ScoutingSheet" id="ScoutingSheet"
+                                                required>
+                                                <option value="1" <% if (editroleview.ScoutingSheet==='1' ) { %>selected
+                                                    <% } %>
+                                                        >Yes</option>
+                                                <option value="0" <% if (editroleview.ScoutingSheet==='0' ) { %>selected
+                                                    <% } %>
+                                                        >No</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-12">
+                                        <div class="form-group">
+                                            <label for="ApproverInbox">Approver Inbox</label>
+                                            <select class="form-control" name="ApproverInbox" id="ApproverInbox"
+                                                required>
+                                                <option value="1" <% if (editroleview.ApproverInbox==='1' ) { %>selected
+                                                    <% } %>>Yes
+                                                </option>
+                                                <option value="0" <% if (editroleview.ApproverInbox==='0' ) { %>selected
+                                                    <% } %>>No
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-12">
+                                        <div class="form-group">
+                                            <label for="ApplicationList">Application List</label>
+                                            <select class="form-control" name="ApplicationList" id="ApplicationList"
+                                                required>
+                                                <option value="1" <% if (editroleview.ApplicationList==='1' ) { %>
+                                                    selected<% } %>>Yes</option>
+                                                <option value="0" <% if (editroleview.ApplicationList==='0' ) { %>
+                                                    selected<% } %>>No</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-12">
+                                        <div class="form-group">
+                                            <label for="DistributorsList">Distributors List</label>
+                                            <select class="form-control" name="DistributorsList" id="DistributorsList"
+                                                required>
+                                                <option value="1" <% if (editroleview.DistributorsList==='1' ) { %>
+                                                    selected<% } %>>Yes</option>
+                                                <option value="0" <% if (editroleview.DistributorsList==='0' ) { %>
+                                                    selected<% } %>>No</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-12">
+                                        <div class="form-group">
+                                            <label for="RoleManagement">Role Management</label>
+                                            <select class="form-control" name="RoleManagement" id="RoleManagement"
+                                                required>
+                                                <option value="1" <% if (editroleview.RoleManagement==='1' ) { %>
+                                                    selected<% } %>>Yes</option>
+                                                <option value="0" <% if (editroleview.RoleManagement==='0' ) { %>
+                                                    selected<% } %>>No</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-12">
+                                        <div class="form-group">
+                                            <label for="UserManagement">User Management</label>
+                                            <select class="form-control" name="UserManagement" id="UserManagement"
+                                                required>
+                                                <option value="1" <% if (editroleview.UserManagement==='1' ) { %>
+                                                    selected<% } %>>Yes</option>
+                                                <option value="0" <% if (editroleview.UserManagement==='0' ) { %>
+                                                    selected<% } %>>No</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-12">
+                                        <div class="form-group">
+                                            <label for="TerritoryManagement">Territory Management</label>
+                                            <select class="form-control" name="TerritoryManagement"
+                                                id="TerritoryManagement" required>
+                                                <option value="1" <% if (editroleview.TerritoryManagement==='1' ) { %>
+                                                    selected<% } %>>Yes</option>
+                                                <option value="0" <% if (editroleview.TerritoryManagement==='0' ) { %>
+                                                    selected<% } %>>No</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-4 col-12 mt-lg-4">
+                                        <div class="form-group">
+                                            <button type="submit" class="btn w-100 btn-success">Submit</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        <footer class="footer">
+            <div class="container-fluid text-center">
+                <span class="text-muted d-block text-center text-sm-start d-sm-inline-block">Lorem ipsum dolor
+                    veniam
+                    eveniet ut est distinctio nulla!</span>
+            </div>
+        </footer>
+        <!-- partial -->
+    </div>
+    <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+    </div>
+    <script>
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+        });
+
+        function showToast(icon, title) {
+            Toast.fire({
+                icon: icon,
+                title: title
+            });
+        }
+        "  <% if (message) { %>"
+        showToast("error", "<%= message %>");
+        "<% } else if (success) { %>"
+        showToast("success", "<%= success %>");
+
+        "  <% } %>"
+
+    </script>
+    <%- include("../shared/footer.ejs") %>

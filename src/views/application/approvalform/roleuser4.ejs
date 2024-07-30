@@ -1,0 +1,2769 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Distributor Details</title>
+    <!-- plugins:css -->
+    <link
+      rel="stylesheet"
+      href="../../public/vendors/mdi/css/materialdesignicons.min.css"
+    />
+    <!-- <link rel="stylesheet" href="./assets/vendors/css/vendor.bundle.base.css"> -->
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="../../public/css/style.css" />
+    <link rel="stylesheet" href="../../public/css/style.css" />
+
+    <link rel="stylesheet" href="../../public/css/responsive.css" />
+    <!-- End layout styles -->
+    <link rel="stylesheet" href="../../public/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../public/DataTables/datatables.min.css" />
+
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 15px;
+        text-align: left;
+      }
+
+      th,
+      td {
+        padding: 12px;
+        border-bottom: 1px solid #ddd;
+      }
+
+      th {
+        background-color: #f2f2f2;
+      }
+
+      tr:hover {
+        background-color: #f1f1f1;
+      }
+
+      td a {
+        color: blue;
+        text-decoration: none;
+      }
+
+      td a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container-scroller">
+      <!-- partial:../../partials/_navbar.html -->
+      <nav
+        class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row"
+      >
+        <div
+          class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center"
+        >
+          <a class="navbar-brand brand-logo logo-hide" href="/"
+            ><img src="../../public/images/Group 46 (1).jpg" alt="logo"
+          /></a>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-stretch">
+          <button
+            class="navbar-toggler navbar-toggler align-self-center"
+            type="button"
+            data-toggle="minimize"
+          >
+            <span class="mdi mdi-menu"></span>
+          </button>
+          <div
+            class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center"
+          >
+            <a class="navbar-brand brand-logo" href="/"
+              ><img src="../../public/images/Group 46 (1).jpg" alt="logo"
+            /></a>
+          </div>
+          <ul class="navbar-nav navbar-nav-right">
+            <li class="nav-item nav-profile dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                id="profileDropdown"
+                href="#"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <div class="nav-profile-img">
+                  <img
+                    src="../../public/images/faces/user-avatar.webp"
+                    alt="image"
+                  />
+                  <span class="availability-status online"></span>
+                </div>
+                <div class="nav-profile-text">
+                  <p class="mb-1 text-black">ABC Distributor</p>
+                </div>
+              </a>
+              <div
+                class="dropdown-menu navbar-dropdown"
+                aria-labelledby="profileDropdown"
+              >
+                <a class="dropdown-item" href="#">
+                  <i class="mdi mdi-cached me-2 text-success"></i> Activity Log
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/login_role">
+                  <i class="mdi mdi-logout me-2 text-primary"></i> Signout
+                </a>
+              </div>
+            </li>
+          </ul>
+          <button
+            class="navbar-toggler navbar-toggler-right d-lg-none align-self-center"
+            type="button"
+            data-toggle="offcanvas"
+          >
+            <span class="mdi mdi-menu"></span>
+          </button>
+        </div>
+      </nav>
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:../../partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/userrole">
+                <i class="mdi mdi-home menu-icon"></i>
+                <span class="menu-title">Details & Document Upload</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/doc_correction">
+                <i class="mdi mdi-library-books menu-icon"></i>
+                <span class="menu-title">Document Correction</span>
+              </a>
+            </li>
+            <!-- <li class="nav-item">
+            <a class="nav-link" href="./pages/prospective_distributors/prospective_distributors.html">
+              <i class="mdi mdi-content-save-all menu-icon"></i>
+              <span class="menu-title">Prospective Distributors</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="pages/business_forms/business_detail.html">
+              <i class="mdi mdi-contacts menu-icon"></i>
+              <span class="menu-title">Invite</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./pages/tables/opportunity.html">
+              <i class="mdi mdi-human-greeting menu-icon"></i>
+              <span class="menu-title">Opportunity</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./pages/tables/approvers_inbox.html">
+              <i class="mdi mdi-message menu-icon"></i>
+              <span class="menu-title"> Approver's Inbox</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false"
+              aria-controls="ui-basic">
+              <i class="mdi mdi-account-box-outline menu-icon"></i>
+              <span class="menu-title">Application List</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-basic">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="./pages/application/document_captur.html">Document
+                    Captur</a></li>
+                <li class="nav-item"> <a class="nav-link" href="./pages/application/under_review.html">Under
+                    Review</a></li>
+                <li class="nav-item"> <a class="nav-link" href="./pages/application/completed.html">Completed</a>
+                </li>
+                <li class="nav-item"> <a class="nav-link" href="./pages/application/rejected.html">Rejected</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./pages/distributors/distributors_list.html">
+              <i class="mdi mdi-library-books menu-icon"></i>
+              <span class="menu-title"> Distributors List</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./pages/role_management/role_management.html">
+              <i class="mdi mdi-roller-skate menu-icon"></i>
+              <span class="menu-title"> Role Management</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./pages/role_management/user_management.html">
+              <i class="mdi mdi-source-repository menu-icon"></i>
+              <span class="menu-title"> User Management</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./pages/role_management/territory_managemant.html">
+              <i class="mdi mdi-progress-wrench menu-icon"></i>
+              <span class="menu-title"> Territory Management</span>
+            </a>
+          </li> -->
+          </ul>
+        </nav>
+        <!-- partial -->
+        <div class="main-panel role-user-status">
+          <div class="content-wrapper">
+            <div class="row">
+              <div class="col-12 grid-margin stretch-card">
+                <div class="card p-3 table-responsive">
+                  <div class="distributor-first">
+                    <!-- ***************role-user-wizard-form-strat************ -->
+                    <section class="wizard-section" id="form1_role_user">
+                      <div class="row no-gutters">
+                        <div class="col-lg-12 col-md-12">
+                          <div class="form-wizard m-md-3">
+                            <form
+                              action="/userrole/role4"
+                              method="post"
+                              enctype="multipart/form-data"
+                              id="myForm"
+                            >
+                              <div class="form-wizard-header">
+                                <ul
+                                  class="list-unstyled form-wizard-steps clearfix d-flex justify-content-center"
+                                >
+                                  <li class="active"><span>1</span></li>
+                                  <li><span>2</span></li>
+                                  <li><span>3</span></li>
+                                  <li><span>4</span></li>
+                                  <li><span>5</span></li>
+                                  <li><span>6</span></li>
+                                  <li><span>7</span></li>
+                                  <li><span>8</span></li>
+                                  <li><span>9</span></li>
+                                  <li><span>10</span></li>
+                                </ul>
+                                <ul
+                                  class="list-unstyled clearfix distributor-wizad-status-name d-flex justify-content-center"
+                                >
+                                  <li class="active">Personal Details</li>
+                                  <li>Business Details</li>
+                                  <li>INFRA</li>
+                                  <li>Expenses Estimation</li>
+                                  <li>TDS Declaration</li>
+                                  <li>BDBPL - TDS Declaration</li>
+                                  <li>ITR</li>
+                                  <li>GSTR</li>
+                                  <li>Bank Details</li>
+                                  <li>Summary</li>
+                                </ul>
+                              </div>
+
+                              <!-- ************infra-details************** -->
+                              <fieldset class="wizard-fieldset">
+                                <div
+                                  class="d-flex mb-md-5 heading-text justify-content-center py-3"
+                                >
+                                  <span class="position-relative"
+                                    >INFRASTRUCTURE</span
+                                  >
+                                </div>
+                                <section class="secend-wizard">
+                                  <div class="main-content">
+                                    <div
+                                      class="row justify-content-center pt-0 p-4 step-sec-wizard"
+                                    >
+                                      <div class="col-md-10 text-center">
+                                        <div class="wizard-form py-4 my-2">
+                                          <ul
+                                            id="progressBar"
+                                            class="progressbar px-lg-5 px-0 d-flex align-items-center justify-content-between"
+                                          >
+                                            <li
+                                              id="progressList-1"
+                                              class="d-inline-block fw-bold w-25 position-relative text-center float-start progressbar-list active"
+                                            >
+                                              GENERAL INFORAMATION
+                                            </li>
+                                            <li
+                                              id="progressList-2"
+                                              class="d-inline-block fw-bold w-25 position-relative text-center float-start progressbar-list"
+                                            >
+                                              FACILITY AND EXPENSE
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <fieldset
+                                      class="step-sec-wizard justify-content-center"
+                                    >
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group">
+                                          <label
+                                            >Enter Number Of Vehicle *</label
+                                          >
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <input
+                                              type="text"
+                                              class="form-control"
+                                              id="number_vehicle1"
+                                              name="number_vehicle"
+                                              required
+                                            />
+                                            <label
+                                              for="number_vehicle1"
+                                              class="wizard-form-text-label"
+                                              >Number of Vehicle *</label
+                                            >
+                                            <div
+                                              class="wizard-form-error"
+                                            ></div>
+                                          </div>
+                                        </div>
+                                        <div class="col-md-6"></div>
+                                        <div class="col-md-6">
+                                          <div class="row">
+                                            <div class="col-md-6">
+                                              <div class="form-group">
+                                                <input
+                                                  type="text"
+                                                  class="form-control"
+                                                  id="number_vehicle2"
+                                                  name="non_mechanical_vehicle"
+                                                  required
+                                                />
+                                                <label
+                                                  for="number_vehicle"
+                                                  class="wizard-form-text-label"
+                                                  >Non Mechanical Vehicle
+                                                  *</label
+                                                >
+                                                <div
+                                                  class="wizard-form-error"
+                                                ></div>
+                                              </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                              <div class="form-group">
+                                                <input
+                                                  type="text"
+                                                  class="form-control"
+                                                  id="number_vehicle3"
+                                                  name="mechanical_vehicle"
+                                                  required
+                                                />
+                                                <label
+                                                  for="number_vehicle"
+                                                  class="wizard-form-text-label"
+                                                  >Mechanical Vehicle *</label
+                                                >
+                                                <div
+                                                  class="wizard-form-error"
+                                                ></div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <div>
+                                        <table id="vehicleTable">
+                                          <thead>
+                                            <tr>
+                                              <th>RC Number</th>
+                                              <th>Fleet Vehicle Size (MT)</th>
+                                              <th>Vehicle Detail</th>
+                                              <th>Vehicle (Owned/Rented)</th>
+                                              <th>RC Book Photo</th>
+                                              <th>Vehicle Photo</th>
+                                            </tr>
+                                          </thead>
+                                          <tbody id="tableBody">
+                                            <!-- Table rows will be inserted here -->
+                                          </tbody>
+                                        </table>
+                                      </div>
+
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group">
+                                          <label>Opening Time *</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <input
+                                              type="time"
+                                              class="form-control"
+                                              id="opning_time"
+                                              name="opening_time"
+                                              required
+                                            />
+                                            <div
+                                              class="wizard-form-error"
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group">
+                                          <label>Closing Time *</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <input
+                                              type="time"
+                                              class="form-control"
+                                              id="closing_time"
+                                              name="closing_time"
+                                              required
+                                            />
+                                            <div
+                                              class="wizard-form-error"
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="form-group">
+                                        <label> Manpower Finalization</label>
+                                      </div>
+
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group"></div>
+                                        <div class="col-md-6">
+                                          <div class="row">
+                                            <div class="col-md-6">
+                                              <div class="col-md-6 form-group">
+                                                <label>No of Employees*</label>
+                                              </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                              <div class="col-md-6 form-group">
+                                                <label
+                                                  >No. of Exclusive
+                                                  Employees*</label
+                                                >
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group">
+                                          <label>Manager*</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="row">
+                                            <div class="col-md-6">
+                                              <div class="form-group">
+                                                <input
+                                                  type="text"
+                                                  class="form-control"
+                                                  id="Manager_emp"
+                                                  name="Manager_emp"
+                                                  required
+                                                />
+                                                <label
+                                                  for="number_vehicle"
+                                                  class="wizard-form-text-label"
+                                                ></label>
+                                                <div
+                                                  class="wizard-form-error"
+                                                ></div>
+                                              </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                              <div class="form-group">
+                                                <input
+                                                  type="text"
+                                                  class="form-control"
+                                                  id="Manager_emp_exclusive"
+                                                  name="Manager_emp_exclusive"
+                                                  required
+                                                />
+                                                <label
+                                                  for="number_vehicle"
+                                                  class="wizard-form-text-label"
+                                                ></label>
+                                                <div
+                                                  class="wizard-form-error"
+                                                ></div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group">
+                                          <label>Salesman*</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="row">
+                                            <div class="col-md-6">
+                                              <div class="form-group">
+                                                <input
+                                                  type="text"
+                                                  class="form-control"
+                                                  id="salesmen_emp"
+                                                  name="salesmen_emp"
+                                                  required
+                                                />
+                                                <label
+                                                  for="number_vehicle"
+                                                  class="wizard-form-text-label"
+                                                ></label>
+                                                <div
+                                                  class="wizard-form-error"
+                                                ></div>
+                                              </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                              <div class="form-group">
+                                                <input
+                                                  type="text"
+                                                  class="form-control"
+                                                  id="salesman_emp_exclusive"
+                                                  name="number_vehicle"
+                                                  required
+                                                />
+                                                <label
+                                                  for="number_vehicle"
+                                                  class="wizard-form-text-label"
+                                                ></label>
+                                                <div
+                                                  class="wizard-form-error"
+                                                ></div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group">
+                                          <label>Driver *</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="row">
+                                            <div class="col-md-6">
+                                              <div class="form-group">
+                                                <input
+                                                  type="text"
+                                                  class="form-control"
+                                                  id="driver_emp"
+                                                  name="driver_emp"
+                                                  required
+                                                />
+                                                <label
+                                                  for="number_vehicle"
+                                                  class="wizard-form-text-label"
+                                                ></label>
+                                                <div
+                                                  class="wizard-form-error"
+                                                ></div>
+                                              </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                              <div class="form-group">
+                                                <input
+                                                  type="text"
+                                                  class="form-control"
+                                                  id="driver_emp_exclusive"
+                                                  name="driver_emp_exclusive"
+                                                  required
+                                                />
+                                                <label
+                                                  for="number_vehicle"
+                                                  class="wizard-form-text-label"
+                                                ></label>
+                                                <div
+                                                  class="wizard-form-error"
+                                                ></div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group">
+                                          <label>Delivery Boys *</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="row">
+                                            <div class="col-md-6">
+                                              <div class="form-group">
+                                                <input
+                                                  type="text"
+                                                  class="form-control"
+                                                  id="delivery_boys_emp"
+                                                  name="delivery_boys_emp"
+                                                  required
+                                                />
+                                                <label
+                                                  for="number_vehicle"
+                                                  class="wizard-form-text-label"
+                                                ></label>
+                                                <div
+                                                  class="wizard-form-error"
+                                                ></div>
+                                              </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                              <div class="form-group">
+                                                <input
+                                                  type="text"
+                                                  class="form-control"
+                                                  id="delivery_boys_emp_exclusive"
+                                                  name="delivery_boys_emp_exclusive"
+                                                  required
+                                                />
+                                                <label
+                                                  for="number_vehicle"
+                                                  class="wizard-form-text-label"
+                                                ></label>
+                                                <div
+                                                  class="wizard-form-error"
+                                                ></div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group">
+                                          <label>Operator *</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="row">
+                                            <div class="col-md-6">
+                                              <div class="form-group">
+                                                <input
+                                                  type="text"
+                                                  class="form-control"
+                                                  id="Operator_emp"
+                                                  name="Operator_emp"
+                                                  required
+                                                />
+                                                <label
+                                                  for="number_vehicle"
+                                                  class="wizard-form-text-label"
+                                                ></label>
+                                                <div
+                                                  class="wizard-form-error"
+                                                ></div>
+                                              </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                              <div class="form-group">
+                                                <input
+                                                  type="text"
+                                                  class="form-control"
+                                                  id="Operator_emp_exclusive"
+                                                  name="Operator_emp_exclusive"
+                                                  required
+                                                />
+                                                <label
+                                                  for="number_vehicle"
+                                                  class="wizard-form-text-label"
+                                                ></label>
+                                                <div
+                                                  class="wizard-form-error"
+                                                ></div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group">
+                                          <label>Others *</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="row">
+                                            <div class="col-md-6">
+                                              <div class="form-group">
+                                                <input
+                                                  type="text"
+                                                  class="form-control"
+                                                  id="others_emp"
+                                                  name="others_emp"
+                                                  required
+                                                />
+                                                <label
+                                                  for="number_vehicle"
+                                                  class="wizard-form-text-label"
+                                                ></label>
+                                                <div
+                                                  class="wizard-form-error"
+                                                ></div>
+                                              </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                              <div class="form-group">
+                                                <input
+                                                  type="text"
+                                                  class="form-control"
+                                                  id="others_emp_exclusive"
+                                                  name="others_emp_exclusive"
+                                                  required
+                                                />
+                                                <label
+                                                  for="number_vehicle"
+                                                  class="wizard-form-text-label"
+                                                ></label>
+                                                <div
+                                                  class="wizard-form-error"
+                                                ></div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <div
+                                        class="form-group"
+                                        style="margin-top: 20px"
+                                      >
+                                        <label style="font-weight: 700"
+                                          >External Brands Associated
+                                          With</label
+                                        >
+                                      </div>
+
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group"></div>
+                                        <div class="col-md-12">
+                                          <div class="row">
+                                            <div class="col-md-6">
+                                              <div class="form-group">
+                                                <input
+                                                  type="text"
+                                                  class="form-control"
+                                                  id="external_brands"
+                                                  name="external_brands"
+                                                  required
+                                                />
+                                                <label
+                                                  for="number_vehicle"
+                                                  class="wizard-form-text-label"
+                                                  >Brand*</label
+                                                >
+                                                <div
+                                                  class="wizard-form-error"
+                                                ></div>
+                                              </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                              <div class="form-group">
+                                                <input
+                                                  type="text"
+                                                  class="form-control"
+                                                  id="external_company"
+                                                  name="external_company"
+                                                  required
+                                                />
+                                                <label
+                                                  for="number_vehicle"
+                                                  class="wizard-form-text-label"
+                                                  >Company*</label
+                                                >
+                                                <div
+                                                  class="wizard-form-error"
+                                                ></div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group"></div>
+                                        <div class="col-md-12">
+                                          <div class="row">
+                                            <div class="col-md-6">
+                                              <div class="form-group">
+                                                <input
+                                                  type="text"
+                                                  class="form-control"
+                                                  id="external_industry"
+                                                  name="external_industry"
+                                                  required
+                                                />
+                                                <label
+                                                  for="external_industry"
+                                                  class="wizard-form-text-label"
+                                                  >Industry*</label
+                                                >
+                                                <div
+                                                  class="wizard-form-error"
+                                                ></div>
+                                              </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                              <div class="form-group">
+                                                <input
+                                                  type="text"
+                                                  class="form-control"
+                                                  id="external_noOfProducts"
+                                                  name="external_noOfProducts"
+                                                  required
+                                                />
+                                                <label
+                                                  for="external_noOfProducts"
+                                                  class="wizard-form-text-label"
+                                                  >Number of Products*
+                                                </label>
+                                                <div
+                                                  class="wizard-form-error"
+                                                ></div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group"></div>
+                                        <div class="col-md-12">
+                                          <div class="row">
+                                            <div class="col-md-6">
+                                              <div class="form-group">
+                                                <input
+                                                  type="text"
+                                                  class="form-control"
+                                                  id="manager_area_of_opertaion"
+                                                  name="manager_area_of_opertaion"
+                                                  required
+                                                />
+                                                <label
+                                                  for="manager_area_of_opertaion"
+                                                  class="wizard-form-text-label"
+                                                  >Area of Operation*</label
+                                                >
+                                                <div
+                                                  class="wizard-form-error"
+                                                ></div>
+                                              </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                              <div class="form-group">
+                                                <input
+                                                  type="text"
+                                                  class="form-control"
+                                                  id="external_dsm_count"
+                                                  name="external_dsm_count"
+                                                  required
+                                                />
+                                                <label
+                                                  for="external_dsm_count"
+                                                  class="wizard-form-text-label"
+                                                  >DSM Count*</label
+                                                >
+                                                <div
+                                                  class="wizard-form-error"
+                                                ></div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group"></div>
+                                        <div class="col-md-12">
+                                          <div class="row">
+                                            <div class="col-md-6">
+                                              <div class="form-group">
+                                                <input
+                                                  type="text"
+                                                  class="form-control"
+                                                  id="external_noOf_outlet_coverage"
+                                                  name="external_noOf_outlet_coverage"
+                                                  required
+                                                />
+                                                <label
+                                                  for="external_noOf_outlet_coverage"
+                                                  class="wizard-form-text-label"
+                                                  >No of oulet Coverage*</label
+                                                >
+                                                <div
+                                                  class="wizard-form-error"
+                                                ></div>
+                                              </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                              <div class="form-group">
+                                                <input
+                                                  type="text"
+                                                  class="form-control"
+                                                  id="external_dsm/sfa"
+                                                  name="external_dsm/sfa"
+                                                  required
+                                                />
+                                                <label
+                                                  for="external_dsm/sfa"
+                                                  class="wizard-form-text-label"
+                                                  >Using SFA/DSM*</label
+                                                >
+                                                <div
+                                                  class="wizard-form-error"
+                                                ></div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group"></div>
+                                        <div class="col-md-12">
+                                          <div class="row">
+                                            <div class="col-md-6">
+                                              <div class="form-group">
+                                                <input
+                                                  type="text"
+                                                  class="form-control"
+                                                  id="external_tenure_company"
+                                                  name="external_tenure_company"
+                                                  required
+                                                />
+                                                <label
+                                                  for="external_tenure_company"
+                                                  class="wizard-form-text-label"
+                                                  >Tenure with company*</label
+                                                >
+                                                <div
+                                                  class="wizard-form-error"
+                                                ></div>
+                                              </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                              <div class="form-group">
+                                                <input
+                                                  type="text"
+                                                  class="form-control"
+                                                  id="external_appx_cross"
+                                                  name="external_appx_cross"
+                                                  required
+                                                />
+                                                <label
+                                                  for="external_appx_cross"
+                                                  class="wizard-form-text-label"
+                                                  >Appx gross margin*</label
+                                                >
+                                                <div
+                                                  class="wizard-form-error"
+                                                ></div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group"></div>
+                                        <div class="col-md-12">
+                                          <div class="row">
+                                            <div class="col-md-6">
+                                              <div class="form-group">
+                                                <input
+                                                  type="text"
+                                                  class="form-control"
+                                                  id="external_monthly_t/o"
+                                                  name="external_monthly_t/o"
+                                                  required
+                                                />
+                                                <label
+                                                  for="external_monthly_t/o"
+                                                  class="wizard-form-text-label"
+                                                  >Monthly T/O(in lacs)</label
+                                                >
+                                                <div
+                                                  class="wizard-form-error"
+                                                ></div>
+                                              </div>
+                                            </div>
+                                            <div class="col-md-6"></div>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <div
+                                        class="form-group clearfix d-flex justify-content-center mt-md-5"
+                                      >
+                                        <a
+                                          href="javascript:;"
+                                          class="form-wizard-previous-btn btn me-2"
+                                          >Back To Bussiness Details</a
+                                        >
+                                        <a
+                                          class="btn next_infra form-wizard-next-mine"
+                                          >Next</a
+                                        >
+                                      </div>
+                                    </fieldset>
+
+                                    <fieldset
+                                      class="step-sec-wizard form-business"
+                                    >
+                                      <div class="form-group">
+                                        <label>Availabilty of Warehouse</label>
+                                      </div>
+                                      <div class="form-group">
+                                        <div class="row g-3 align-items-center">
+                                          <div class="col-md-6">
+                                            <label> Owned/Rented*</label>
+                                          </div>
+                                          <div class="col-md-6">
+                                            <div class="wizard-form-radio">
+                                              <input
+                                                name="infra_radio_ownership"
+                                                id="ownership_own"
+                                                type="radio"
+                                                value="own"
+                                                required
+                                              />
+                                              <label for="ownership_own"
+                                                >Own</label
+                                              >
+                                            </div>
+                                            <div class="wizard-form-radio">
+                                              <input
+                                                name="infra_radio_ownership"
+                                                id="ownership_hented"
+                                                type="radio"
+                                                value="rented"
+                                                required
+                                              />
+                                              <label for="ownership_hented"
+                                                >Rented</label
+                                              >
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group">
+                                          <label
+                                            >Number Of Days Of Investment
+                                            *</label
+                                          >
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <input
+                                              type="tel"
+                                              class="form-control"
+                                              id="days_investment"
+                                              name="days_investment"
+                                              required
+                                            />
+                                            <label
+                                              for="days_investment"
+                                              class="wizard-form-text-label"
+                                              >Enter Days Of Investment *</label
+                                            >
+                                            <div
+                                              class="wizard-form-error"
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group">
+                                          <label
+                                            >Total Godown Space(SQ.FT) *</label
+                                          >
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <input
+                                              type="tel"
+                                              class="form-control"
+                                              id="Total_Godown_Space1"
+                                              name="Total_Godown_Space"
+                                              required
+                                            />
+                                            <label
+                                              for="Total_Godown_Space1"
+                                              class="wizard-form-text-label"
+                                              >Total Godown Space(SQ.FT)
+                                              *</label
+                                            >
+                                            <div
+                                              class="wizard-form-error"
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group">
+                                          <label
+                                            >Excepted Outlet Coverage *</label
+                                          >
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <input
+                                              type="tel"
+                                              class="form-control"
+                                              id="Outlet_Coverage1"
+                                              name="Outlet_Coverage"
+                                              required
+                                            />
+                                            <label
+                                              for="Outlet_Coverage1"
+                                              class="wizard-form-text-label"
+                                              >Excepted Outlet Coverage *</label
+                                            >
+                                            <div
+                                              class="wizard-form-error"
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group">
+                                          <label
+                                            >Allocated Space for AWL(SQ.FT)
+                                            *</label
+                                          >
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <input
+                                              type="tel"
+                                              class="form-control"
+                                              id="Space_for_AWL"
+                                              name="Space_for_AWL"
+                                              required
+                                            />
+                                            <label
+                                              for="Space_for_AWL"
+                                              class="wizard-form-text-label"
+                                              >Allocated Space for AWL(SQ.FT)
+                                              *</label
+                                            >
+                                            <div
+                                              class="wizard-form-error"
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group">
+                                          <label
+                                            >Unloading Space(SQ.FT) *</label
+                                          >
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <input
+                                              type="tel"
+                                              class="form-control"
+                                              id="Unloading_Space"
+                                              name="Unloading_Space"
+                                              required
+                                            />
+                                            <label
+                                              for="Unloading_Space"
+                                              class="wizard-form-text-label"
+                                              >Unloading Space(SQ.FT) *</label
+                                            >
+                                            <div
+                                              class="wizard-form-error"
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group">
+                                          <label
+                                            >Number Of Person who will handle
+                                            business *</label
+                                          >
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <input
+                                              type="tel"
+                                              class="form-control"
+                                              id="person_handle_business"
+                                              name="person_handle_business"
+                                              required
+                                            />
+                                            <label
+                                              for="person_handle_business"
+                                              class="wizard-form-text-label"
+                                              >Number Of Person who will handle
+                                              business *</label
+                                            >
+                                            <div
+                                              class="wizard-form-error"
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group">
+                                          <label
+                                            >Managing Person Contact Number
+                                            *</label
+                                          >
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <input
+                                              type="tel"
+                                              class="form-control"
+                                              id="managing_person_contact"
+                                              name="managing_person_contact"
+                                              required
+                                            />
+                                            <label
+                                              for="managing_person_contact"
+                                              class="wizard-form-text-label"
+                                              >Managing Person Contact Number
+                                              *</label
+                                            >
+                                            <div
+                                              class="wizard-form-error"
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group">
+                                          <label>Designation *</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <input
+                                              type="tel"
+                                              class="form-control"
+                                              id="facility_designation"
+                                              name="facility_designation"
+                                              required
+                                            />
+                                            <label
+                                              for="facility_designation"
+                                              class="wizard-form-text-label"
+                                              >Designation *</label
+                                            >
+                                            <div
+                                              class="wizard-form-error"
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group">
+                                          <label
+                                            >No. of Loading and Unloading ponits
+                                            *</label
+                                          >
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <input
+                                              type="tel"
+                                              class="form-control"
+                                              id="Unloading_ponits"
+                                              name="Unloading_ponits"
+                                              required
+                                            />
+                                            <label
+                                              for="Unloading_ponits"
+                                              class="wizard-form-text-label"
+                                              >No. of Loading and Unloading
+                                              ponits *</label
+                                            >
+                                            <div
+                                              class="wizard-form-error"
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <div
+                                        class="row g-3 align-items-center"
+                                        style="display: none"
+                                      >
+                                        <div class="col-md-6 form-group">
+                                          <label>Power Backup (in Hrs) *</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <div class="slidecontainer">
+                                              <input
+                                                type="range"
+                                                class="form-range slider"
+                                                min="0"
+                                                max="24"
+                                                step="1"
+                                                value="24"
+                                                id="myRangeHrs"
+                                                required
+                                              />
+                                              <p>
+                                                Hrs:
+                                                <span id="updateHrs">24</span>
+                                              </p>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="form-group d-flex justify-content-between"
+                                      >
+                                        <label> Availabilty of Pallets*</label>
+                                        <div class="col-md-6">
+                                          <div class="wizard-form-radio">
+                                            <input
+                                              name="Availabilty_Pallets"
+                                              id="ownership_own"
+                                              type="radio"
+                                              required
+                                            />
+                                            <label for="Availabilty_Pallets"
+                                              >Yes</label
+                                            >
+                                          </div>
+                                          <div class="wizard-form-radio">
+                                            <input
+                                              name="Availabilty_Pallets"
+                                              id="ownership_hented"
+                                              type="radio"
+                                              required
+                                            />
+                                            <label for="no_Availabilty_Pallets"
+                                              >No</label
+                                            >
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <div class="form-group mt-10">
+                                        <label class="mt-5"
+                                          >Device Details*</label
+                                        >
+                                      </div>
+
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group">
+                                          <label for="handheld_device"
+                                            >Handheld Device *</label
+                                          >
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <input
+                                              type="tel"
+                                              class="form-control"
+                                              id="handheld_device"
+                                              name="handheld_device"
+                                              required
+                                            />
+                                            <label
+                                              for="handheld_device"
+                                              class="wizard-form-text-label"
+                                              >Handheld Device *</label
+                                            >
+                                            <div
+                                              class="wizard-form-error"
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group">
+                                          <label for="computer"
+                                            >Computer *</label
+                                          >
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <input
+                                              type="tel"
+                                              class="form-control"
+                                              id="computer"
+                                              name="facility_computer"
+                                              required
+                                            />
+                                            <label
+                                              for="facility_computer"
+                                              class="wizard-form-text-label"
+                                              >Computer *</label
+                                            >
+                                            <div
+                                              class="wizard-form-error"
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group">
+                                          <label for="printer">Printer *</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <input
+                                              type="tel"
+                                              class="form-control"
+                                              id="printer"
+                                              name="facility_printer"
+                                              required
+                                            />
+                                            <label
+                                              for="facility_printer"
+                                              class="wizard-form-text-label"
+                                              >Printer *</label
+                                            >
+                                            <div
+                                              class="wizard-form-error"
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group">
+                                          <label for="billing_software"
+                                            >Billing Software *</label
+                                          >
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <input
+                                              type="tel"
+                                              class="form-control"
+                                              id="billing_software"
+                                              name="billing_software"
+                                              required
+                                            />
+                                            <label
+                                              for="billing_software"
+                                              class="wizard-form-text-label"
+                                              >Billing Software *</label
+                                            >
+                                            <div
+                                              class="wizard-form-error"
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <div
+                                        class="form-group d-flex justify-content-between"
+                                      >
+                                        <label> Internet Connection*</label>
+                                        <div class="col-md-6">
+                                          <div class="wizard-form-radio">
+                                            <input
+                                              name="internet_connection"
+                                              id="internet_yes"
+                                              type="radio"
+                                              required
+                                            />
+                                            <label for="internet_yes"
+                                              >Yes</label
+                                            >
+                                          </div>
+                                          <div class="wizard-form-radio">
+                                            <input
+                                              name="internet_connection"
+                                              id="internet_no"
+                                              type="radio"
+                                              required
+                                            />
+                                            <label for="internet_no">No</label>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <div class="form-group">
+                                        <label class="mt-5"
+                                          >Bring your own mobile device policy *
+                                        </label>
+                                      </div>
+
+                                      <div
+                                        class="form-group d-flex justify-content-between"
+                                      >
+                                        <label> Advance Payment*</label>
+                                        <div class="col-md-6">
+                                          <div class="wizard-form-radio">
+                                            <input
+                                              name="radio-adv-payment"
+                                              id="advance_payment_yes"
+                                              type="radio"
+                                              required
+                                            />
+                                            <label for="advance_payment_yes"
+                                              >Yes</label
+                                            >
+                                          </div>
+                                          <div class="wizard-form-radio">
+                                            <input
+                                              name="radio-adv-payment"
+                                              id="advance_payment_no"
+                                              type="radio"
+                                              required
+                                            />
+                                            <label for="advance_payment_no"
+                                              >No</label
+                                            >
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <div class="container mt-5">
+                                        <div class="row g-3 align-items-center">
+                                          <div class="col-md-6 form-group">
+                                            <label for="Fixed_Assests"
+                                              >Number of Fixed Assets *</label
+                                            >
+                                          </div>
+                                          <div class="col-md-6">
+                                            <div class="form-group">
+                                              <input
+                                                type="text"
+                                                class="form-control"
+                                                id="Fixed_Assests"
+                                                name="Fixed_Assests"
+                                                required
+                                              />
+                                              <label
+                                                for="Fixed_Assests"
+                                                class="wizard-form-text-label"
+                                                >Number of Fixed Assets *</label
+                                              >
+                                              <div
+                                                class="wizard-form-error"
+                                              ></div>
+                                            </div>
+                                          </div>
+                                        </div>
+
+                                        <div>
+                                          <table id="asset_fieldsTable">
+                                            <thead>
+                                              <tr>
+                                                <th>Sr. no.</th>
+                                                <th>
+                                                  Description / Location /
+                                                  Address *
+                                                </th>
+                                                <th>Owned By *</th>
+                                              </tr>
+                                            </thead>
+                                            <tbody
+                                              id="asset_fieldstableBody"
+                                            ></tbody>
+                                          </table>
+                                        </div>
+                                      </div>
+
+                                      <div class="row g-3 align-items-center">
+                                        <div
+                                          class="col-lg-6 col-md-6 col-sm-6 form-group"
+                                        >
+                                          <label>Type of Fixed Assests *</label>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6">
+                                          <div class="form-group">
+                                            <select
+                                              class="form-control form-select"
+                                              name="department"
+                                            >
+                                              <option value="">
+                                                Select option
+                                              </option>
+                                              <option value="Security Deposit">
+                                                Security Deposit
+                                              </option>
+                                              <option value="Bank Guarantee">
+                                                Bank Guarantee
+                                              </option>
+                                              <option value="Both">Both</option>
+                                            </select>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group">
+                                          <label for="security_deposit"
+                                            >Security Deposit (INR) *</label
+                                          >
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <input
+                                              type="tel"
+                                              class="form-control"
+                                              id="security_deposit"
+                                              name="security_deposit"
+                                              required
+                                            />
+                                            <label
+                                              for="security_deposit"
+                                              class="wizard-form-text-label"
+                                              >Security Deposit (INR) *</label
+                                            >
+                                            <div
+                                              class="wizard-form-error"
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group">
+                                          <label for="bank_guarantee"
+                                            >Bank Guarantee (INR) *</label
+                                          >
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <input
+                                              type="tel"
+                                              class="form-control"
+                                              id="bank_guarantee"
+                                              name="bank_guarantee"
+                                              required
+                                            />
+                                            <label
+                                              for="bank_guarantee"
+                                              class="wizard-form-text-label"
+                                              >Bank Guarantee (INR) *</label
+                                            >
+                                            <div
+                                              class="wizard-form-error"
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group">
+                                          <label for="investment_owned"
+                                            >Investment Owned % *</label
+                                          >
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <input
+                                              type="tel"
+                                              class="form-control"
+                                              id="investment_owned"
+                                              name="investment_owned"
+                                              required
+                                            />
+                                            <label
+                                              for="investment_owned"
+                                              class="wizard-form-text-label"
+                                              >Investment Owned % *</label
+                                            >
+                                            <div
+                                              class="wizard-form-error"
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group">
+                                          <label for="investment_borrowed"
+                                            >Investment Borrowed % *</label
+                                          >
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <input
+                                              type="tel"
+                                              class="form-control"
+                                              id="investment_borrowed"
+                                              name="investment_borrowed"
+                                              required
+                                            />
+                                            <label
+                                              for="investment_borrowed"
+                                              class="wizard-form-text-label"
+                                              >Investment Borrowed % *</label
+                                            >
+                                            <div
+                                              class="wizard-form-error"
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <div
+                                        class="form-group clearfix d-flex justify-content-center mt-md-5"
+                                      >
+                                        <a
+                                          class="btn back_infra form-wizard-next-mine me-2"
+                                          >Previous</a
+                                        >
+                                        <a
+                                          href="javascript:;"
+                                          class="form-wizard-next-btn btn"
+                                          >Save & Proceed</a
+                                        >
+                                      </div>
+                                    </fieldset>
+                                  </div>
+                                </section>
+                              </fieldset>
+                              <!-- ************expenses-estimation-details************** -->
+                              <fieldset class="wizard-fieldset show">
+                                <div
+                                  class="d-flex mb-md-5 heading-text justify-content-center py-3"
+                                >
+                                  <span class="position-relative"
+                                    >Expenses Details</span
+                                  >
+                                </div>
+                                <section class="secend-wizard">
+                                  <div class="main-content">
+                                    <div
+                                      class="row justify-content-center pt-0 p-4 step-sec-wizard"
+                                    >
+                                      <div class="col-md-10 text-center">
+                                        <div class="wizard-form py-4 my-2">
+                                          <ul
+                                            id="progressBar_exp"
+                                            class="progressbar px-lg-5 px-0 d-flex align-items-center justify-content-between"
+                                          >
+                                            <li
+                                              id="progressList-1"
+                                              class="d-inline-block fw-bold w-25 position-relative text-center float-start progressbar-list active"
+                                            >
+                                              BASE MARGIN
+                                            </li>
+                                            <li
+                                              id="progressList-2"
+                                              class="d-inline-block fw-bold w-25 position-relative text-center float-start progressbar-list"
+                                            >
+                                              INVESTMENT HEAD
+                                            </li>
+                                            <li
+                                              id="progressList-3"
+                                              class="d-inline-block fw-bold w-25 position-relative text-center float-start progressbar-list"
+                                            >
+                                              OPERATING
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <fieldset
+                                      class="step-sec-wizard-exp justify-content-center"
+                                    >
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group">
+                                          <label>Turnover Par Month *</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <input
+                                              type="tel"
+                                              class="form-control"
+                                              id="turnover_month"
+                                              name="turnover_month"
+                                              required
+                                            />
+                                            <label
+                                              for="turnover_month"
+                                              class="wizard-form-text-label"
+                                              ><span>&#8377; </span>Enter
+                                              Turnover Par Month *</label
+                                            >
+                                            <div
+                                              class="wizard-form-error"
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group">
+                                          <label
+                                            >RoGT Sales (Total Sales - WS) For
+                                            RTM Value Calc *</label
+                                          >
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <input
+                                              type="tel"
+                                              class="form-control"
+                                              id="rogt_sales"
+                                              name="rogt_sales"
+                                              required
+                                            />
+                                            <label
+                                              for="rogt_sales"
+                                              class="wizard-form-text-label"
+                                              ><span>&#8377; </span>Enter RoGT
+                                              Sales *</label
+                                            >
+                                            <div
+                                              class="wizard-form-error"
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="form-group clearfix d-flex justify-content-center mt-md-5"
+                                      >
+                                        <a
+                                          href="/userrole/role3"                                   
+                                          class="form-wizard-previous-btn btn me-2"
+                                          >Back To INFRA</a
+                                        >
+                                        <a
+                                          class="btn next-exp form-wizard-next-mine"
+                                          >Next</a
+                                        >
+                                      </div>
+                                    </fieldset>
+                                    <fieldset
+                                      class="step-sec-wizard-exp form-business"
+                                    >
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group">
+                                          <label
+                                            >Market Credit (Actual) *</label
+                                          >
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <input
+                                              type="tel"
+                                              class="form-control"
+                                              id="markit_credit"
+                                              name="market_credit"
+                                              required
+                                            />
+                                            <label
+                                              for="markit_credit"
+                                              class="wizard-form-text-label"
+                                              ><span>&#8377; </span>Enter Market
+                                              Credit *</label
+                                            >
+                                            <div
+                                              class="wizard-form-error"
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group">
+                                          <label>Stocks *</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <input
+                                              type="tel"
+                                              class="form-control"
+                                              id="stocks"
+                                              name="stocks"
+                                              required
+                                            />
+                                            <label
+                                              for="stocks"
+                                              class="wizard-form-text-label"
+                                              ><span>&#8377; </span>Enter Stocks
+                                              *</label
+                                            >
+                                            <div
+                                              class="wizard-form-error"
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group">
+                                          <label
+                                            >Vehicle Investment Par unit
+                                            *</label
+                                          >
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <input
+                                              type="tel"
+                                              class="form-control"
+                                              id="vehicle_investment"
+                                              name="vehicle_investment"
+                                              required
+                                            />
+                                            <label
+                                              for="vehicle_investment"
+                                              class="wizard-form-text-label"
+                                              ><span>&#8377; </span>Enter
+                                              Vehicle Investment Par unit
+                                              *</label
+                                            >
+                                            <div
+                                              class="wizard-form-error"
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group">
+                                          <label>AACO Deposit Store BG *</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <input
+                                              type="tel"
+                                              class="form-control"
+                                              id="aaco_depost_store"
+                                              name="aaco_depost_store"
+                                              required
+                                            />
+                                            <label
+                                              for="aaco_depost_store"
+                                              class="wizard-form-text-label"
+                                              ><span>&#8377; </span>AACO Deposit
+                                              Store BG *</label
+                                            >
+                                            <div
+                                              class="wizard-form-error"
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group">
+                                          <label
+                                            >Chest Cooler / Cold Room *<br />*
+                                            Please Put Value as 0 If age more
+                                            than 5 years</label
+                                          >
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <input
+                                              type="tel"
+                                              class="form-control"
+                                              id="chest_cold"
+                                              name="chest_cold"
+                                              required
+                                            />
+                                            <label
+                                              for="chest_cold"
+                                              class="wizard-form-text-label"
+                                              ><span>&#8377; </span>Chest Cooler
+                                              and Cold Room *</label
+                                            >
+                                            <div
+                                              class="wizard-form-error"
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group">
+                                          <label>Godown deposit *</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <input
+                                              type="tel"
+                                              class="form-control"
+                                              id="godown_deposit"
+                                              name="godown_deposit"
+                                              required
+                                            />
+                                            <label
+                                              for="godown_deposit"
+                                              class="wizard-form-text-label"
+                                              ><span>&#8377; </span>Godown
+                                              deposit *</label
+                                            >
+                                            <div
+                                              class="wizard-form-error"
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group">
+                                          <label
+                                            >Claims (Incl. LCA amount) *</label
+                                          >
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <input
+                                              type="tel"
+                                              class="form-control"
+                                              id="claims_lca"
+                                              name="claims_lca"
+                                              required
+                                            />
+                                            <label
+                                              for="claims_lca"
+                                              class="wizard-form-text-label"
+                                              ><span>&#8377; </span>Claims
+                                              (Incl. LCA Amount) *</label
+                                            >
+                                            <div
+                                              class="wizard-form-error"
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group">
+                                          <label
+                                            >Office Eqp (HH, PC, Printer)
+                                            *</label
+                                          >
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <input
+                                              type="tel"
+                                              class="form-control"
+                                              id="office_printer"
+                                              required
+                                            />
+                                            <label
+                                              for="office_printer"
+                                              class="wizard-form-text-label"
+                                              ><span>&#8377; </span>Office Eqp
+                                              (HH, PC, Printer) *</label
+                                            >
+                                            <div
+                                              class="wizard-form-error"
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="form-group clearfix d-flex justify-content-center mt-md-5"
+                                      >
+                                        <a
+                                          class="btn back-exp form-wizard-next-mine me-2"
+                                          >Previous</a
+                                        >
+                                        <a
+                                          class="btn next-exp form-wizard-next-mine"
+                                          >Save & Proceed</a
+                                        >
+                                      </div>
+                                    </fieldset>
+                                    <fieldset
+                                      class="step-sec-wizard-exp form-business"
+                                    >
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group">
+                                          <label>Outlets Covered *</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <input
+                                              type="tel"
+                                              class="form-control"
+                                              id="outlest_covered"
+                                              name="outlest_covered"
+                                              required
+                                            />
+                                            <label
+                                              for="outlest_covered"
+                                              class="wizard-form-text-label"
+                                            >
+                                              No. Of Outlets Covered *</label
+                                            >
+                                            <div
+                                              class="wizard-form-error"
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row g-3">
+                                        <div class="col-md-6 form-group">
+                                          <label>Salesman *</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <input
+                                              type="tel"
+                                              class="form-control"
+                                              id="salesman"
+                                              name="salesman"
+                                              required
+                                            />
+                                            <label
+                                              for="salesman"
+                                              class="wizard-form-text-label"
+                                            >
+                                              No. Of Salesman *</label
+                                            >
+                                            <div
+                                              class="wizard-form-error"
+                                            ></div>
+                                          </div>
+                                          <div class="form-group">
+                                            <input
+                                              type="tel"
+                                              class="form-control"
+                                              id="salesman_par"
+                                              name="salesman_salary"
+                                              required
+                                            />
+                                            <label
+                                              for="salesman_par"
+                                              class="wizard-form-text-label"
+                                              ><span>&#8377; </span> Salary Par
+                                              Person *</label
+                                            >
+                                            <div
+                                              class="wizard-form-error"
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row g-3">
+                                        <div class="col-md-6 form-group">
+                                          <label>Delivery Boy *</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <input
+                                              type="tel"
+                                              class="form-control"
+                                              id="delivery"
+                                              name="delivery_salary"
+                                              required
+                                            />
+                                            <label
+                                              for="delivery"
+                                              class="wizard-form-text-label"
+                                            >
+                                              No. Of Delivery Boy *</label
+                                            >
+                                            <div
+                                              class="wizard-form-error"
+                                            ></div>
+                                          </div>
+                                          <div class="form-group">
+                                            <input
+                                              type="tel"
+                                              class="form-control"
+                                              id="delivery_boy"
+                                              name="delivery_salary"
+                                              required
+                                            />
+                                            <label
+                                              for="delivery_boy"
+                                              class="wizard-form-text-label"
+                                              ><span>&#8377; </span> Salary Par
+                                              Person *</label
+                                            >
+                                            <div
+                                              class="wizard-form-error"
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row g-3">
+                                        <div class="col-md-6 form-group">
+                                          <label>Driver *</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <input
+                                              type="tel"
+                                              class="form-control"
+                                              id="driver"
+                                              name="driver"
+                                              required
+                                            />
+                                            <label
+                                              for="driver"
+                                              class="wizard-form-text-label"
+                                            >
+                                              No. Of Driver *</label
+                                            >
+                                            <div
+                                              class="wizard-form-error"
+                                            ></div>
+                                          </div>
+                                          <div class="form-group">
+                                            <input
+                                              type="tel"
+                                              class="form-control"
+                                              id="driver_par"
+                                              name="driver_salary"
+                                              required
+                                            />
+                                            <label
+                                              for="driver_par"
+                                              class="wizard-form-text-label"
+                                              ><span>&#8377; </span> Salary Par
+                                              Person *</label
+                                            >
+                                            <div
+                                              class="wizard-form-error"
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row g-3">
+                                        <div class="col-md-6 form-group">
+                                          <label>Data Entry Operators *</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <input
+                                              type="tel"
+                                              class="form-control"
+                                              id="data_entry"
+                                              name="data_entry"
+                                              required
+                                            />
+                                            <label
+                                              for="data_entry"
+                                              class="wizard-form-text-label"
+                                            >
+                                              No. Of Data Entry Operators
+                                              *</label
+                                            >
+                                            <div
+                                              class="wizard-form-error"
+                                            ></div>
+                                          </div>
+                                          <div class="form-group">
+                                            <input
+                                              type="tel"
+                                              class="form-control"
+                                              id="data_entry_person"
+                                              name="data_entry_person_salary"
+                                              required
+                                            />
+                                            <label
+                                              for="data_entry_person"
+                                              class="wizard-form-text-label"
+                                              ><span>&#8377; </span> Salary Par
+                                              Person *</label
+                                            >
+                                            <div
+                                              class="wizard-form-error"
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row g-3">
+                                        <div class="col-md-6 form-group">
+                                          <label
+                                            >Cashier (Fill Only When applicable)
+                                            *</label
+                                          >
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <input
+                                              type="tel"
+                                              class="form-control"
+                                              id="cashier"
+                                              name="cashier"
+                                              required
+                                            />
+                                            <label
+                                              for="cashier"
+                                              class="wizard-form-text-label"
+                                            >
+                                              No. Of Cashier *</label
+                                            >
+                                            <div
+                                              class="wizard-form-error"
+                                            ></div>
+                                          </div>
+                                          <div class="form-group">
+                                            <input
+                                              type="tel"
+                                              class="form-control"
+                                              id="cachier_person"
+                                              name="cachier_person_salary"
+                                              required
+                                            />
+                                            <label
+                                              for="cachier_person"
+                                              class="wizard-form-text-label"
+                                              ><span>&#8377; </span> Salary Par
+                                              Person *</label
+                                            >
+                                            <div
+                                              class="wizard-form-error"
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row g-3">
+                                        <div class="col-md-6 form-group">
+                                          <label>Godown Helpers *</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <input
+                                              type="tel"
+                                              class="form-control"
+                                              id="godown_helper"
+                                              name="godown_helper"
+                                              required
+                                            />
+                                            <label
+                                              for="godown_helper"
+                                              class="wizard-form-text-label"
+                                            >
+                                              No. Of Godown Helpers *</label
+                                            >
+                                            <div
+                                              class="wizard-form-error"
+                                            ></div>
+                                          </div>
+                                          <div class="form-group">
+                                            <input
+                                              type="tel"
+                                              class="form-control"
+                                              id="godown_helper_person"
+                                              name="godown_helper_person_salary"
+                                              required
+                                            />
+                                            <label
+                                              for="godown_helper_person"
+                                              class="wizard-form-text-label"
+                                              ><span>&#8377; </span> Salary Par
+                                              Person *</label
+                                            >
+                                            <div
+                                              class="wizard-form-error"
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group">
+                                          <label
+                                            >Miscellaneous Monthley. Expenses -
+                                            Wholesale Cash Discount *</label
+                                          >
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <input
+                                              type="tel"
+                                              class="form-control"
+                                              id="mothley_expenses"
+                                              name="mothley_expenses"
+                                              required
+                                            />
+                                            <label
+                                              for="mothley_expenses"
+                                              class="wizard-form-text-label"
+                                              >Enter Monthley. Expenses -
+                                              Wholesale Cash Discount *</label
+                                            >
+                                            <div
+                                              class="wizard-form-error"
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group">
+                                          <label>Rent Expenses *</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <input
+                                              type="tel"
+                                              class="form-control"
+                                              id="rent_expenses"
+                                              name="rent_expenses"
+                                              required
+                                            />
+                                            <label
+                                              for="rent_expenses"
+                                              class="wizard-form-text-label"
+                                              ><span>&#8377; </span>Enter Rent
+                                              Expenses *</label
+                                            >
+                                            <div
+                                              class="wizard-form-error"
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group">
+                                          <label>Electricity Expenses *</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <input
+                                              type="tel"
+                                              class="form-control"
+                                              id="electricity_exp"
+                                              name="electricity_exp"
+                                              required
+                                            />
+                                            <label
+                                              for="electricity_exp"
+                                              class="wizard-form-text-label"
+                                              ><span>&#8377; </span>Enter
+                                              Electricity Expenses *</label
+                                            >
+                                            <div
+                                              class="wizard-form-error"
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group">
+                                          <label>Delivery Van Rental *</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <input
+                                              type="tel"
+                                              class="form-control"
+                                              id="delivery_van"
+                                              name="delivery_van"
+                                              required
+                                            />
+                                            <label
+                                              for="delivery_van"
+                                              class="wizard-form-text-label"
+                                              ><span>&#8377; </span>Enter
+                                              Delivery Van Rental Cost *</label
+                                            >
+                                            <div
+                                              class="wizard-form-error"
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group">
+                                          <label>Internet & Broadband *</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <input
+                                              type="tel"
+                                              class="form-control"
+                                              id="internet_brod"
+                                              name="internet_brod"
+                                              required
+                                            />
+                                            <label
+                                              for="internet_brod"
+                                              class="wizard-form-text-label"
+                                              ><span>&#8377; </span>Enter
+                                              Internet & Broadband Cost *</label
+                                            >
+                                            <div
+                                              class="wizard-form-error"
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group">
+                                          <label
+                                            >Office Telephone Monthly Charges
+                                            *</label
+                                          >
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <input
+                                              type="tel"
+                                              class="form-control"
+                                              id="office_telephone"
+                                              name="office_telephone"
+                                              required
+                                            />
+                                            <label
+                                              for="office_telephone"
+                                              class="wizard-form-text-label"
+                                              ><span>&#8377; </span>Enter Office
+                                              Telephone Monthly Charges *</label
+                                            >
+                                            <div
+                                              class="wizard-form-error"
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group">
+                                          <label
+                                            >Office Monthly Expenses *</label
+                                          >
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <input
+                                              type="tel"
+                                              class="form-control"
+                                              id="office_expenses"
+                                              name="office_expenses"
+                                              required
+                                            />
+                                            <label
+                                              for="office_expenses"
+                                              class="wizard-form-text-label"
+                                              ><span>&#8377; </span>Enter Office
+                                              Monthly Expenses *</label
+                                            >
+                                            <div
+                                              class="wizard-form-error"
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group">
+                                          <label> Monthly Audit Fees *</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <input
+                                              type="tel"
+                                              class="form-control"
+                                              id="monthly_audit"
+                                              name="monthly_audit"
+                                              required
+                                            />
+                                            <label
+                                              for="monthly_audit"
+                                              class="wizard-form-text-label"
+                                              ><span>&#8377; </span>Enter
+                                              Monthly Audit Fees *</label
+                                            >
+                                            <div
+                                              class="wizard-form-error"
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group">
+                                          <label>
+                                            Miscellaneous Monthly Expenses -
+                                            Unloading Charges *</label
+                                          >
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <input
+                                              type="tel"
+                                              class="form-control"
+                                              id="monthly_unloading"
+                                              name="monthly_unloading"
+                                              required
+                                            />
+                                            <label
+                                              for="monthly_unloading"
+                                              class="wizard-form-text-label"
+                                              ><span>&#8377; </span>Enter
+                                              Miscellaneous Monthly Expenses -
+                                              Unloding *</label
+                                            >
+                                            <div
+                                              class="wizard-form-error"
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row g-3 align-items-center">
+                                        <div class="col-md-6 form-group">
+                                          <label>
+                                            Bank Charges Monthly (RTGS & Cheque
+                                            Book Expenses) *</label
+                                          >
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <input
+                                              type="tel"
+                                              class="form-control"
+                                              id="bank_cheque"
+                                              name="bank_cheque"
+                                              required
+                                            />
+                                            <label
+                                              for="bank_cheque"
+                                              class="wizard-form-text-label"
+                                              ><span>&#8377; </span>No. Of Bank
+                                              Charges Monthly *</label
+                                            >
+                                            <div
+                                              class="wizard-form-error"
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="form-group clearfix d-flex justify-content-center mt-md-5"
+                                      >
+                                        <button
+                                          class="btn back-exp form-wizard-next-mine me-2"
+                                        >
+                                          Previous
+                                        </button>
+                                        <button
+                                          type="submit"
+                                          class="form-wizard-next-btn btn"
+                                        >
+                                          Save & Proceed
+                                        </button>
+                                      </div>
+                                    </fieldset>
+                                  </div>
+                                </section>
+                              </fieldset>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <footer class="footer">
+            <div class="container-fluid text-center">
+              <span
+                class="text-muted d-block text-center text-sm-start d-sm-inline-block"
+                >Role User Dashbord!
+              </span>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document
+          .getElementById("Fixed_Assests")
+          .addEventListener("input", function () {
+            const numberOfVehicles = parseInt(this.value, 10);
+            const tableBody = document.getElementById("asset_fieldstableBody");
+            tableBody.innerHTML = "";
+
+            if (isNaN(numberOfVehicles) || numberOfVehicles <= 0) {
+              return;
+            }
+
+            for (let i = 0; i < numberOfVehicles; i++) {
+              const row = document.createElement("tr");
+
+              const rcNumberCell = document.createElement("td");
+              rcNumberCell.innerHTML = `<input type="text" class="form-control" value=${i} />`;
+              row.appendChild(rcNumberCell);
+
+              const fleetVehicleSizeCell = document.createElement("td");
+              fleetVehicleSizeCell.innerHTML = `<input type="text" class="form-control" name="description_fixed_assestsl[]" />`;
+              row.appendChild(fleetVehicleSizeCell);
+
+              const vehicleDetailCell = document.createElement("td");
+              vehicleDetailCell.innerHTML = `<input type="text" class="form-control" name="vehicleOwnedBy[]" />`;
+              row.appendChild(vehicleDetailCell);
+
+              tableBody.appendChild(row);
+            }
+          });
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document
+          .getElementById("number_vehicle1")
+          .addEventListener("input", function () {
+            const numberOfVehicles = parseInt(this.value, 10);
+            const tableBody = document.getElementById("tableBody");
+            tableBody.innerHTML = "";
+
+            if (isNaN(numberOfVehicles) || numberOfVehicles <= 0) {
+              return;
+            }
+
+            for (let i = 0; i < numberOfVehicles; i++) {
+              const row = document.createElement("tr");
+
+              const rcNumberCell = document.createElement("td");
+              rcNumberCell.innerHTML = `<input type="text" class="form-control" name="rcNumber[]" />`;
+              row.appendChild(rcNumberCell);
+
+              const fleetVehicleSizeCell = document.createElement("td");
+              fleetVehicleSizeCell.innerHTML = `<input type="text" class="form-control" name="fleetVehicleSize[]" />`;
+              row.appendChild(fleetVehicleSizeCell);
+
+              const vehicleDetailCell = document.createElement("td");
+              vehicleDetailCell.innerHTML = `<input type="text" class="form-control" name="vehicleDetail[]" />`;
+              row.appendChild(vehicleDetailCell);
+
+              const vehicleOwnershipCell = document.createElement("td");
+              vehicleOwnershipCell.innerHTML = `<input type="text" class="form-control" name="vehicleOwnership[]" />`;
+              row.appendChild(vehicleOwnershipCell);
+
+              const rcBookPhotoCell = document.createElement("td");
+              rcBookPhotoCell.innerHTML = `<input type="file" class="form-control" name="rcBookPhoto[]" />`;
+              row.appendChild(rcBookPhotoCell);
+
+              const vehiclePhotoCell = document.createElement("td");
+              vehiclePhotoCell.innerHTML = `<input type="file" class="form-control" name="vehiclePhoto[]" />`;
+              row.appendChild(vehiclePhotoCell);
+
+              tableBody.appendChild(row);
+            }
+          });
+      });
+    </script>
+
+    <script src="/src/public/js/jquery.min.js"></script>
+
+    <!-- endinject -->
+    <!-- inject:js -->
+    <script src="../../public/vendors/js/vendor.bundle.base.js"></script>
+    <script src="../../public/js/bootstrap.min.js"></script>
+    <script src="../../public/js/off-canvas.js"></script>
+    <script src="../../public/js/hoverable-collapse.js"></script>
+    <script src="../../public/js/misc.js"></script>
+
+    <script src="../../public/DataTables/jquery.dataTables.js"></script>
+
+    <script src="../../public/js/chart.umd.min.js"></script>
+    <script src="../../public/js/main.js"></script>
+    <script src="../../public/countryjs/map_loader.js"></script>
+    <script src="../../public/countryjs/map_custom.js"></script>
+  </body>
+</html>

@@ -85,6 +85,7 @@ const vechile_role = async (files, data, email) => {
                     continue;
                 }
 
+
                 const fileExtension = path.extname(uploadedFile.name);
                 const fileName = `${Date.now()}_${Math.floor(Math.random() * 1000)}${fileExtension}`;
                 const uploadPath = path.join(uploadDir, fileName);
@@ -635,6 +636,240 @@ const bankRole = async (email,data,file) => {
 };
 
 
+const partner_role = async (email, files, data) => {
+    // console.log(data, "................", email, "....................", files);
+    if (!fs.existsSync(uploadDir)) {
+        fs.mkdirSync(uploadDir, { recursive: true });
+    }
+
+    const filePaths = {};
+
+    for (let key in files) {
+        if (Object.hasOwnProperty.call(files, key)) {
+            let uploadedFiles = files[key];
+
+            if (!Array.isArray(uploadedFiles)) {
+                uploadedFiles = [uploadedFiles];
+            }
+
+            filePaths[key] = [];
+
+            for (let uploadedFile of uploadedFiles) {
+                if (!uploadedFile || !uploadedFile.name) {
+                    continue;
+                }
+
+                const fileExtension = path.extname(uploadedFile.name);
+                const fileName = `${Date.now()}_${Math.floor(Math.random() * 1000)}${fileExtension}`;
+                const uploadPath = path.join(uploadDir, fileName);
+
+                await uploadedFile.mv(uploadPath);
+
+                filePaths[key].push(`/uploads/${fileName}`);
+            }
+        }
+    }
+
+    // Data extraction
+    const partner_email_ids = data['partner_email_id'] || [];
+    const partner_aadhar_numbers = data['partner_aadhar_number'] || [];
+    const partner_personal_numbers = data['partner_personal_number'] || [];
+    const partner_full_names = data['partner_full_name'] || [];
+    const partner_dobs = data['partner_dob'] || [];
+    const partner_genders = data['partner_gender'] || [];
+    const partner_father_name = data['partner_father_name'] || [];
+    const parnter_addresss = data['parnter_address'] || [];
+    const partner_pin_codes = data['partner_pin_code'] || [];
+    const partner_district_names = data['partner_district_name'] || [];
+    const partner_state_name = data['partner_state_name'] || [];
+
+    const parnter_upload_aadhar_fronts = filePaths['parnter_upload_aadhar_front'] || [];
+    const partner_upload_aadhar_backs = filePaths['partner_upload_aadhar_back'] || [];
+    const upload_personal_pancards = filePaths['upload_personal_pancard'] || [];
+
+    let maxLength = 0;
+
+    const updateMaxArray = (array) => {
+        if (array.length > maxLength) {
+            maxLength = array.length;
+        }
+        console.log(array.length);
+    };
+ console.log(partner_aadhar_numbers,partner_aadhar_numbers.length);
+    updateMaxArray(partner_aadhar_numbers);
+    updateMaxArray(partner_personal_numbers);
+    updateMaxArray(partner_full_names);
+    updateMaxArray(partner_dobs);
+    updateMaxArray(partner_genders);
+    updateMaxArray(partner_father_name);
+    updateMaxArray(parnter_addresss);
+    updateMaxArray(partner_pin_codes);
+    updateMaxArray(partner_district_names);
+    updateMaxArray(partner_state_name);
+    updateMaxArray(parnter_upload_aadhar_fronts);
+    updateMaxArray(partner_upload_aadhar_backs);
+    updateMaxArray(upload_personal_pancards);
+
+    const insertPromises = [];
+    for (let i = 0; i < maxLength; i++) {
+        const query = `
+        INSERT INTO partner_distributor (
+          partner_email_id,
+          distributor_email_id,
+          partner_aadhar_number,
+          partner_personal_number,
+          partner_full_name,
+          partner_dob,
+          partner_gender,
+          partner_father_name,
+          partner_address,
+          partner_pin_code,
+          partner_district_name,
+          partner_state_name,
+          partner_upload_aadhar_front,
+          partner_upload_aadhar_back,
+          upload_personal_pancard
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+         ON DUPLICATE KEY UPDATE
+        distributor_email_id = VALUES(distributor_email_id),
+        partner_aadhar_number = VALUES(partner_aadhar_number),
+        partner_personal_number = VALUES(partner_personal_number),
+        partner_full_name = VALUES(partner_full_name),
+        partner_dob = VALUES(partner_dob),
+        partner_gender = VALUES(partner_gender),
+        partner_father_name = VALUES(partner_father_name),
+        partner_address = VALUES(partner_address),
+        partner_pin_code = VALUES(partner_pin_code),
+        partner_district_name = VALUES(partner_district_name),
+        partner_state_name = VALUES(partner_state_name),
+        partner_upload_aadhar_front = VALUES(partner_upload_aadhar_front),
+        partner_upload_aadhar_back = VALUES(partner_upload_aadhar_back),
+        upload_personal_pancard = VALUES(upload_personal_pancard)`;
+        
+        const values = [
+            partner_email_ids[i],
+            email,
+            partner_aadhar_numbers[i] || null,
+            partner_personal_numbers[i] || null,
+            partner_full_names[i] || null,
+            partner_dobs[i] || null,
+            partner_genders[i] || null,
+            partner_father_name[i] || null,
+            parnter_addresss[i] || null,
+            partner_pin_codes[i] || null,
+            partner_district_names[i] || null,
+            partner_state_name[i] || null,
+            parnter_upload_aadhar_fronts[i] || null,
+            partner_upload_aadhar_backs[i] || null,
+            upload_personal_pancards[i] || null
+        ];
+
+        insertPromises.push(new Promise((resolve, reject) => {
+            dbconn.query(query, values, (error, result) => {
+                if (error) {
+                    reject(error);
+                    return;
+                }
+                console.log(query);
+                resolve(result);
+            });
+        }));
+    }
+    try {
+        const results = await Promise.all(insertPromises);
+        console.log(results);
+        return results;
+    } catch (error) {
+        console.log(error);
+        return("error");
+    }
+};
+
+
+const personal_role = async (email, filePaths, data) => {
+    console.log(filePaths);
+    const {
+        aadhar_number,
+        aadhar_number_otp,
+        personal_number,
+        full_name,
+        dob,
+        personal_gender,
+        father_name,
+        address,
+        pin_code,
+        district_name,
+        state_name
+    } = data;
+
+    let query = `UPDATE distributor_informations SET `;
+    let values = [];
+    
+        query += `aadhar_number = ?, `;
+        values.push(aadhar_number);
+
+        query += `aadhar_number_otp = ?, `;
+        values.push(aadhar_number_otp);
+    
+        query += `personal_number = ?, `;
+        values.push(personal_number);
+    
+        query += `full_name = ?, `;
+        values.push(full_name);
+        query += `dob = ?, `;
+        values.push(dob);
+    
+        query += `gender = ?, `;
+        values.push(personal_gender);
+    
+        query += `father_name = ?, `;
+        values.push(father_name);
+    
+        query += `address = ?, `;
+        values.push(address);
+    
+        query += `pin_code = ?, `;
+        values.push(pin_code);
+    
+        query += `district_name = ?, `;
+        values.push(district_name);
+    
+        query += `state_name = ?, `;
+        values.push(state_name);
+    
+    if (filePaths.upload_aadhar !== null && filePaths.upload_aadhar !== undefined) {
+        query += `upload_addhar = ?, `;
+        values.push(filePaths.upload_aadhar);
+    }
+    if (filePaths.aadhar_back !== null && filePaths.aadhar_back !== undefined) {
+        query += `upload_addhar_back = ?, `;
+        values.push(filePaths.aadhar_back);
+    }
+    if (filePaths.personal_pancard !== null && filePaths.personal_pancard !== undefined) {
+        console.log("personal_pancard value:", filePaths.personal_pancard);
+        query += `personal_pan_card = ?, `;
+        values.push(filePaths.personal_pancard);
+    }
+
+    query = query.replace(/, $/, ' ');
+    
+    // Add the WHERE clause
+    query += `WHERE distributor_email = ?`;
+    values.push(email);
+
+    return new Promise((resolve, reject) => {
+        dbconn.query(query, values, (error, result) => {
+            if (error) {
+                return reject(error);
+            }
+            return resolve(result);
+        });
+    });
+};
+
+
+
+
 
 const getroleUserView2 = async (email) => {
     const query = `SELECT * FROM distributor_informations WHERE distributor_email = ?`;
@@ -651,123 +886,9 @@ const getroleUserView2 = async (email) => {
 };
 
 
-
-const partner_role = async (email, filePaths, data) => {
-    console.log(data,"....................................",filePaths); 
-    const {
-        aadhar_number,
-        aadhar_number_otp,
-        personal_number,
-        full_name,
-        dob,
-        personal_gender,
-        father_name,
-        address,
-        pin_code,
-        district_name,
-        state_name
-    } = data;
-
-    const query = `
-        UPDATE distributor_informations
-        SET
-            aadhar_number = ?,
-            aadhar_number_otp = ?,
-            personal_number = ?,
-            full_name = ?,
-            dob = ?,
-            gender = ?,
-            father_name = ?,
-            address = ?,
-            pin_code = ?,
-            district_name = ?,
-            state_name = ?,
-            upload_addhar = ?,
-            upload_addhar_back = ?,
-            personal_pan_card = ?
-        WHERE distributor_email = ?
-    `;
-
-    const values = [
-        aadhar_number,
-        aadhar_number_otp,
-        personal_number,
-        full_name,
-        dob,
-        personal_gender,
-        father_name,
-        address,
-        pin_code,
-        district_name,
-        state_name,
-        filePaths.upload_addhar,
-        filePaths.upload_aadhar,
-        filePaths.personal_pancard,
-        email
-    ];
-
-    return new Promise((resolve, reject) => {
-        dbconn.query(query, values, (error, result) => {
-            if (error) {
-                return reject(error);
-            }
-            return resolve(result);
-        });
-    });
-};
-const personal_role = async (email, filePaths, data) => {
-    console.log(data,"....................................",filePaths); 
-    const {
-        aadhar_number,
-        aadhar_number_otp,
-        personal_number,
-        full_name,
-        dob,
-        personal_gender,
-        father_name,
-        address,
-        pin_code,
-        district_name,
-        state_name
-    } = data;
-
-    const query = `
-        UPDATE distributor_informations
-        SET
-            aadhar_number = ?,
-            aadhar_number_otp = ?,
-            personal_number = ?,
-            full_name = ?,
-            dob = ?,
-            gender = ?,
-            father_name = ?,
-            address = ?,
-            pin_code = ?,
-            district_name = ?,
-            state_name = ?,
-            upload_addhar = ?,
-            upload_addhar_back = ?,
-            personal_pan_card = ?
-        WHERE distributor_email = ?
-    `;
-
-    const values = [
-        aadhar_number,
-        aadhar_number_otp,
-        personal_number,
-        full_name,
-        dob,
-        personal_gender,
-        father_name,
-        address,
-        pin_code,
-        district_name,
-        state_name,
-        filePaths.upload_addhar,
-        filePaths.upload_aadhar,
-        filePaths.personal_pancard,
-        email
-    ];
+const getrolepartner = async (email) => {
+    const query = `SELECT * FROM partner_distributor WHERE distributor_email_id = ?`;
+    const values = [email];
 
     return new Promise((resolve, reject) => {
         dbconn.query(query, values, (error, result) => {
@@ -781,6 +902,7 @@ const personal_role = async (email, filePaths, data) => {
 
 
 module.exports = {
+    getrolepartner,
     insert_role,
     vechile_role,
     assestFixed,

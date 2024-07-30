@@ -1,6 +1,11 @@
 const bcrypt = require('bcrypt');
 
-const {checkUser,insertOtp,findOtp,insertUser,insertOtp1,updateotp,searchOtp,updateUser,insertDistributionInfo} = require("../models/registration/login.model");
+
+const {sendLinkOnMail,generateOTP}  = require("../util/send.email");
+const {encrypt}  = require("../util/encypt.pass");
+
+
+const {checkUser,insertOtp,findOtp,insertUser,insertOtp1,updateotp,searchOtp,updateUser,insertDistributionInfo,checkDistributor} = require("../models/registration/login.model");
 
 const loginRoleView = async (req, res) => {    
     res.render('login/login_role_user',{ message: req.session.message });
@@ -11,8 +16,9 @@ const loginRoleView = async (req, res) => {
 
 const loginRoleCheck = async (req,res) => {
 
+    console.log(req.body.email);
     try {
-        let userData = await checkUser(req.body.email);
+        let userData = await checkDistributor(req.body.email);
         
         if (!userData || userData.length === 0) {
             req.session.message = 'Email Does Not Exist';
@@ -26,7 +32,7 @@ const loginRoleCheck = async (req,res) => {
 
         if (passwordMatch) {
             res.cookie('email', req.body.email, { httpOnly: true });
-            await insertDistributionInfo(req.body.email);
+            // await insertDistributionInfo(req.body.email);
             req.session.email = req.body.email;   
             return res.redirect("/userrole/role2");
         } else {
@@ -39,4 +45,31 @@ const loginRoleCheck = async (req,res) => {
     } 
 }
 
-module.exports = { loginRoleView ,loginRoleCheck};
+
+const forgotpasswordview = async (req, res) => {
+    res.render('login/forgorpassword_role');
+};
+
+const forgotpassword = async (req, res) => {
+
+    let { email, otp, password } = req.body;
+    console.log(req.body);
+
+    let encrypted = await encrypt(password);
+
+    try {
+       let isValid = await findOtp(email, otp);
+       if (isValid) {
+           await updateUser(email,password,encrypted);
+        //    res.json({ success: true, message: 'Password changed successfully' });
+           res.json({ success: true, message: 'Password changed successfully' });
+
+        } else {
+        return res.json({ success: false, message: 'Invalid OTP' });
+       }
+    } catch (error) {
+       console.error('Error occurred:', error);
+       return;
+    }     
+};
+module.exports = { loginRoleView ,loginRoleCheck,forgotpasswordview,forgotpassword};

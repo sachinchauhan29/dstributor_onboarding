@@ -1,15 +1,20 @@
 const path = require('path');
 const fs = require('fs');
-const {partner_role,personal_role, getroleUserView2,insert_role,vechile_role,assestFixed, expenses_estimation, income_tax, gstReturns, business_role, infra_role, tdsRole, bdplRole,bankRole} = require("../models/user_role/user_role");
+    const {partner_role, getrolepartner,personal_role, getroleUserView2,insert_role,vechile_role,assestFixed, expenses_estimation, income_tax, gstReturns, business_role, infra_role, tdsRole, bdplRole,bankRole} = require("../models/user_role/user_role");
 
 const roleUserView1 = async (req, res) => {
-    res.render('roleuser/roleuser1');
+    const email = req.cookies.email;
+    const resultArray = await getroleUserView2(email);
+    const result = resultArray.length > 0 ? resultArray[0] : null;
+      
+    console.log(result);
+    const result1 = await getrolepartner(email);
+    res.render('roleuser/roleuser1',{userData:result});
 };
 const roleUserView2 = async (req, res) => {
-    console.log(req.cookies);
     const email = req.cookies.email;
-    console.log(`Email from cookie: ${email}`);
     const result = await getroleUserView2(email);
+
     // console.log(result);
     res.render('roleuser/roleuser2',{data:result});
 };
@@ -58,10 +63,8 @@ const uploadDir = path.join(__dirname, '../../uploads/');
 // }
 
 
-const roleUserInsert1 = async(req,res)=>{
+const roleUserInsert1 = async (req, res) => {
     const email = req.cookies.email;
-    console.log(`Email from cookie: ${email}`);
-    console.log(req.body,".........................................");
     const files = req.files;
 
     if (!fs.existsSync(uploadDir)) {
@@ -70,8 +73,10 @@ const roleUserInsert1 = async(req,res)=>{
 
     const filePaths = {};
 
-    for (let key in files) {
-        if (Object.hasOwnProperty.call(files, key)) {
+    try {
+        // Process all files
+        for (let key in files) {
+            if (Object.hasOwnProperty.call(files, key)) {
                 const uploadedFile = files[key];
                 if (!uploadedFile || !uploadedFile.name) {
                     continue; 
@@ -80,16 +85,22 @@ const roleUserInsert1 = async(req,res)=>{
                 const fileName = `${Date.now()}_${Math.floor(Math.random() * 1000)}${fileExtension}`;
                 const uploadPath = path.join(uploadDir, fileName);
 
-            await uploadedFile.mv(uploadPath);
-            
-            filePaths[key] = `/uploads/${fileName}`;
+                await uploadedFile.mv(uploadPath);
+                
+                filePaths[key] = `/uploads/${fileName}`;
+            }
         }
+        await personal_role(email, filePaths, req.body);
+        await partner_role(email, req.files, req.body);
+
+        return res.redirect("/userrole/role2");
+
+    } catch (error) {
+        console.error('Error during file upload or processing:', error);
+        return res.status(500).send('An error occurred during file upload or processing');
     }
+};
 
-    const data = await personal_role(email,filePaths, req.body);
-    const data1 = await partner_detail(email,filePaths,req.body);
-
-}
 
 const roleUserInsert2 = async(req,res)=>{
     console.log(req.cookies);

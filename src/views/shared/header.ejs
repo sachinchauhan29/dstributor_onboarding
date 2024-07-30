@@ -18,7 +18,6 @@
   <!-- End layout styles -->
   <link rel="stylesheet" href="../../public/css/bootstrap.min.css" />
   <link rel="stylesheet" href="../../public/DataTables/datatables.min.css" />
-
   <!-- Include SweetAlert2 Library -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
@@ -71,101 +70,130 @@
     <!-- partial:partials/_sidebar.html -->
     <nav class="sidebar sidebar-offcanvas" id="sidebar">
       <ul class="nav">
-        <li class="nav-item">
-          <a class="nav-link" href="./">
-            <i class="mdi mdi-home menu-icon"></i>
-            <span class="menu-title">DASHBOARD</span>
-          </a>
-        </li>
 
-        <li class="nav-item">
-          <a class="nav-link" href="/prospective_buisnessform">
-            <i class="mdi mdi-contacts menu-icon"></i>
-            <span class="menu-title">Prospective Distributors</span>
-          </a>
-        </li>
+        <% if (token?.Dashboard==='1' ) { %>
+          <li class="nav-item">
+            <a class="nav-link" href="./">
+              <i class="mdi mdi-home menu-icon"></i>
+              <span class="menu-title">DASHBOARD</span>
+            </a>
+          </li>
+          <% } %>
 
-        <li class="nav-item">
-          <a class="nav-link" href="/scoutingsheet">
-            <i class="mdi mdi-palette-advanced menu-icon"></i>
-            <span class="menu-title">Scouting sheet</span>
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="/invite">
-            <i class="mdi mdi-content-save-all menu-icon"></i>
-            <!-- <span class="menu-title">Prospective Distributors</span> -->
-            <span class="menu-title">Invite</span>
-          </a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="/opportunity">
-            <i class="mdi mdi-human-greeting menu-icon"></i>
-            <span class="menu-title">Opportunity</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/approvers">
-            <i class="mdi mdi-message menu-icon"></i>
-            <span class="menu-title"> Approver's Inbox</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-            <i class="mdi mdi-account-box-outline menu-icon"></i>
-            <span class="menu-title">Application List</span>
-            <i class="menu-arrow"></i>
-          </a>
-          <div class="collapse" id="ui-basic">
-            <ul class="nav flex-column sub-menu">
+            <% if (token?.ProspectiveDistributors=='1' ) { %>
               <li class="nav-item">
-                <a class="nav-link" href="/application_doccpature">Document Captur</a>
+                <a class="nav-link" href="/prospective_buisnessform">
+                  <i class="mdi mdi-contacts menu-icon"></i>
+                  <span class="menu-title">Prospective Distributors</span>
+                </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/application_underreview">Under Review</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/application_completed">Completed</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/application_rejected">Rejected</a>
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/distributor_list">
-            <i class="mdi mdi-library-books menu-icon"></i>
-            <span class="menu-title"> Distributors List</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/role_managment">
-            <i class="mdi mdi-roller-skate menu-icon"></i>
-            <span class="menu-title"> Role Management</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/user_management">
-            <i class="mdi mdi-source-repository menu-icon"></i>
-            <span class="menu-title"> User Management</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/territory_managment">
-            <i class="mdi mdi-progress-wrench menu-icon"></i>
-            <span class="menu-title"> Territory Management</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/login_role">
-            <i class="mdi mdi-table-large menu-icon"></i>
-            <span class="menu-title">Role User login</span>
-          </a>
-        </li>
+              <% } %>
+
+                <% if (token?.Invite=='1' ) { %>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/invite">
+                      <i class="mdi mdi-content-save-all menu-icon"></i>
+                      <span class="menu-title">Invite</span>
+                    </a>
+                  </li>
+                  <% } %>
+
+                    <% if (token?.ScoutingSheet=='1' ) { %>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/scoutingsheet">
+                          <i class="mdi mdi-palette-advanced menu-icon"></i>
+                          <span class="menu-title">Scouting sheet</span>
+                        </a>
+                      </li>
+                      <% } %>
+
+                        <% if (token?.Opportunity=='1' ) { %>
+                          <li class="nav-item">
+                            <a class="nav-link" href="/opportunity">
+                              <i class="mdi mdi-human-greeting menu-icon"></i>
+                              <span class="menu-title">Opportunity</span>
+                            </a>
+                          </li>
+                          <% } %>
+
+                            <% if (token?.ApproverInbox=='1' ) { %>
+                              <li class="nav-item">
+                                <a class="nav-link" href="/approvers">
+                                  <i class="mdi mdi-message menu-icon"></i>
+                                  <span class="menu-title">Approver's Inbox</span>
+                                </a>
+                              </li>
+                              <% } %>
+
+                                <% if (token?.ApplicationList=='1' ) { %>
+                                  <li class="nav-item">
+                                    <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false"
+                                      aria-controls="ui-basic">
+                                      <i class="mdi mdi-account-box-outline menu-icon"></i>
+                                      <span class="menu-title">Application List</span>
+                                      <i class="menu-arrow"></i>
+                                    </a>
+                                    <div class="collapse" id="ui-basic">
+                                      <ul class="nav flex-column sub-menu">
+                                        <li class="nav-item">
+                                          <a class="nav-link" href="/application_doccpature">Document Captur</a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" href="/application_underreview">Under Review</a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" href="/application_completed">Completed</a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" href="/application_rejected">Rejected</a>
+                                        </li>
+                                      </ul>
+                                    </div>
+                                  </li>
+                                  <% } %>
+
+                                    <% if (token?.DistributorsList=='1' ) { %>
+                                      <li class="nav-item">
+                                        <a class="nav-link" href="/distributor_list">
+                                          <i class="mdi mdi-library-books menu-icon"></i>
+                                          <span class="menu-title">Distributors List</span>
+                                        </a>
+                                      </li>
+                                      <% } %>
+
+                                        <% if (token?.RoleManagement=='1' ) { %>
+                                          <li class="nav-item">
+                                            <a class="nav-link" href="/role_managment">
+                                              <i class="mdi mdi-roller-skate menu-icon"></i>
+                                              <span class="menu-title">Role Management</span>
+                                            </a>
+                                          </li>
+                                          <% } %>
+
+                                            <% if (token?.UserManagement=='1' ) { %>
+                                              <li class="nav-item">
+                                                <a class="nav-link" href="/user_management">
+                                                  <i class="mdi mdi-source-repository menu-icon"></i>
+                                                  <span class="menu-title">User Management</span>
+                                                </a>
+                                              </li>
+                                              <% } %>
+
+                                                <% if (token?.TerritoryManagement=='1' ) { %>
+                                                  <li class="nav-item">
+                                                    <a class="nav-link" href="/territory_managment">
+                                                      <i class="mdi mdi-progress-wrench menu-icon"></i>
+                                                      <span class="menu-title">Territory Management</span>
+                                                    </a>
+                                                  </li>
+                                                  <% } %>
+
+                                                    <li class="nav-item">
+                                                      <a class="nav-link" href="/login_role">
+                                                        <i class="mdi mdi-table-large menu-icon"></i>
+                                                        <span class="menu-title">Role User login</span>
+                                                      </a>
+                                                    </li>
       </ul>
     </nav>
 

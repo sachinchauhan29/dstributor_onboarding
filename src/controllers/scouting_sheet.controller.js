@@ -12,9 +12,12 @@ const addNewUser = async (req, res) => {
     let selectUser = await selectUsers(req.body);
     if (req.body.averageScore <= 3) {
         console.log("1.............................................................", req.body.averageScore);
+   
+        await saveUser(req.body);
         req.session.averagescoremsg = 'Average Score is not good';
     } else if (selectUser.length === 0) {
         console.log("2.............................................................",);
+     
         await saveUser(req.body);
         req.session.success = 'User added successfully';
     } else {

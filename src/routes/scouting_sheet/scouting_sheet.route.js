@@ -6,6 +6,6 @@ const router = express.Router();
 
 
 router.route('/').get(scoutingsheetview.scoutingsheetview);
- router.route('/add_scouti').post(scoutingsheetview.addNewUser);
+router.route('/add_scouti').post(scoutingsheetview.addNewUser);
 
 module.exports = router;

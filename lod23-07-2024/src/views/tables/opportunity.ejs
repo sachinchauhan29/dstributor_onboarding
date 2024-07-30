@@ -1,0 +1,477 @@
+<%- include("../shared/header.ejs") %>
+
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    <div class="row">
+                        <div class="col-12 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body opportunity-table-top table-responsive">
+                                    <div class="row my-2 d-flex">
+                                        <div class="col-md-6 col-sm-6">
+                                            <!-- <div class="input-group rounded my-1">
+                                                <input type="search" class="form-control rounded" placeholder="Search"
+                                                    aria-label="Search" aria-describedby="search-addon" />
+                                                <span class="input-group-text border-0" id="search-addon">
+                                                    <i class="input-group-text border-0 mdi mdi-magnify"></i>
+                                                </span>
+                                            </div> -->
+                                            <div class="input-group-table  rounded">
+                                                <input type="search" id="search_table_input" class="form-control "
+                                                    placeholder="Search" aria-label="Search" />
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="col-md-6 col-sm-6 my-1 d-flex justify-content-md-end  justify-content-sm-end">
+                                            <div class="form-group">
+                                                <select class="form-select form-control-lg form-control">
+                                                    <option value="1">All Opportunity </option>
+                                                    <option value="2">Status-Pending </option>
+                                                    <option value="3">Status-Submitted</option>
+                                                    <option value="4">Status-Approved</option>
+                                                    <option value="5">Status-Rejected</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <table id="opportunity-table" class="display table table-hover" style="width:100% ">
+                                        <thead>
+                                            <tr>
+                                                <th>BUSINESS PARTNER NAME</th>
+                                                <th>OPPORTUNITY NAME</th>
+                                                <th>UPDATE AT</th>
+                                                <th>STATUS</th>
+                                                <th>ACTION</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="search_table_data">
+                                            <tr>
+                                                <td>Tiger Nixon</td>
+                                                <td>Enquiries</td>
+                                                <td><span>Jan, 19 2023</span></td>
+                                                <td><span class="old text-success">Approved</span></td>
+                                                <td><a href="./opportunity/enquiryform"
+                                                        class="text-decoration-none">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Garrett Winters</td>
+                                                <td>Enquiries</td>
+                                                <td><span>Jan, 19 2023</span></td>
+                                                <td><span class="old text-success">Approved</span></td>
+                                                <td><a href="../forms/distributor_enquiry_form.html"
+                                                        class="text-decoration-none">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Ashton Cox</td>
+                                                <td>Enquiries</td>
+                                                <td><span>Jan, 19 2023</span></td>
+                                                <td><span class="old text-success">Approved</span></td>
+                                                <td><a href="../forms/distributor_enquiry_form.html"
+                                                        class="text-decoration-none">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Cedric Kelly</td>
+                                                <td>Enquiries</td>
+                                                <td><span>Jan, 19 2023</span></td>
+                                                <td><span class="old text-success">Approved</span></td>
+                                                <td><a href="../forms/distributor_enquiry_form.html"
+                                                        class="text-decoration-none">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Airi Satou</td>
+                                                <td>Enquiries</td>
+                                                <td><span>Jan, 19 2023</span></td>
+                                                <td><span class="old text-success">Approved</span></td>
+                                                <td><a href="./opportunity/enquiryform"
+                                                        class="text-decoration-none">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Brielle Williamson</td>
+                                                <td>Enquiries</td>
+                                                <td><span>Jan, 19 2023</span></td>
+                                                <td><span class="old text-success">Approved</span></td>
+                                                <td><a href="../forms/distributor_enquiry_form.html"
+                                                        class="text-decoration-none">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Herrod Chandler</td>
+                                                <td>Enquiries</td>
+                                                <td><span>Jan, 19 2023</span></td>
+                                                <td><span class="old text-success">Approved</span></td>
+                                                <td><a href="../forms/distributor_enquiry_form.html"
+                                                        class="text-decoration-none">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Rhona Davidson</td>
+                                                <td>Enquiries</td>
+                                                <td><span>Jan, 19 2023</span></td>
+                                                <td><span class="old text-success">Approved</span></td>
+                                                <td><a href="../forms/distributor_enquiry_form.html"
+                                                        class="text-decoration-none">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Colleen Hurst</td>
+                                                <td>Enquiries</td>
+                                                <td><span>Jan, 19 2023</span></td>
+                                                <td><span class="old text-success">Approved</span></td>
+                                                <td><a href="../forms/distributor_enquiry_form.html"
+                                                        class="text-decoration-none">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Sonya Frost</td>
+                                                <td>Enquiries</td>
+                                                <td><span>Jan, 19 2023</span></td>
+                                                <td><span class="old text-success">Approved</span></td>
+                                                <td><a href="../forms/distributor_enquiry_form.html"
+                                                        class="text-decoration-none">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Jena Gaines</td>
+                                                <td>Enquiries</td>
+                                                <td><span>Jan, 19 2023</span></td>
+                                                <td><span class="old text-success">Approved</span></td>
+                                                <td><a href="../forms/distributor_enquiry_form.html"
+                                                        class="text-decoration-none">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Quinn Flynn</td>
+                                                <td>Enquiries</td>
+                                                <td><span>Jan, 19 2023</span></td>
+                                                <td><span class="old text-success">Approved</span></td>
+                                                <td><a href="../forms/distributor_enquiry_form.html"
+                                                        class="text-decoration-none">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Charde Marshall</td>
+                                                <td>Enquiries</td>
+                                                <td><span>Jan, 19 2023</span></td>
+                                                <td><span class="old text-success">Approved</span></td>
+                                                <td><a href="../forms/distributor_enquiry_form.html"
+                                                        class="text-decoration-none">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Haley Kennedy</td>
+                                                <td>Enquiries</td>
+                                                <td><span>Jan, 19 2023</span></td>
+                                                <td><span class="old text-success">Approved</span></td>
+                                                <td><a href="../forms/distributor_enquiry_form.html"
+                                                        class="text-decoration-none">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Tatyana Fitzpatrick</td>
+                                                <td>Enquiries</td>
+                                                <td><span>Jan, 19 2023</span></td>
+                                                <td><span class="old text-success">Approved</span></td>
+                                                <td><a href="../forms/distributor_enquiry_form.html"
+                                                        class="text-decoration-none">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Michael Silva</td>
+                                                <td>Enquiries</td>
+                                                <td><span>Jan, 19 2023</span></td>
+                                                <td><span class="old text-success">Approved</span></td>
+                                                <td><a href="../forms/distributor_enquiry_form.html"
+                                                        class="text-decoration-none">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Paul Byrd</td>
+                                                <td>Enquiries</td>
+                                                <td><span>Jan, 19 2023</span></td>
+                                                <td><span class="old text-success">Approved</span></td>
+                                                <td><a href="../forms/distributor_enquiry_form.html"
+                                                        class="text-decoration-none">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Gloria Little</td>
+                                                <td>Enquiries</td>
+                                                <td><span>Jan, 19 2023</span></td>
+                                                <td><span class="old text-success">Approved</span></td>
+                                                <td><a href="../forms/distributor_enquiry_form.html"
+                                                        class="text-decoration-none">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Bradley Greer</td>
+                                                <td>Enquiries</td>
+                                                <td><span>Jan, 19 2023</span></td>
+                                                <td><span class="old text-success">Approved</span></td>
+                                                <td><a href="../forms/distributor_enquiry_form.html"
+                                                        class="text-decoration-none">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Dai Rios</td>
+                                                <td>Enquiries</td>
+                                                <td><span>Jan, 19 2023</span></td>
+                                                <td><span class="old text-success">Approved</span></td>
+                                                <td><a href="../forms/distributor_enquiry_form.html"
+                                                        class="text-decoration-none">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Jenette Caldwell</td>
+                                                <td>Enquiries</td>
+                                                <td><span>Jan, 19 2023</span></td>
+                                                <td><span class="old text-success">Approved</span></td>
+                                                <td><a href="../forms/distributor_enquiry_form.html"
+                                                        class="text-decoration-none">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Yuri Berry</td>
+                                                <td>Enquiries</td>
+                                                <td><span>Jan, 19 2023</span></td>
+                                                <td><span class="old text-success">Approved</span></td>
+                                                <td><a href="../forms/distributor_enquiry_form.html"
+                                                        class="text-decoration-none">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Caesar Vance</td>
+                                                <td>Enquiries</td>
+                                                <td><span>Jan, 19 2023</span></td>
+                                                <td><span class="old text-success">Approved</span></td>
+                                                <td><a href="../forms/distributor_enquiry_form.html"
+                                                        class="text-decoration-none">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Doris Wilder</td>
+                                                <td>Enquiries</td>
+                                                <td><span>Jan, 19 2023</span></td>
+                                                <td><span class="old text-success">Approved</span></td>
+                                                <td><a href="../forms/distributor_enquiry_form.html"
+                                                        class="text-decoration-none">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Angelica Ramos</td>
+                                                <td>Enquiries</td>
+                                                <td><span>Jan, 19 2023</span></td>
+                                                <td><span class="old text-success">Approved</span></td>
+                                                <td><a href="../forms/distributor_enquiry_form.html"
+                                                        class="text-decoration-none">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Gavin Joyce</td>
+                                                <td>Enquiries</td>
+                                                <td><span>Jan, 19 2023</span></td>
+                                                <td><span class="old text-success">Approved</span></td>
+                                                <td><a href="../forms/distributor_enquiry_form.html"
+                                                        class="text-decoration-none">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Jennifer Chang</td>
+                                                <td>Enquiries</td>
+                                                <td><span>Jan, 19 2023</span></td>
+                                                <td><span class="old text-success">Approved</span></td>
+                                                <td><a href="../forms/distributor_enquiry_form.html"
+                                                        class="text-decoration-none">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Brenden Wagner</td>
+                                                <td>Enquiries</td>
+                                                <td><span>Jan, 19 2023</span></td>
+                                                <td><span class="old text-success">Approved</span></td>
+                                                <td><a href="../forms/distributor_enquiry_form.html"
+                                                        class="text-decoration-none">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Fiona Green</td>
+                                                <td>Enquiries</td>
+                                                <td><span>Jan, 19 2023</span></td>
+                                                <td><span class="old text-success">Approved</span></td>
+                                                <td><a href="../forms/distributor_enquiry_form.html"
+                                                        class="text-decoration-none">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Shou Itou</td>
+                                                <td>Enquiries</td>
+                                                <td><span>Jan, 19 2023</span></td>
+                                                <td><span class="old text-success">Approved</span></td>
+                                                <td><a href="../forms/distributor_enquiry_form.html"
+                                                        class="text-decoration-none">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Michelle House</td>
+                                                <td>Enquiries</td>
+                                                <td><span>Jan, 19 2023</span></td>
+                                                <td><span class="old text-success">Approved</span></td>
+                                                <td><a href="../forms/distributor_enquiry_form.html"
+                                                        class="text-decoration-none">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Suki Burks</td>
+                                                <td>Enquiries</td>
+                                                <td><span>Jan, 19 2023</span></td>
+                                                <td><span class="old text-success">Approved</span></td>
+                                                <td><a href="../forms/distributor_enquiry_form.html"
+                                                        class="text-decoration-none">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Prescott Bartlett</td>
+                                                <td>Enquiries</td>
+                                                <td><span>Jan, 19 2023</span></td>
+                                                <td><span class="old text-success">Approved</span></td>
+                                                <td><a href="../forms/distributor_enquiry_form.html"
+                                                        class="text-decoration-none">View</a></td>
+                                            </tr>
+
+                                            <td>Jackson Bradshaw</td>
+                                            <td>Enquiries</td>
+                                            <td><span>Jan, 19 2023</span></td>
+                                            <td><span class="text-danger">Rejected</span></td>
+                                            <td><a href="../forms/distributor_enquiry_form.html"
+                                                    class="text-decoration-none">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Olivia Liang</td>
+                                                <td>Enquiries</td>
+                                                <td><span>Jan, 19 2023</span></td>
+                                                <td><span class="text-danger">Rejected</span></td>
+                                                <td><a href="../forms/distributor_enquiry_form.html"
+                                                        class="text-decoration-none">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Bruno Nash</td>
+                                                <td>Enquiries</td>
+                                                <td><span>Jan, 19 2023</span></td>
+                                                <td><span class="text-danger">Rejected</span></td>
+                                                <td><a href="../forms/distributor_enquiry_form.html"
+                                                        class="text-decoration-none">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Sakura Yamamoto</td>
+                                                <td>Enquiries</td>
+                                                <td><span>Jan, 19 2023</span></td>
+                                                <td><span class="text-danger">Rejected</span></td>
+                                                <td><a href="../forms/distributor_enquiry_form.html"
+                                                        class="text-decoration-none">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Thor Walton</td>
+                                                <td>Enquiries</td>
+                                                <td><span>Jan, 19 2023</span></td>
+                                                <td><span class="text-danger">Rejected</span></td>
+                                                <td><a href="../forms/distributor_enquiry_form.html"
+                                                        class="text-decoration-none">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Finn Camacho</td>
+                                                <td>Enquiries</td>
+                                                <td><span>Jan, 19 2023</span></td>
+                                                <td><span class="text-danger">Rejected</span></td>
+                                                <td><a href="../forms/distributor_enquiry_form.html"
+                                                        class="text-decoration-none">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Serge Baldwin</td>
+                                                <td>Enquiries</td>
+                                                <td><span>Jan, 19 2023</span></td>
+                                                <td><span class="text-danger">Rejected</span></td>
+                                                <td><a href="../forms/distributor_enquiry_form.html"
+                                                        class="text-decoration-none">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Zenaida Frank</td>
+                                                <td>Enquiries</td>
+                                                <td><span>Jan, 19 2023</span></td>
+                                                <td><span class="text-danger">Rejected</span></td>
+                                                <td><a href="../forms/distributor_enquiry_form.html"
+                                                        class="text-decoration-none">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Zorita Serrano</td>
+                                                <td>Enquiries</td>
+                                                <td><span>Jan, 19 2023</span></td>
+                                                <td><span class="text-danger">Rejected</span></td>
+                                                <td><a href="../forms/distributor_enquiry_form.html"
+                                                        class="text-decoration-none">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Jennifer Acosta</td>
+                                                <td>Enquiries</td>
+                                                <td><span>Jan, 19 2023</span></td>
+                                                <td><span class="text-danger">Rejected</span></td>
+                                                <td><a href="../forms/distributor_enquiry_form.html"
+                                                        class="text-decoration-none">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Cara Stevens</td>
+                                                <td>Enquiries</td>
+                                                <td><span>Jan, 19 2023</span></td>
+                                                <td><span class="text-danger">Rejected</span></td>
+                                                <td><a href="../forms/distributor_enquiry_form.html"
+                                                        class="text-decoration-none">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Hermione Butler</td>
+                                                <td>Enquiries</td>
+                                                <td><span>Jan, 19 2023</span></td>
+                                                <td><span class="text-danger">Rejected</span></td>
+                                                <td><a href="../forms/distributor_enquiry_form.html"
+                                                        class="text-decoration-none">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Lael Greer</td>
+                                                <td>Enquiries</td>
+                                                <td><span>Jan, 19 2023</span></td>
+                                                <td><span class="text-danger">Rejected</span></td>
+                                                <td><a href="../forms/distributor_enquiry_form.html"
+                                                        class="text-decoration-none">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Jonas Alexander</td>
+                                                <td>Enquiries</td>
+                                                <td><span>Jan, 19 2023</span></td>
+                                                <td><span class="text-danger">Rejected</span></td>
+                                                <td><a href="../forms/distributor_enquiry_form.html"
+                                                        class="text-decoration-none">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Shad Decker</td>
+                                                <td>Enquiries</td>
+                                                <td><span>Jan, 19 2023</span></td>
+                                                <td><span class="text-danger">Rejected</span></td>
+                                                <td><a href="../forms/distributor_enquiry_form.html"
+                                                        class="text-decoration-none">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Michael Bruce</td>
+                                                <td>Enquiries</td>
+                                                <td><span>Jan, 19 2023</span></td>
+                                                <td><span class="text-danger">Rejected</span></td>
+                                                <td><a href="../forms/distributor_enquiry_form.html"
+                                                        class="text-decoration-none">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Donna Snider</td>
+                                                <td>Enquiries</td>
+                                                <td><span>Jan, 19 2023</span></td>
+                                                <td><span class="text-danger">Rejected</span></td>
+                                                <td><a href="../forms/distributor_enquiry_form.html"
+                                                        class="text-decoration-none">View</a></td>
+                                            </tr>
+                                        </tbody>
+
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- content-wrapper ends -->
+                <!-- partial:../../partials/_footer.html -->
+                <footer class="footer">
+                    <div class="container-fluid text-center">
+                        <span class="text-muted d-block text-center text-sm-start d-sm-inline-block">Lorem ipsum dolor
+                            veniam
+                            eveniet ut est distinctio nulla!</span>
+                    </div>
+                </footer>
+                <!-- partial -->
+            </div>
+            <!-- main-panel ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+
+    <%- include("../shared/footer.ejs") %>
+
+</body>
+
+</html>

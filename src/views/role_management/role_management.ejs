@@ -1,460 +1,159 @@
-<%- include("../shared/header.ejs") %>
+<%- include("../shared/header.ejs", { token: token }) %>
 
-
-            <div class="main-panel">
-                <div class="content-wrapper">
-                    <div class="row">
-                        <div class="col-12 grid-margin stretch-card">
-                            <div class="card">
-                                <div class="card-body role-management table-responsive">
-                                    <div>
-                                        <h3 class="role-hadding">Role Management</h3>
+    <div class="main-panel">
+        <div class="content-wrapper">
+            <div class="row">
+                <div class="col-12 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body role-management table-responsive">
+                            <div>
+                                <h3 class="role-hadding">Role Management</h3>
+                            </div>
+                            <div class="row my-2 d-flex">
+                                <div class="col-md-6 col-sm-4">
+                                    <div class="input-group-table-role  rounded">
+                                        <input type="search" id="search_table_input" class="form-control "
+                                            placeholder="Search" aria-label="Search" />
                                     </div>
-                                    <div class="row my-2 d-flex">
-                                        <div class="col-md-6 col-sm-4">
-                                            <div class="input-group-table-role  rounded">
-                                                <input type="search" id="search_table_input" class="form-control "
-                                                    placeholder="Search" aria-label="Search" />
-                                            </div>
-                                        </div>
-                                        <div
-                                            class="col-md-6 col-sm-6 my-1 d-flex justify-content-md-end  justify-content-sm-end">
-                                            <a class="role-btn">CREATE ROLE</a>
-                                        </div>
-                                    </div>
-                                    <table id="role_management_id_table"
-                                        class="display table table-hover stripe row-border order-column"
-                                        style="width:100%">
-                                        <thead>
-                                            <tr>
-                                                <th>ROLE NAME</th>
-                                                <th>DISPLAY NAME</th>
-                                                <th>PERMISSION (S)</th>
-                                                <th></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody id="search_table_data">
-                                            <tr>
-                                                <td>AWL_ASE</td>
-                                                <td>Area Sales Executive</td>
-                                                <td>Application Approver, Application Details, Approver Inbox,Business
-                                                    Partner Invite, Markit Survery App, History Tab, Details Tab.
-                                                    Document Tab, Enterprise Application list,Dashboard, Enterprise
-                                                    Document Upload</td>
-                                                <td class="role-icon">
-                                                    <div class="role-dropdown ">
-                                                        <i class="role-dropbtn mdi mdi-dots-vertical"></i>
-                                                        <div class="role-dropdown-content">
-                                                            <a href="#" class="d-flex align-items-center"><i
-                                                                    class="mdi mdi-lead-pencil"></i><span
-                                                                    class="mx-2">Edit</span></a>
-                                                            <a href="#" class="d-flex align-items-center"><i
-                                                                    class="mdi mdi-delete"></i><span
-                                                                    class="mx-2">Delete</span></a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>AWL_ASE</td>
-                                                <td>Area Sales Executive</td>
-                                                <td>Application Approver, Application Details, Approver Inbox,Business
-                                                    Partner Invite, Markit Survery App, History Tab, Details Tab.
-                                                    Document Tab, Enterprise Application list,Dashboard, Enterprise
-                                                    Document Upload</td>
-                                                <td class="role-icon">
-                                                    <div class="role-dropdown ">
-                                                        <i class="role-dropbtn mdi mdi-dots-vertical"></i>
-                                                        <div class="role-dropdown-content">
-                                                            <a href="#" class="d-flex align-items-center"><i
-                                                                    class="mdi mdi-lead-pencil"></i><span
-                                                                    class="mx-2">Edit</span></a>
-                                                            <a href="#" class="d-flex align-items-center"><i
-                                                                    class="mdi mdi-delete"></i><span
-                                                                    class="mx-2">Delete</span></a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>AWL_ASE</td>
-                                                <td>Area Sales Executive</td>
-                                                <td>Application Approver, Application Details, Approver Inbox,Business
-                                                    Partner Invite, Markit Survery App, History Tab, Details Tab.
-                                                    Document Tab, Enterprise Application list,Dashboard, Enterprise
-                                                    Document Upload</td>
-                                                <td class="role-icon">
-                                                    <div class="role-dropdown ">
-                                                        <i class="role-dropbtn mdi mdi-dots-vertical"></i>
-                                                        <div class="role-dropdown-content">
-                                                            <a href="#" class="d-flex align-items-center"><i
-                                                                    class="mdi mdi-lead-pencil"></i><span
-                                                                    class="mx-2">Edit</span></a>
-                                                            <a href="#" class="d-flex align-items-center"><i
-                                                                    class="mdi mdi-delete"></i><span
-                                                                    class="mx-2">Delete</span></a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>AWL_ASE</td>
-                                                <td>Area Sales Executive</td>
-                                                <td>Application Approver, Application Details, Approver Inbox,Business
-                                                    Partner Invite, Markit Survery App, History Tab, Details Tab.
-                                                    Document Tab, Enterprise Application list,Dashboard, Enterprise
-                                                    Document Upload</td>
-                                                <td class="role-icon">
-                                                    <div class="role-dropdown ">
-                                                        <i class="role-dropbtn mdi mdi-dots-vertical"></i>
-                                                        <div class="role-dropdown-content">
-                                                            <a href="#" class="d-flex align-items-center"><i
-                                                                    class="mdi mdi-lead-pencil"></i><span
-                                                                    class="mx-2">Edit</span></a>
-                                                            <a href="#" class="d-flex align-items-center"><i
-                                                                    class="mdi mdi-delete"></i><span
-                                                                    class="mx-2">Delete</span></a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>AWL_ASE</td>
-                                                <td>Area Sales Executive</td>
-                                                <td>Application Approver, Application Details, Approver Inbox,Business
-                                                    Partner Invite, Markit Survery App, History Tab, Details Tab.
-                                                    Document Tab, Enterprise Application list,Dashboard, Enterprise
-                                                    Document Upload</td>
-                                                <td class="role-icon">
-                                                    <div class="role-dropdown ">
-                                                        <i class="role-dropbtn mdi mdi-dots-vertical"></i>
-                                                        <div class="role-dropdown-content">
-                                                            <a href="#" class="d-flex align-items-center"><i
-                                                                    class="mdi mdi-lead-pencil"></i><span
-                                                                    class="mx-2">Edit</span></a>
-                                                            <a href="#" class="d-flex align-items-center"><i
-                                                                    class="mdi mdi-delete"></i><span
-                                                                    class="mx-2">Delete</span></a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>AWL_ASE</td>
-                                                <td>Area Sales Executive</td>
-                                                <td>Application Approver, Application Details, Approver Inbox,Business
-                                                    Partner Invite, Markit Survery App, History Tab, Details Tab.
-                                                    Document Tab, Enterprise Application list,Dashboard, Enterprise
-                                                    Document Upload</td>
-                                                <td class="role-icon">
-                                                    <div class="role-dropdown ">
-                                                        <i class="role-dropbtn mdi mdi-dots-vertical"></i>
-                                                        <div class="role-dropdown-content">
-                                                            <a href="#" class="d-flex align-items-center"><i
-                                                                    class="mdi mdi-lead-pencil"></i><span
-                                                                    class="mx-2">Edit</span></a>
-                                                            <a href="#" class="d-flex align-items-center"><i
-                                                                    class="mdi mdi-delete"></i><span
-                                                                    class="mx-2">Delete</span></a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>AWL_ASE</td>
-                                                <td>Area Sales Executive</td>
-                                                <td>Application Approver, Application Details, Approver Inbox,Business
-                                                    Partner Invite, Markit Survery App, History Tab, Details Tab.
-                                                    Document Tab, Enterprise Application list,Dashboard, Enterprise
-                                                    Document Upload</td>
-                                                <td class="role-icon">
-                                                    <div class="role-dropdown ">
-                                                        <i class="role-dropbtn mdi mdi-dots-vertical"></i>
-                                                        <div class="role-dropdown-content">
-                                                            <a href="#" class="d-flex align-items-center"><i
-                                                                    class="mdi mdi-lead-pencil"></i><span
-                                                                    class="mx-2">Edit</span></a>
-                                                            <a href="#" class="d-flex align-items-center"><i
-                                                                    class="mdi mdi-delete"></i><span
-                                                                    class="mx-2">Delete</span></a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>AWL_ASE</td>
-                                                <td>Area Sales Executive</td>
-                                                <td>Application Approver, Application Details, Approver Inbox,Business
-                                                    Partner Invite, Markit Survery App, History Tab, Details Tab.
-                                                    Document Tab, Enterprise Application list,Dashboard, Enterprise
-                                                    Document Upload</td>
-                                                <td class="role-icon">
-                                                    <div class="role-dropdown ">
-                                                        <i class="role-dropbtn mdi mdi-dots-vertical"></i>
-                                                        <div class="role-dropdown-content">
-                                                            <a href="#" class="d-flex align-items-center"><i
-                                                                    class="mdi mdi-lead-pencil"></i><span
-                                                                    class="mx-2">Edit</span></a>
-                                                            <a href="#" class="d-flex align-items-center"><i
-                                                                    class="mdi mdi-delete"></i><span
-                                                                    class="mx-2">Delete</span></a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>AWL_ASE</td>
-                                                <td>Area Sales Executive</td>
-                                                <td>Application Approver, Application Details, Approver Inbox,Business
-                                                    Partner Invite, Markit Survery App, History Tab, Details Tab.
-                                                    Document Tab, Enterprise Application list,Dashboard, Enterprise
-                                                    Document Upload</td>
-                                                <td class="role-icon">
-                                                    <div class="role-dropdown ">
-                                                        <i class="role-dropbtn mdi mdi-dots-vertical"></i>
-                                                        <div class="role-dropdown-content">
-                                                            <a href="#" class="d-flex align-items-center"><i
-                                                                    class="mdi mdi-lead-pencil"></i><span
-                                                                    class="mx-2">Edit</span></a>
-                                                            <a href="#" class="d-flex align-items-center"><i
-                                                                    class="mdi mdi-delete"></i><span
-                                                                    class="mx-2">Delete</span></a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>AWL_ASE</td>
-                                                <td>Area Sales Executive</td>
-                                                <td>Application Approver, Application Details, Approver Inbox,Business
-                                                    Partner Invite, Markit Survery App, History Tab, Details Tab.
-                                                    Document Tab, Enterprise Application list,Dashboard, Enterprise
-                                                    Document Upload</td>
-                                                <td class="role-icon">
-                                                    <div class="role-dropdown ">
-                                                        <i class="role-dropbtn mdi mdi-dots-vertical"></i>
-                                                        <div class="role-dropdown-content">
-                                                            <a href="#" class="d-flex align-items-center"><i
-                                                                    class="mdi mdi-lead-pencil"></i><span
-                                                                    class="mx-2">Edit</span></a>
-                                                            <a href="#" class="d-flex align-items-center"><i
-                                                                    class="mdi mdi-delete"></i><span
-                                                                    class="mx-2">Delete</span></a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>AWL_ASE</td>
-                                                <td>Area Sales Executive</td>
-                                                <td>Application Approver, Application Details, Approver Inbox,Business
-                                                    Partner Invite, Markit Survery App, History Tab, Details Tab.
-                                                    Document Tab, Enterprise Application list,Dashboard, Enterprise
-                                                    Document Upload</td>
-                                                <td class="role-icon">
-                                                    <div class="role-dropdown ">
-                                                        <i class="role-dropbtn mdi mdi-dots-vertical"></i>
-                                                        <div class="role-dropdown-content">
-                                                            <a href="#" class="d-flex align-items-center"><i
-                                                                    class="mdi mdi-lead-pencil"></i><span
-                                                                    class="mx-2">Edit</span></a>
-                                                            <a href="#" class="d-flex align-items-center"><i
-                                                                    class="mdi mdi-delete"></i><span
-                                                                    class="mx-2">Delete</span></a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>AWL_ASE</td>
-                                                <td>Area Sales Executive</td>
-                                                <td>Application Approver, Application Details, Approver Inbox,Business
-                                                    Partner Invite, Markit Survery App, History Tab, Details Tab.
-                                                    Document Tab, Enterprise Application list,Dashboard, Enterprise
-                                                    Document Upload</td>
-                                                <td class="role-icon">
-                                                    <div class="role-dropdown ">
-                                                        <i class="role-dropbtn mdi mdi-dots-vertical"></i>
-                                                        <div class="role-dropdown-content">
-                                                            <a href="#" class="d-flex align-items-center"><i
-                                                                    class="mdi mdi-lead-pencil"></i><span
-                                                                    class="mx-2">Edit</span></a>
-                                                            <a href="#" class="d-flex align-items-center"><i
-                                                                    class="mdi mdi-delete"></i><span
-                                                                    class="mx-2">Delete</span></a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>AWL_ASE</td>
-                                                <td>Area Sales Executive</td>
-                                                <td>Application Approver, Application Details, Approver Inbox,Business
-                                                    Partner Invite, Markit Survery App, History Tab, Details Tab.
-                                                    Document Tab, Enterprise Application list,Dashboard, Enterprise
-                                                    Document Upload</td>
-                                                <td class="role-icon">
-                                                    <div class="role-dropdown ">
-                                                        <i class="role-dropbtn mdi mdi-dots-vertical"></i>
-                                                        <div class="role-dropdown-content">
-                                                            <a href="#" class="d-flex align-items-center"><i
-                                                                    class="mdi mdi-lead-pencil"></i><span
-                                                                    class="mx-2">Edit</span></a>
-                                                            <a href="#" class="d-flex align-items-center"><i
-                                                                    class="mdi mdi-delete"></i><span
-                                                                    class="mx-2">Delete</span></a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>AWL_ASE</td>
-                                                <td>Area Sales Executive</td>
-                                                <td>Application Approver, Application Details, Approver Inbox,Business
-                                                    Partner Invite, Markit Survery App, History Tab, Details Tab.
-                                                    Document Tab, Enterprise Application list,Dashboard, Enterprise
-                                                    Document Upload</td>
-                                                <td class="role-icon">
-                                                    <div class="role-dropdown ">
-                                                        <i class="role-dropbtn mdi mdi-dots-vertical"></i>
-                                                        <div class="role-dropdown-content">
-                                                            <a href="#" class="d-flex align-items-center"><i
-                                                                    class="mdi mdi-lead-pencil"></i><span
-                                                                    class="mx-2">Edit</span></a>
-                                                            <a href="#" class="d-flex align-items-center"><i
-                                                                    class="mdi mdi-delete"></i><span
-                                                                    class="mx-2">Delete</span></a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>AWL_ASE</td>
-                                                <td>Area Sales Executive</td>
-                                                <td>Application Approver, Application Details, Approver Inbox,Business
-                                                    Partner Invite, Markit Survery App, History Tab, Details Tab.
-                                                    Document Tab, Enterprise Application list,Dashboard, Enterprise
-                                                    Document Upload</td>
-                                                <td class="role-icon">
-                                                    <div class="role-dropdown ">
-                                                        <i class="role-dropbtn mdi mdi-dots-vertical"></i>
-                                                        <div class="role-dropdown-content">
-                                                            <a href="#" class="d-flex align-items-center"><i
-                                                                    class="mdi mdi-lead-pencil"></i><span
-                                                                    class="mx-2">Edit</span></a>
-                                                            <a href="#" class="d-flex align-items-center"><i
-                                                                    class="mdi mdi-delete"></i><span
-                                                                    class="mx-2">Delete</span></a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>AWL_ASE</td>
-                                                <td>Area Sales Executive</td>
-                                                <td>Application Approver, Application Details, Approver Inbox,Business
-                                                    Partner Invite, Markit Survery App, History Tab, Details Tab.
-                                                    Document Tab, Enterprise Application list,Dashboard, Enterprise
-                                                    Document Upload</td>
-                                                <td class="role-icon">
-                                                    <div class="role-dropdown ">
-                                                        <i class="role-dropbtn mdi mdi-dots-vertical"></i>
-                                                        <div class="role-dropdown-content">
-                                                            <a href="#" class="d-flex align-items-center"><i
-                                                                    class="mdi mdi-lead-pencil"></i><span
-                                                                    class="mx-2">Edit</span></a>
-                                                            <a href="#" class="d-flex align-items-center"><i
-                                                                    class="mdi mdi-delete"></i><span
-                                                                    class="mx-2">Delete</span></a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>AWL_ASE</td>
-                                                <td>Area Sales Executive</td>
-                                                <td>Application Approver, Application Details, Approver Inbox,Business
-                                                    Partner Invite, Markit Survery App, History Tab, Details Tab.
-                                                    Document Tab, Enterprise Application list,Dashboard, Enterprise
-                                                    Document Upload</td>
-                                                <td class="role-icon">
-                                                    <div class="role-dropdown ">
-                                                        <i class="role-dropbtn mdi mdi-dots-vertical"></i>
-                                                        <div class="role-dropdown-content">
-                                                            <a href="#" class="d-flex align-items-center"><i
-                                                                    class="mdi mdi-lead-pencil"></i><span
-                                                                    class="mx-2">Edit</span></a>
-                                                            <a href="#" class="d-flex align-items-center"><i
-                                                                    class="mdi mdi-delete"></i><span
-                                                                    class="mx-2">Delete</span></a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>AWL_ASE</td>
-                                                <td>Area Sales Executive</td>
-                                                <td>Application Approver, Application Details, Approver Inbox,Business
-                                                    Partner Invite, Markit Survery App, History Tab, Details Tab.
-                                                    Document Tab, Enterprise Application list,Dashboard, Enterprise
-                                                    Document Upload</td>
-                                                <td class="role-icon">
-                                                    <div class="role-dropdown ">
-                                                        <i class="role-dropbtn mdi mdi-dots-vertical"></i>
-                                                        <div class="role-dropdown-content">
-                                                            <a href="#" class="d-flex align-items-center"><i
-                                                                    class="mdi mdi-lead-pencil"></i><span
-                                                                    class="mx-2">Edit</span></a>
-                                                            <a href="#" class="d-flex align-items-center"><i
-                                                                    class="mdi mdi-delete"></i><span
-                                                                    class="mx-2">Delete</span></a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>AWL_ASE</td>
-                                                <td>Area Sales Executive</td>
-                                                <td>Application Approver, Application Details, Approver Inbox,Business
-                                                    Partner Invite, Markit Survery App, History Tab, Details Tab.
-                                                    Document Tab, Enterprise Application list,Dashboard, Enterprise
-                                                    Document Upload</td>
-                                                <td class="role-icon">
-                                                    <div class="role-dropdown ">
-                                                        <i class="role-dropbtn mdi mdi-dots-vertical"></i>
-                                                        <div class="role-dropdown-content">
-                                                            <a href="#" class="d-flex align-items-center"><i
-                                                                    class="mdi mdi-lead-pencil"></i><span
-                                                                    class="mx-2">Edit</span></a>
-                                                            <a href="#" class="d-flex align-items-center"><i
-                                                                    class="mdi mdi-delete"></i><span
-                                                                    class="mx-2">Delete</span></a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-
-                                        </tbody>
-                                    </table>
+                                </div>
+                                <div
+                                    class="col-md-6 col-sm-6 my-1 d-flex justify-content-md-end  justify-content-sm-end">
+                                    <a href="/role_managment/createrole" class="role-btn">CREATE ROLE</a>
                                 </div>
                             </div>
+                            <table id="role_management_id_table"
+                                class="display table table-hover stripe row-border order-column">
+                                <thead>
+                                    <tr>
+                                        <th>ROLE NAME</th>
+
+                                        <th>DISPLAY NAME</th>
+                                        <th>PERMISSION (S)</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="search_table_data">
+
+                                    <% const AWS_="AWS_" ; %>
+                                        <% roleManagment.forEach((data)=> { %>
+                                            <tr>
+                                                <td class="text_uppercase">
+                                                    <%= AWS_ + `${data.role}` %>
+                                                </td>
+
+                                                <td>
+                                                    <%= data.displayname %>
+                                                </td>
+                                                <td>
+                                                    <%= [ data.Dashboard==='1' ? 'Dashboard' : null,
+                                                        data.ProspectiveDistributors==='1' ? 'Prospective Distributors'
+                                                        : null, data.Invite==='1' ? 'Invite' : null,
+                                                        data.ApproverInbox==='1' ? 'Approver Inbox' : null,
+                                                        data.ApplicationList==='1' ? 'Application List' : null,
+                                                        data.DistributorsList==='1' ? 'Distributors List' : null,
+                                                        data.RoleManagement==='1' ? 'Role Management' : null,
+                                                        data.UserManagement==='1' ? 'User Management' : null,
+                                                        data.TerritoryManagement==='1' ? 'Territory Management' : null,
+                                                        data.edit==='1' ? 'Edit' : null, data.userdelete==='1'
+                                                        ? 'User Delete' : null ].filter(Boolean).join(', ') %>
+                                            </td>
+                                            
+                                            <td class="role-icon">
+                                                <a href="/role_managment/editrole?role=<%= data.role %>" class="d-flex align-items-center"><i class="mdi mdi-lead-pencil"></i><span class="mx-2">Edit</span></a>
+
+                                                <a href="#" class="d-flex align-items-center" 
+                                                data-bs-toggle="modal" 
+                                                data-bs-target="#deleteModal"
+                                                data-email="<%= data.role %>">
+                                                 <i class="mdi mdi-delete"></i><span class="mx-2">Delete</span>
+                                             </a>
+                                                </td>
+                                            </tr>
+                                            <% }) %>
+
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
-                <!-- content-wrapper ends -->
-                <!-- partial:../../partials/_footer.html -->
-                <footer class="footer">
-                    <div class="container-fluid text-center">
-                        <span class="text-muted d-block text-center text-sm-start d-sm-inline-block">Lorem ipsum dolor
-                            veniam
-                            eveniet ut est distinctio nulla!</span>
-                    </div>
-                </footer>
-                <!-- partial -->
             </div>
-            <!-- main-panel ends -->
         </div>
-        <!-- page-body-wrapper ends -->
-    </div>
+        <!-- Bootstrap Modal for Delete Confirmation -->
+        <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="deleteModalLabel">Confirm Deletion</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure you want to delete this role?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <a id="deleteConfirmButton" href="#" class="btn btn-danger">Delete</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<%- include("../shared/footer.ejs") %>
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        <footer class="footer">
+            <div class="container-fluid text-center">
+                <span class="text-muted d-block text-center text-sm-start d-sm-inline-block">Lorem ipsum dolor
+                    veniam
+                    eveniet ut est distinctio nulla!</span>
+            </div>
+        </footer>
+        <!-- partial -->
+    </div>
+    <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+    </div>
+    
+    <script>
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+        });
+
+        function showToast(icon, title) {
+            Toast.fire({
+                icon: icon,
+                title: title
+            });
+        }
+        "  <% if (message) { %>"
+        showToast("error", "<%= message %>");
+        "<% } else if (success) { %>"
+        showToast("success", "<%= success %>");
+
+        "  <% } %>"
+
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const deleteModal = document.getElementById('deleteModal');
+            deleteModal.addEventListener('show.bs.modal', function(event) {
+                const button = event.relatedTarget; 
+                const email = button.getAttribute('data-email'); 
+        
+                const modalBody = deleteModal.querySelector('.modal-body');
+                const deleteConfirmButton = deleteModal.querySelector('#deleteConfirmButton');
+        
+                // Update the modal's content.u want to delete the role associated with role: ${email}?`;
+                deleteConfirmButton.href = `/role_managment/delete?role=${email}`;
+            });
+        });
+    </script>
+        
+    <%- include("../shared/footer.ejs") %>

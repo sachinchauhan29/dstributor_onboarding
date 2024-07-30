@@ -1,0 +1,217 @@
+<%- include("../shared/header.ejs", { token: token }) %>
+
+
+    <div class="main-panel">
+        <div class="content-wrapper">
+            <div class="row">
+                <div class="col-12 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body role-management table-responsive">
+
+                            <div>
+                                <h3 class="role-hadding">CREATE ROLE</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body role-management table-responsive">
+                            <form action="/role_managment/createrole" method="post" enctype="multipart/form-data">
+                                <div class="row">
+
+                                    <div class="col-lg-4 col-12">
+                                        <div class="form-group">
+                                            <label for="Select role">Select role</label>
+                                            <select name="role" id="" class="form-control" required>
+                                                <option value="">Select role</option>
+                                                <option value="ase">ASE </option>
+                                                <option value="asm">ASM </option>
+                                                <option value="rsm">RSM</option>
+                                                <option value="ZGTM">ZGTM</option>
+                                                <option value="ZSM"> ZSM</option>
+                                                <option value="HODistributionHelpDesk">HO Distribution Help Desk
+                                                </option>
+                                                <option value="ClusterHead">Cluster Head</option>
+                                                <option value=" SND HOD"> SND HOD</option>
+                                                <option value="MDM">MDM</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-12">
+                                        <div class="form-group">
+                                            <label for="displayname">DISPLAY NAME</label>
+                                            <input class="form-control" type="text" name="displayname" id="displayname"
+                                                placeholder="DISPLAY NAME">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-12">
+                                        <div class="form-group">
+                                            <label for="DASHBOARD">DASHBOARD</label>
+                                            <select class="form-control" name="Dashboard" id="DASHBOARD" required>
+                                                <option value="">Select Status</option>
+                                                <option value="1">Yes</option>
+                                                <option value="0">No</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-12">
+                                        <div class="form-group">
+                                            <label for="ProspectiveDistributors">ProspectiveDistributors</label>
+                                            <select class="form-control" name="ProspectiveDistributors"
+                                                id="ProspectiveDistributors" required>
+                                                <option value="">Select Status</option>
+                                                <option value="1">Yes</option>
+                                                <option value="0">No</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-12">
+                                        <div class="form-group">
+                                            <label for="Invite">Invite</label>
+                                            <select class="form-control" name="Invite" id="Invite" required>
+                                                <option value="">Select Status</option>
+                                                <option value="1">Yes</option>
+                                                <option value="0">No</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-12">
+                                        <div class="form-group">
+                                            <label for="ScoutingSheet">ScoutingSheet</label>
+                                            <select class="form-control" name="ScoutingSheet" id="ScoutingSheet"
+                                                required>
+                                                <option value="">Select Status</option>
+                                                <option value="1">Yes</option>
+                                                <option value="0">No</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-12">
+                                        <div class="form-group">
+                                            <label for="ApproverInbox">Approver Inbox</label>
+                                            <select class="form-control" name="ApproverInbox" id="ApproverInbox"
+                                                required>
+                                                <option value="">Select Status</option>
+                                                <option value="1">Yes</option>
+                                                <option value="0">No</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-12">
+                                        <div class="form-group">
+                                            <label for="ApplicationList">ApplicationList</label>
+                                            <select class="form-control" name="ApplicationList" id="ApplicationList"
+                                                required>
+                                                <option value="">Select Status</option>
+                                                <option value="1">Yes</option>
+                                                <option value="0">No</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-12">
+                                        <div class="form-group">
+                                            <label for="DistributorsList">DistributorsList</label>
+                                            <select class="form-control" name="DistributorsList" id="DistributorsList"
+                                                required>
+                                                <option value="">Select Status</option>
+                                                <option value="1">Yes</option>
+                                                <option value="0">No</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-12">
+                                        <div class="form-group">
+                                            <label for="RoleManagement">RoleManagement</label>
+                                            <select class="form-control" name="RoleManagement" id="RoleManagement"
+                                                required>
+                                                <option value="">Select Status</option>
+                                                <option value="1">Yes</option>
+                                                <option value="0">No</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-12">
+                                        <div class="form-group">
+                                            <label for="UserManagement">UserManagement</label>
+                                            <select class="form-control" name="UserManagement" id="UserManagement"
+                                                required>
+                                                <option value="">Select Status</option>
+                                                <option value="1">Yes</option>
+                                                <option value="0">No</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-12">
+                                        <div class="form-group">
+                                            <label for="TerritoryManagement">TerritoryManagement</label>
+                                            <select class="form-control" name="TerritoryManagement"
+                                                id="TerritoryManagement" required>
+                                                <option value="">Select Status</option>
+                                                <option value="1">Yes</option>
+                                                <option value="0">No</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-4 col-12 mt-lg-4">
+                                        <div class="form-group">
+                                            <button type="submit" class="btn w-100 btn-success">Submit</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        <footer class="footer">
+            <div class="container-fluid text-center">
+                <span class="text-muted d-block text-center text-sm-start d-sm-inline-block">Lorem ipsum dolor
+                    veniam
+                    eveniet ut est distinctio nulla!</span>
+            </div>
+        </footer>
+        <!-- partial -->
+    </div>
+    <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+    </div>
+    <script>
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+        });
+
+        function showToast(icon, title) {
+            Toast.fire({
+                icon: icon,
+                title: title
+            });
+        }
+        "  <% if (message) { %>"
+        showToast("error", "<%= message %>");
+        "<% } else if (success) { %>"
+        showToast("success", "<%= success %>");
+
+        "  <% } %>"
+
+    </script>
+    <%- include("../shared/footer.ejs") %>

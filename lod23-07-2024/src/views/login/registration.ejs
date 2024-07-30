@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Login</title>
+    <!-- plugins:css -->
+    <link
+      rel="stylesheet"
+      href="../../public/vendors/mdi/css/materialdesignicons.min.css"
+    />
+
+    <link rel="stylesheet" href="../../public/css/style.css" />
+    <link rel="stylesheet" href="../../public/css/style.css" />
+
+    <link rel="stylesheet" href="../../public/css/responsive.css" />
+    <link rel="stylesheet" href="../../public/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../public/DataTables/datatables.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybBud7TlRbs/ic4AwGcFZOxg5DpPt8EgeUIgIwzjWfXQKWA3" crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+  </head>
+
+  <% if (message) { %>
+    <div class="alert1">
+      <p><%= message %></p>
+    </div>
+    <% } %>
+
+    <div class="container-fluid login-main-panel">
+      <div class="container">
+        <div class="row py-4">
+          <div
+            class="col-md-6 p-0 d-flex align-items-center justify-content-center"
+          >
+            <div class="login-img">
+              <img
+                src="../../public/images/loginImg/login-aside1.avif"
+                alt=""
+              />
+            </div>
+          </div>
+          <div
+            class="col-md-6 p-0 d-flex align-items-center justify-content-center"
+          >
+            <div class="login-content">
+              <form action="/checkotp" method="POST">
+                <div
+                  class="login-logo d-flex align-items-center justify-content-center pb-4"
+                >
+                  <img src="../../assets/images/Group 46 (1).jpg" alt="" />
+                </div>
+                <!-- <div class="mb-3">
+                  <label class="form-label">Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="name"
+                    placeholder="Enter Your Name"
+                  />
+                </div> -->
+                <div class="mb-3">
+                  <label class="form-label">Email address</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    name="email"
+                    placeholder="Enter Email Address"
+                    required
+                  />
+                </div>
+                <!-- <div class="mb-3 position-relative">
+                  <label class="form-label">Password</label>
+                  <input
+                    type="password"
+                    id="password"
+                    class="form-control"
+                    name="password"
+                    placeholder="Enter Your Password"
+                  />
+                  <span class="password-icon">
+                    <i class="bi bi-eye-slash" id="togglePassword"></i
+                  ></span>
+                </div> -->
+                <div class="login-btn d-flex justify-content-center">
+                  <button type="submit" class="btn">SEND OTP</button>
+                </div>
+                <div
+                  class="login-forgot-password d-flex justify-content-center"
+                >
+                  <a href="/login_role">Already a User ? Log in</a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- main-panel ends -->
+    <script src="/src/public/js/jquery.min.js"></script>
+    <script src="../../public/vendors/js/vendor.bundle.base.js"></script>
+    <script src="../../public/js/bootstrap.min.js"></script>
+    <!-- End custom js for this page -->
+    <script>
+      const togglePassword = document.querySelector("#togglePassword");
+      const password = document.querySelector("#password");
+      const messageElement = document.querySelector(".alert1");
+      if (messageElement) {
+        setTimeout(() => {
+          messageElement.style.display = "none";
+        }, 3000);
+      }
+      togglePassword.addEventListener("click", function () {
+        // toggle the type attribute
+        const type =
+          password.getAttribute("type") === "password" ? "text" : "password";
+        password.setAttribute("type", type);
+
+        // toggle the icon
+        this.classList.toggle("bi-eye");
+      });
+
+      // prevent form submit
+      const form = document.querySelector("form");
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+      });
+    </script>
+  </body>
+</html>
